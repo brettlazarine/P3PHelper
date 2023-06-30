@@ -8,17 +8,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("P3PHelper.MainPage.xaml", "MainPage.xaml", typeof(global::P3PHelper.MainPage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("P3PHelper.Views.NewItemPage.xaml", "Views/NewItemPage.xaml", typeof(global::P3PHelper.Views.NewItemPage))]
 
-namespace P3PHelper {
+namespace P3PHelper.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("MainPage.xaml")]
-    public partial class MainPage : global::Xamarin.Forms.ContentPage {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\NewItemPage.xaml")]
+    public partial class NewItemPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(MainPage));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(NewItemPage));
         }
     }
 }

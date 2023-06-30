@@ -1,4 +1,6 @@
-﻿using System;
+﻿using P3PHelper.Services;
+using P3PHelper.Views;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -6,11 +8,13 @@ namespace P3PHelper
 {
     public partial class App : Application
     {
+
         public App()
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            DependencyService.Register<MockDataStore>();
+            MainPage = new AppShell();
         }
 
         protected override void OnStart()
