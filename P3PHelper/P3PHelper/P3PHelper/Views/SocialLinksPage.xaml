@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="P3PHelper.Views.SocialLinksPage">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Label Text="List of all of the S. Links"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Button Text="Go to Aeon Page" Clicked="Aeon_Button_Clicked" />
+            <Button Text="Go to Chariot Page" Clicked="Chariot_Button_Clicked" />
+            <Button Text="Go to Death Page" Clicked="Death_Button_Clicked" />
+            <Button Text="Go to Devil Page" Clicked="Devil_Button_Clicked" />
+            <Button Text="Go to Emperor Page" Clicked="Emperor_Button_Clicked" />
+            <Button Text="Go to Empress Page" Clicked="Empress_Button_Clicked" />
+            <Button Text="Go to Fool Page" Clicked="Fool_Button_Clicked" />
+            <Button Text="Go to Fortune Page" Clicked="Fortune_Button_Clicked" />
+            <Button Text="Go to Hanged Man Page" Clicked="HangedMan_Button_Clicked" />
+            <Button Text="Go to Hierophant Page" Clicked="Hierophant_Button_Clicked" />
+            <Button Text="Go to Hermit Page" Clicked="Hermit_Button_Clicked" />
+            <Button Text="Go to Judgement Page" Clicked="Judgement_Button_Clicked" />
+            <Button Text="Go to Justice Page" Clicked="Justice_Button_Clicked" />
+            <Button Text="Go to Lovers Page" Clicked="Lovers_Button_Clicked" />
+            <Button Text="Go to Magician Page" Clicked="Magician_Button_Clicked" />
+            <Button Text="Go to Moon Page" Clicked="Moon_Button_Clicked" />
+            <Button Text="Go to Priestess Page" Clicked="Priestess_Button_Clicked" />
+            <Button Text="Go to Star Page" Clicked="Star_Button_Clicked" />
+            <Button Text="Go to Strength Page" Clicked="Strength_Button_Clicked" />
+            <Button Text="Go to Sun Page" Clicked="Sun_Button_Clicked" />
+            <Button Text="Go to Temperance Page" Clicked="Temperance_Button_Clicked" />
+            <Button Text="Go to Tower Page" Clicked="Tower_Button_Clicked" />
+            
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
