@@ -657,3 +657,8 @@ C:\GitHubRepos\P3PHelper\P3PHelper\P3PHelper\P3PHelper.Android\obj\Debug\130\and
 C:\GitHubRepos\P3PHelper\P3PHelper\P3PHelper\P3PHelper.Android\obj\Debug\130\android\src\crc64720bb2db43a66fe9\PickerAppCompatRendererBase_1.java
 C:\GitHubRepos\P3PHelper\P3PHelper\P3PHelper\P3PHelper.Android\obj\Debug\130\android\src\crc64a0e0a82d0db9a07d\Connectivity_EssentialsNetworkCallback.java
 C:\GitHubRepos\P3PHelper\P3PHelper\P3PHelper\P3PHelper.Android\obj\Debug\130\android\src\crc64ee486da937c010f4\LabelAppCompatRenderer.java
+C:\GitHubRepos\P3PHelper\P3PHelper\P3PHelper\P3PHelper.Android\obj\Debug\130\res\mipmap-mdpi\p3phicon.png
+C:\GitHubRepos\P3PHelper\P3PHelper\P3PHelper\P3PHelper.Android\obj\Debug\130\res\mipmap-hdpi\p3phicon.png
+C:\GitHubRepos\P3PHelper\P3PHelper\P3PHelper\P3PHelper.Android\obj\Debug\130\res\mipmap-xhdpi\p3phicon.png
+C:\GitHubRepos\P3PHelper\P3PHelper\P3PHelper\P3PHelper.Android\obj\Debug\130\res\mipmap-xxhdpi\p3phicon.png
+C:\GitHubRepos\P3PHelper\P3PHelper\P3PHelper\P3PHelper.Android\obj\Debug\130\res\mipmap-xxxhdpi\p3phicon.png
