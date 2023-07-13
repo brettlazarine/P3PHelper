@@ -8,28 +8,138 @@
             <Label Text="List of all of the S. Links"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-            <Button Text="Go to Aeon Page" Clicked="Aeon_Button_Clicked" />
-            <Button Text="Go to Chariot Page" Clicked="Chariot_Button_Clicked" />
-            <Button Text="Go to Death Page" Clicked="Death_Button_Clicked" />
-            <Button Text="Go to Devil Page" Clicked="Devil_Button_Clicked" />
-            <Button Text="Go to Emperor Page" Clicked="Emperor_Button_Clicked" />
-            <Button Text="Go to Empress Page" Clicked="Empress_Button_Clicked" />
-            <Button Text="Go to Fool Page" Clicked="Fool_Button_Clicked" />
-            <Button Text="Go to Fortune Page" Clicked="Fortune_Button_Clicked" />
-            <Button Text="Go to Hanged Man Page" Clicked="HangedMan_Button_Clicked" />
-            <Button Text="Go to Hierophant Page" Clicked="Hierophant_Button_Clicked" />
-            <Button Text="Go to Hermit Page" Clicked="Hermit_Button_Clicked" />
-            <Button Text="Go to Judgement Page" Clicked="Judgement_Button_Clicked" />
-            <Button Text="Go to Justice Page" Clicked="Justice_Button_Clicked" />
-            <Button Text="Go to Lovers Page" Clicked="Lovers_Button_Clicked" />
-            <Button Text="Go to Magician Page" Clicked="Magician_Button_Clicked" />
-            <Button Text="Go to Moon Page" Clicked="Moon_Button_Clicked" />
-            <Button Text="Go to Priestess Page" Clicked="Priestess_Button_Clicked" />
-            <Button Text="Go to Star Page" Clicked="Star_Button_Clicked" />
-            <Button Text="Go to Strength Page" Clicked="Strength_Button_Clicked" />
-            <Button Text="Go to Sun Page" Clicked="Sun_Button_Clicked" />
-            <Button Text="Go to Temperance Page" Clicked="Temperance_Button_Clicked" />
-            <Button Text="Go to Tower Page" Clicked="Tower_Button_Clicked" />
+            <!--First Row-->
+            <StackLayout Orientation="Horizontal">
+                    <StackLayout Orientation="Vertical">
+                        <ImageButton Clicked="Aeon_Button_Clicked" Source="arcanaAeon.png" 
+                            Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
+                        <Label Text="Aeon" HorizontalOptions="Center" />
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical">
+                        <ImageButton Clicked="Chariot_Button_Clicked" Source="arcanaChariot.png"
+                            Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
+                        <Label Text="Chariot" HorizontalOptions="Center" />
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" >
+                        <ImageButton Clicked="Death_Button_Clicked"  Source="arcanaDeath.png"
+                            Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
+                        <Label Text="Death" HorizontalOptions="Center" />
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical">
+                        <ImageButton Clicked="Devil_Button_Clicked"  Source="arcanaDevil.png"
+                            Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
+                        <Label Text="Devil" HorizontalOptions="Center" />
+                    </StackLayout>
+                </StackLayout>
+            <!--Second Row-->
+            <StackLayout Orientation="Horizontal">
+                    <StackLayout Orientation="Vertical">
+                        <ImageButton Clicked="Emperor_Button_Clicked"  Source="arcanaEmperor.png"
+                            Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
+                        <Label Text="Emperor" HorizontalOptions="Center" />
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical">
+                        <ImageButton Clicked="Empress_Button_Clicked"  Source="arcanaEmpress.png"
+                            Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
+                        <Label Text="Empress" HorizontalOptions="Center" />
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical">
+                        <ImageButton Clicked="Fool_Button_Clicked"  Source="arcanaFool.png"
+                            Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
+                        <Label Text="Fool" HorizontalOptions="Center" />
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical">
+                        <ImageButton Clicked="Fortune_Button_Clicked"  Source="arcanaFortune.png"
+                            Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
+                        <Label Text="Fortune" HorizontalOptions="Center" />
+                    </StackLayout>
+                </StackLayout>
+            <!--Third Row-->
+            <StackLayout Orientation="Horizontal">
+                    <StackLayout Orientation="Vertical">
+                        <ImageButton Clicked="HangedMan_Button_Clicked"  Source="arcanaHangedMan.png"
+                            Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
+                        <Label Text="Hanged Man" HorizontalOptions="Center" />
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical">
+                        <ImageButton Clicked="Hierophant_Button_Clicked"  Source="arcanaHierophant.png"
+                            Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
+                        <Label Text="Hierophant" HorizontalOptions="Center" />
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical">
+                        <ImageButton Clicked="Hermit_Button_Clicked"  Source="arcanaHermit.png"
+                            Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
+                        <Label Text="Hermit" HorizontalOptions="Center" />
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical">
+                        <ImageButton Clicked="Judgement_Button_Clicked"  Source="arcanaJudgement.png"
+                Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
+                        <Label Text="Judgement" HorizontalOptions="Center" />
+                    </StackLayout>
+                </StackLayout>
+            <!--Fourth Row-->
+            <StackLayout Orientation="Horizontal">
+                    <StackLayout Orientation="Vertical">
+                        <ImageButton Clicked="Justice_Button_Clicked"  Source="arcanaJustice.png"
+                            Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
+                        <Label Text="Justice" HorizontalOptions="Center" />
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical">
+                        <ImageButton Clicked="Lovers_Button_Clicked"  Source="arcanaLovers.png"
+                            Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
+                        <Label Text="Lovers" HorizontalOptions="Center" />
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical">
+                        <ImageButton Clicked="Magician_Button_Clicked"  Source="arcanaMagician.png"
+                            Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
+                        <Label Text="Magician" HorizontalOptions="Center" />
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical">
+                        <ImageButton Clicked="Moon_Button_Clicked"  Source="arcanaMoon.png"
+                            Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
+                        <Label Text="Moon" HorizontalOptions="Center" />
+                    </StackLayout>
+                </StackLayout>
+            <!--Fifth Row-->
+            <StackLayout Orientation="Horizontal">
+                    <StackLayout Orientation="Vertical">
+                        <ImageButton Clicked="Priestess_Button_Clicked"  Source="arcanaPriestess.png"
+                            Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
+                        <Label Text="Priestess" HorizontalOptions="Center" />
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical">
+                        <ImageButton Clicked="Star_Button_Clicked"  Source="arcanaStar.png"
+                            Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
+                        <Label Text="Star" HorizontalOptions="Center" />
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical">
+                        <ImageButton Clicked="Strength_Button_Clicked"  Source="arcanaStrength.png"
+                            Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
+                        <Label Text="Strength" HorizontalOptions="Center" />
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical">
+                        <ImageButton Clicked="Sun_Button_Clicked"  Source="arcanaSun.png"
+                            Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
+                        <Label Text="Sun" HorizontalOptions="Center" />
+                    </StackLayout>
+                </StackLayout>
+            <!--Sixth Row-->
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <StackLayout Orientation="Vertical">
+                        <ImageButton Clicked="Temperance_Button_Clicked"  Source="arcanaTemperance.png"
+                            Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
+                        <Label Text="Temperance" HorizontalOptions="Center" />
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical">
+                        <ImageButton Clicked="Tower_Button_Clicked"  Source="arcanaTower.png"
+                            Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
+                        <Label Text="Tower" HorizontalOptions="Center" />
+                    </StackLayout>
+
+                    
+
+                    
+                </StackLayout>
             
         </StackLayout>
         </ScrollView>

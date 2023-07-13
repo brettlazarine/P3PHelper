@@ -4,7 +4,7 @@
              x:Class="P3PHelper.Views.SLinks.HierophantPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Heirophant"
+            <Label Text="Hierophant"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>
