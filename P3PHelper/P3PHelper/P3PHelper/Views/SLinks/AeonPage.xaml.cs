@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -23,6 +23,8 @@ namespace P3PHelper.Views.SLinks
             AddFemaleRankLabels();
         }
 
+        private Dictionary<int, bool> checkboxStates = new Dictionary<int, bool>();
+
         private void AddMaleRankLabels()
         {
             var sLink = BindingContext as SLink;
@@ -31,7 +33,14 @@ namespace P3PHelper.Views.SLinks
                 foreach (var rankUp in sLink.MaleRankUps)
                 {
                     var rankLabel = new Label { Text = $"Rank {rankUp.RankNumber}" };
-                    var checkbox = new CustomCheckBox { Gender = "Male", IsChecked = rankUp.IsCompleted };
+                    var checkbox = new CustomCheckBox { Gender = "Male", IsChecked = GetCheckboxState(rankUp.RankNumber) };
+
+                    checkbox.CheckedChanged += (sender, e) =>
+                    {
+                        rankUp.IsCompleted = e.Value;
+                        SaveCheckboxState(rankUp.RankNumber, e.Value); // Save checkbox state
+                    };
+
                     MaleRankUpsContainer.Children.Add(rankLabel);
                     MaleRankUpsContainer.Children.Add(checkbox);
 
@@ -47,6 +56,7 @@ namespace P3PHelper.Views.SLinks
                 }
             }
         }
+
         private void AddFemaleRankLabels()
         {
             var sLink = BindingContext as SLink;
@@ -55,7 +65,14 @@ namespace P3PHelper.Views.SLinks
                 foreach (var rankUp in sLink.FemRankUps)
                 {
                     var rankLabel = new Label { Text = $"Rank {rankUp.RankNumber}" };
-                    var checkbox = new CustomCheckBox { Gender = "Female", IsChecked = rankUp.IsCompleted };
+                    var checkbox = new CustomCheckBox { Gender = "Female", IsChecked = GetCheckboxState(rankUp.RankNumber) };
+
+                    checkbox.CheckedChanged += (sender, e) =>
+                    {
+                        rankUp.IsCompleted = e.Value;
+                        SaveCheckboxState(rankUp.RankNumber, e.Value); // Save checkbox state
+                    };
+
                     FemaleRankUpsContainer.Children.Add(rankLabel);
                     FemaleRankUpsContainer.Children.Add(checkbox);
 
@@ -70,6 +87,23 @@ namespace P3PHelper.Views.SLinks
                     }
                 }
             }
+        }
+
+        private bool GetCheckboxState(int rankNumber)
+        {
+            // Retrieve checkbox state from Application Properties
+            if (Application.Current.Properties.ContainsKey($"CheckboxState_{rankNumber}"))
+            {
+                return (bool)Application.Current.Properties[$"CheckboxState_{rankNumber}"];
+            }
+            return false;
+        }
+
+        private void SaveCheckboxState(int rankNumber, bool state)
+        {
+            // Save checkbox state to Application Properties
+            Application.Current.Properties[$"CheckboxState_{rankNumber}"] = state;
+            Application.Current.SavePropertiesAsync();
         }
     }
 }
