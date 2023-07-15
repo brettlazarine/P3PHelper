@@ -14,9 +14,19 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <StackLayout x:Name="MaleRankUpsContainer" Grid.Column="0">
-                    <!-- Male RankUps content -->
+                <StackLayout Grid.Column="0" >
+                    <Label Text="{Binding MaleName}" HorizontalOptions="Center" />
+                    <Label Text="{Binding MaleUnlockDate}" />
+                    <Label Text="{Binding MaleHowToUnlock}" />
+                    <Label Text="{Binding MaleAvailability}" />
+                    <StackLayout x:Name="NeedPersonaContainer" >
+                        
+                    </StackLayout>
+                    <StackLayout x:Name="MaleRankUpsContainer" >
+                        <!-- Male RankUps content -->
+                    </StackLayout>
                 </StackLayout>
+                
 
                 <StackLayout x:Name="FemaleRankUpsContainer" Grid.Column="1">
                     <!-- Female RankUps content -->

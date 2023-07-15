@@ -19,11 +19,29 @@ namespace P3PHelper.Views.SLinks
         {
             InitializeComponent();
             BindingContext = new SLinksViewModel().CreateAeonInstance();
+            NeedsPersona();
             AddMaleRankLabels();
             AddFemaleRankLabels();
         }
 
         private Dictionary<int, bool> checkboxStates = new Dictionary<int, bool>();
+
+        private void NeedsPersona()
+        {
+            var sLink = BindingContext as SLink;
+            if (sLink != null)
+            {
+                if (sLink.MaleRequiresPersona && sLink.FemRequiresPersona)
+                {
+                    var personaLabel = new Label { Text = "A Persona is required for faster rank-ups." };
+                    NeedPersonaContainer.Children.Add(personaLabel);
+                }
+                else
+                {
+                    var personaLabel = new Label { Text = "A Persona is NOT required for faster rank-ups, but you can use one if you would like." };
+                }
+            }
+        }
 
         private void AddMaleRankLabels()
         {
