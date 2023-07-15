@@ -5,33 +5,67 @@
              x:Class="P3PHelper.Views.SLinks.AeonPage" >
     <ContentPage.Resources>
         <local:InverseBoolConverter x:Key="InverseBoolConverter" />
+        <!--Style for Property titles in SLinks Arcana views-->
+        <Style x:Key="PropertyTitles" TargetType="Label">
+            <Setter Property="HorizontalTextAlignment"  Value="Center" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontAttributes" Value="Bold" />
+        </Style>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <ScrollView>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
+        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
 
-                <StackLayout Grid.Column="0" >
-                    <Label Text="{Binding MaleName}" HorizontalOptions="Center" />
-                    <Label Text="{Binding MaleUnlockDate}" />
-                    <Label Text="{Binding MaleHowToUnlock}" />
-                    <Label Text="{Binding MaleAvailability}" />
-                    <StackLayout x:Name="NeedPersonaContainer" >
-                        
-                    </StackLayout>
-                    <StackLayout x:Name="MaleRankUpsContainer" >
-                        <!-- Male RankUps content -->
-                    </StackLayout>
-                </StackLayout>
-                
+            <Label Grid.Row="0"  Text="{Binding Arcana}" HorizontalOptions="Center" FontSize="50" FontAttributes="Bold" />
 
-                <StackLayout x:Name="FemaleRankUpsContainer" Grid.Column="1">
-                    <!-- Female RankUps content -->
-                </StackLayout>
-            </Grid>
-        </ScrollView>
+            <ScrollView Padding="10" Grid.Row="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <!--Male Properties-->
+                    <StackLayout Grid.Column="0" >
+                        <Label Text="Name" Style="{StaticResource PropertyTitles}" />
+                        <Label Text="{Binding MaleName}" HorizontalOptions="Center" FontSize="15" />
+                        <Label Text="Unlock Date"  Style="{StaticResource PropertyTitles}" />
+                        <Label Text="{Binding MaleUnlockDate}" HorizontalTextAlignment="Center" />
+                        <Label Text="How to Unlock"  Style="{StaticResource PropertyTitles}" />
+                        <Label Text="{Binding MaleHowToUnlock}" />
+                        <Label Text="Availability"  Style="{StaticResource PropertyTitles}" />
+                        <Label Text="{Binding MaleAvailability}" />
+                        <StackLayout x:Name="MaleNeedPersonaContainer" >
+                            <!--Requires Persona content-->
+                        </StackLayout>
+                        <StackLayout x:Name="MaleRankUpsContainer" >
+                            <!-- Male RankUps content -->
+                        </StackLayout>
+                    </StackLayout>
+
+                    <!-- Vertical line -->
+                    <BoxView Grid.Column="1" BackgroundColor="Blue" WidthRequest="1" HorizontalOptions="Center" />
+
+                    <!--Female Properties-->
+                    <StackLayout Grid.Column="2" >
+                        <Label Text="{Binding FemName}" HorizontalOptions="Center" />
+                        <Label Text="{Binding FemUnlockDate}" />
+                        <Label Text="{Binding FemHowToUnlock}" />
+                        <Label Text="{Binding FemAvailability}" />
+                        <StackLayout x:Name="FemaleNeedPersonaContainer" >
+                            <!--Requires Persona content-->
+                        </StackLayout>
+                        <StackLayout x:Name="FemaleRankUpsContainer" Grid.Column="2">
+                            <!-- Female RankUps content -->
+                        </StackLayout>
+                    </StackLayout>
+                </Grid>
+            </ScrollView>
+        </Grid>
+        
     </ContentPage.Content>
 </ContentPage>

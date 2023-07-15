@@ -19,14 +19,33 @@ namespace P3PHelper.Views.SLinks
         {
             InitializeComponent();
             BindingContext = new SLinksViewModel().CreateAeonInstance();
-            NeedsPersona();
+            MaleNeedsPersona();
+            FemaleNeedsPersona();
             AddMaleRankLabels();
             AddFemaleRankLabels();
         }
 
         private Dictionary<int, bool> checkboxStates = new Dictionary<int, bool>();
 
-        private void NeedsPersona()
+        private void MaleNeedsPersona()
+        {
+            var sLink = BindingContext as SLink;
+            if (sLink != null)
+            {
+                if (sLink.MaleRequiresPersona || sLink.FemRequiresPersona)
+                {
+                    var personaLabel = new Label { Text = "A Persona is required for faster rank-ups." };
+                    MaleNeedPersonaContainer.Children.Add(personaLabel);
+                }
+                else
+                {
+                    var personaLabel = new Label { Text = "A Persona is NOT required for faster rank-ups, but you can use one if you would like." };
+                    MaleNeedPersonaContainer.Children.Add(personaLabel);
+                }
+            }
+        }
+
+        private void FemaleNeedsPersona()
         {
             var sLink = BindingContext as SLink;
             if (sLink != null)
@@ -34,11 +53,12 @@ namespace P3PHelper.Views.SLinks
                 if (sLink.MaleRequiresPersona && sLink.FemRequiresPersona)
                 {
                     var personaLabel = new Label { Text = "A Persona is required for faster rank-ups." };
-                    NeedPersonaContainer.Children.Add(personaLabel);
+                    FemaleNeedPersonaContainer.Children.Add(personaLabel);
                 }
                 else
                 {
                     var personaLabel = new Label { Text = "A Persona is NOT required for faster rank-ups, but you can use one if you would like." };
+                    FemaleNeedPersonaContainer.Children.Add(personaLabel);
                 }
             }
         }
@@ -71,6 +91,8 @@ namespace P3PHelper.Views.SLinks
                         MaleRankUpsContainer.Children.Add(questionLabel);
                         MaleRankUpsContainer.Children.Add(answerLabel);
                     }
+                    MaleRankUpsContainer.Children.Add(new BoxView { BackgroundColor = Color.Blue, HeightRequest = 1,
+                        VerticalOptions = LayoutOptions.FillAndExpand});
                 }
             }
         }
@@ -103,6 +125,12 @@ namespace P3PHelper.Views.SLinks
                         FemaleRankUpsContainer.Children.Add(questionLabel);
                         FemaleRankUpsContainer.Children.Add(answerLabel);
                     }
+                    FemaleRankUpsContainer.Children.Add(new BoxView
+                    {
+                        BackgroundColor = Color.Pink,
+                        HeightRequest = 1,
+                        VerticalOptions = LayoutOptions.FillAndExpand
+                    });
                 }
             }
         }
