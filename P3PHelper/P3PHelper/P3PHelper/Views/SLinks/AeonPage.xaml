@@ -8,16 +8,20 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout>
-                <Label Text="{Binding FemName}"
-                    VerticalOptions="Center" 
-                    HorizontalOptions="Center" />
-                <Label Text="{Binding Arcana}" />
-                <Label Text="" />
-                <StackLayout x:Name="RankUpsContainer">
-                
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <StackLayout x:Name="MaleRankUpsContainer" Grid.Column="0">
+                    <!-- Male RankUps content -->
                 </StackLayout>
-            </StackLayout>
+
+                <StackLayout x:Name="FemaleRankUpsContainer" Grid.Column="1">
+                    <!-- Female RankUps content -->
+                </StackLayout>
+            </Grid>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
