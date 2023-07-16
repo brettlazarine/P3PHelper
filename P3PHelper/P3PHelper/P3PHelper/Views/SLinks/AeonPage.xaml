@@ -8,8 +8,15 @@
         <!--Style for Property titles in SLinks Arcana views-->
         <Style x:Key="PropertyTitles" TargetType="Label">
             <Setter Property="HorizontalTextAlignment"  Value="Center" />
-            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontSize" Value="25" />
             <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="TextColor" Value="Blue" />
+        </Style>
+        <!--Style for Property values in SLinks Arcana views-->
+        <Style x:Key="PropertyValues" TargetType="Label">
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="FontSize" Value="20" />
         </Style>
     </ContentPage.Resources>
     <ContentPage.Content>
@@ -20,7 +27,8 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <Label Grid.Row="0"  Text="{Binding Arcana}" HorizontalOptions="Center" FontSize="50" FontAttributes="Bold" />
+            <Label Grid.Row="0"  Text="{Binding Arcana}" HorizontalOptions="Center" FontSize="50" FontAttributes="Bold"
+                   TextColor="Blue" />
 
             <ScrollView Padding="10" Grid.Row="1">
                 <Grid>
@@ -32,13 +40,13 @@
                     <!--Male Properties-->
                     <StackLayout Grid.Column="0" >
                         <Label Text="Name" Style="{StaticResource PropertyTitles}" />
-                        <Label Text="{Binding MaleName}" HorizontalOptions="Center" FontSize="15" />
+                        <Label Text="{Binding MaleName}" Style="{StaticResource PropertyValues}" />
                         <Label Text="Unlock Date"  Style="{StaticResource PropertyTitles}" />
-                        <Label Text="{Binding MaleUnlockDate}" HorizontalTextAlignment="Center" />
+                        <Label Text="{Binding MaleUnlockDate}" Style="{StaticResource PropertyValues}" />
                         <Label Text="How to Unlock"  Style="{StaticResource PropertyTitles}" />
-                        <Label Text="{Binding MaleHowToUnlock}" />
+                        <Label Text="{Binding MaleHowToUnlock}" Style="{StaticResource PropertyValues}" />
                         <Label Text="Availability"  Style="{StaticResource PropertyTitles}" />
-                        <Label Text="{Binding MaleAvailability}" />
+                        <Label Text="{Binding MaleAvailability}" Style="{StaticResource PropertyValues}" />
                         <StackLayout x:Name="MaleNeedPersonaContainer" >
                             <!--Requires Persona content-->
                         </StackLayout>

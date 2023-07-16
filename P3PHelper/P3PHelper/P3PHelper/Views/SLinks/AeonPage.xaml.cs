@@ -34,7 +34,11 @@ namespace P3PHelper.Views.SLinks
             {
                 if (sLink.MaleRequiresPersona || sLink.FemRequiresPersona)
                 {
-                    var personaLabel = new Label { Text = "A Persona is required for faster rank-ups." };
+                    var personaLabel = new Label 
+                    { 
+                        Text = "A Persona IS required for faster rank-ups!", TextColor = Color.Black,
+                        HorizontalTextAlignment = TextAlignment.Center, FontSize = 20, FontAttributes = FontAttributes.Bold 
+                    };
                     MaleNeedPersonaContainer.Children.Add(personaLabel);
                 }
                 else
@@ -52,7 +56,7 @@ namespace P3PHelper.Views.SLinks
             {
                 if (sLink.MaleRequiresPersona && sLink.FemRequiresPersona)
                 {
-                    var personaLabel = new Label { Text = "A Persona is required for faster rank-ups." };
+                    var personaLabel = new Label { Text = "A Persona IS required for faster rank-ups!" };
                     FemaleNeedPersonaContainer.Children.Add(personaLabel);
                 }
                 else
@@ -70,8 +74,17 @@ namespace P3PHelper.Views.SLinks
             {
                 foreach (var rankUp in sLink.MaleRankUps)
                 {
-                    var rankLabel = new Label { Text = $"Rank {rankUp.RankNumber}" };
-                    var checkbox = new CustomCheckBox { Gender = "Male", IsChecked = GetCheckboxState(rankUp.RankNumber) };
+                    var rankLabel = new Label 
+                    { 
+                        Text = $"Rank {rankUp.RankNumber}", FontSize = 25, TextColor = Color.Blue,
+                        HorizontalTextAlignment = TextAlignment.Center, FontAttributes = FontAttributes.Bold
+                        
+                    };
+                    var checkbox = new CustomCheckBox
+                    {
+                        Gender = "Male", IsChecked = GetCheckboxState(rankUp.RankNumber)
+                    };
+                    checkbox.HorizontalOptions = LayoutOptions.Center;
 
                     checkbox.CheckedChanged += (sender, e) =>
                     {
@@ -84,11 +97,34 @@ namespace P3PHelper.Views.SLinks
 
                     foreach (var (question, answer) in rankUp.Questions)
                     {
-                        var newQuestion = new Label { Text = "Question", HorizontalOptions = LayoutOptions.Center };
-                        var questionLabel = new Label { Text = question };
-                        var answerLabel = new Label { Text = answer };
+                        var newQuestion = new Label
+                        {
+                            Text = "Question", HorizontalOptions = LayoutOptions.Center,
+                            FontAttributes = FontAttributes.Bold, TextColor = Color.Blue, FontSize = 20
+                        };
+                        var newResponse = new Label
+                        {
+                            Text = "Response",
+                            HorizontalOptions = LayoutOptions.Center,
+                            FontAttributes = FontAttributes.Bold,
+                            TextColor = Color.Blue,
+                            FontSize = 20
+                        };
+                        var questionLabel = new Label 
+                        { 
+                            Text = question, 
+                            TextColor = Color.Black, 
+                            HorizontalTextAlignment = TextAlignment.Center 
+                        };
+                        var answerLabel = new Label 
+                        { 
+                            Text = answer, 
+                            TextColor = Color.Black,
+                            HorizontalTextAlignment = TextAlignment.Center
+                        };
                         MaleRankUpsContainer.Children.Add(newQuestion);
                         MaleRankUpsContainer.Children.Add(questionLabel);
+                        MaleRankUpsContainer.Children.Add(newResponse);
                         MaleRankUpsContainer.Children.Add(answerLabel);
                     }
                     MaleRankUpsContainer.Children.Add(new BoxView { BackgroundColor = Color.Blue, HeightRequest = 1,
