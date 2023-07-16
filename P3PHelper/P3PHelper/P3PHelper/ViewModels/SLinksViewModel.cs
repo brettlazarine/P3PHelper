@@ -33,11 +33,11 @@ namespace P3PHelper.ViewModels
             {
                 Arcana = "Aeon",
                 //Female
-                FemName = "Aigis",
-                FemUnlockDate = "1/8",
-                FemHowToUnlock = "Talk to her in the classroom on 1/8.",
-                FemAvailability = "Can be found in the classroom every day except Sunday.",
-                FemRankUps = new List<RankUp>
+                FemaleName = "Aigis",
+                FemaleUnlockDate = "1/8",
+                FemaleHowToUnlock = "Talk to her in the classroom on 1/8.",
+                FemaleAvailability = "Can be found in the classroom every day except Sunday.",
+                FemaleRankUps = new List<RankUp>
                 {
                     new RankUp()
                     {

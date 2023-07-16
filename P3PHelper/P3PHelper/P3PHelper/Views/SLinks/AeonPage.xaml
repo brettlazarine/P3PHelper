@@ -5,12 +5,19 @@
              x:Class="P3PHelper.Views.SLinks.AeonPage" >
     <ContentPage.Resources>
         <local:InverseBoolConverter x:Key="InverseBoolConverter" />
-        <!--Style for Property titles in SLinks Arcana views-->
-        <Style x:Key="PropertyTitles" TargetType="Label">
+        <!--Style for male Property titles in SLinks Arcana views-->
+        <Style x:Key="MalePropertyTitles" TargetType="Label">
             <Setter Property="HorizontalTextAlignment"  Value="Center" />
             <Setter Property="FontSize" Value="25" />
             <Setter Property="FontAttributes" Value="Bold" />
             <Setter Property="TextColor" Value="Blue" />
+        </Style>
+        <!--Style for female Property titles in SLinks Arcana views-->
+        <Style x:Key="FemalePropertyTitles" TargetType="Label">
+            <Setter Property="HorizontalTextAlignment"  Value="Center" />
+            <Setter Property="FontSize" Value="25" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="TextColor" Value="HotPink" />
         </Style>
         <!--Style for Property values in SLinks Arcana views-->
         <Style x:Key="PropertyValues" TargetType="Label">
@@ -39,13 +46,13 @@
                     </Grid.ColumnDefinitions>
                     <!--Male Properties-->
                     <StackLayout Grid.Column="0" >
-                        <Label Text="Name" Style="{StaticResource PropertyTitles}" />
+                        <Label Text="Name" Style="{StaticResource MalePropertyTitles}" />
                         <Label Text="{Binding MaleName}" Style="{StaticResource PropertyValues}" />
-                        <Label Text="Unlock Date"  Style="{StaticResource PropertyTitles}" />
+                        <Label Text="Unlock Date"  Style="{StaticResource MalePropertyTitles}" />
                         <Label Text="{Binding MaleUnlockDate}" Style="{StaticResource PropertyValues}" />
-                        <Label Text="How to Unlock"  Style="{StaticResource PropertyTitles}" />
+                        <Label Text="How to Unlock"  Style="{StaticResource MalePropertyTitles}" />
                         <Label Text="{Binding MaleHowToUnlock}" Style="{StaticResource PropertyValues}" />
-                        <Label Text="Availability"  Style="{StaticResource PropertyTitles}" />
+                        <Label Text="Availability"  Style="{StaticResource MalePropertyTitles}" />
                         <Label Text="{Binding MaleAvailability}" Style="{StaticResource PropertyValues}" />
                         <StackLayout x:Name="MaleNeedPersonaContainer" >
                             <!--Requires Persona content-->
@@ -60,10 +67,14 @@
 
                     <!--Female Properties-->
                     <StackLayout Grid.Column="2" >
-                        <Label Text="{Binding FemName}" HorizontalOptions="Center" />
-                        <Label Text="{Binding FemUnlockDate}" />
-                        <Label Text="{Binding FemHowToUnlock}" />
-                        <Label Text="{Binding FemAvailability}" />
+                        <Label Text="Name" Style="{StaticResource FemalePropertyTitles}" />
+                        <Label Text="{Binding FemaleName}" Style="{StaticResource PropertyValues}" />
+                        <Label Text="Unlock Date"  Style="{StaticResource FemalePropertyTitles}" />
+                        <Label Text="{Binding FemaleUnlockDate}" Style="{StaticResource PropertyValues}" />
+                        <Label Text="How to Unlock"  Style="{StaticResource FemalePropertyTitles}" />
+                        <Label Text="{Binding FemaleHowToUnlock}" Style="{StaticResource PropertyValues}" />
+                        <Label Text="Availability"  Style="{StaticResource FemalePropertyTitles}" />
+                        <Label Text="{Binding FemaleAvailability}" Style="{StaticResource PropertyValues}" />
                         <StackLayout x:Name="FemaleNeedPersonaContainer" >
                             <!--Requires Persona content-->
                         </StackLayout>

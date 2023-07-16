@@ -32,7 +32,7 @@ namespace P3PHelper.Views.SLinks
             var sLink = BindingContext as SLink;
             if (sLink != null)
             {
-                if (sLink.MaleRequiresPersona || sLink.FemRequiresPersona)
+                if (sLink.MaleRequiresPersona || sLink.FemaleRequiresPersona)
                 {
                     var personaLabel = new Label 
                     { 
@@ -54,9 +54,16 @@ namespace P3PHelper.Views.SLinks
             var sLink = BindingContext as SLink;
             if (sLink != null)
             {
-                if (sLink.MaleRequiresPersona && sLink.FemRequiresPersona)
+                if (sLink.MaleRequiresPersona || sLink.FemaleRequiresPersona)
                 {
-                    var personaLabel = new Label { Text = "A Persona IS required for faster rank-ups!" };
+                    var personaLabel = new Label
+                    {
+                        Text = "A Persona IS required for faster rank-ups!",
+                        TextColor = Color.Black,
+                        HorizontalTextAlignment = TextAlignment.Center,
+                        FontSize = 20,
+                        FontAttributes = FontAttributes.Bold
+                    };
                     FemaleNeedPersonaContainer.Children.Add(personaLabel);
                 }
                 else
@@ -138,10 +145,23 @@ namespace P3PHelper.Views.SLinks
             var sLink = BindingContext as SLink;
             if (sLink != null)
             {
-                foreach (var rankUp in sLink.FemRankUps)
+                foreach (var rankUp in sLink.FemaleRankUps)
                 {
-                    var rankLabel = new Label { Text = $"Rank {rankUp.RankNumber}" };
-                    var checkbox = new CustomCheckBox { Gender = "Female", IsChecked = GetCheckboxState(rankUp.RankNumber) };
+                    var rankLabel = new Label
+                    {
+                        Text = $"Rank {rankUp.RankNumber}",
+                        FontSize = 25,
+                        TextColor = Color.HotPink,
+                        HorizontalTextAlignment = TextAlignment.Center,
+                        FontAttributes = FontAttributes.Bold
+
+                    };
+                    var checkbox = new CustomCheckBox
+                    {
+                        Gender = "Female",
+                        IsChecked = GetCheckboxState(rankUp.RankNumber)
+                    };
+                    checkbox.HorizontalOptions = LayoutOptions.Center;
 
                     checkbox.CheckedChanged += (sender, e) =>
                     {
@@ -154,16 +174,42 @@ namespace P3PHelper.Views.SLinks
 
                     foreach (var (question, answer) in rankUp.Questions)
                     {
-                        var newQuestion = new Label { Text = "Question" };
-                        var questionLabel = new Label { Text = question };
-                        var answerLabel = new Label { Text = answer };
+                        var newQuestion = new Label
+                        {
+                            Text = "Question",
+                            HorizontalOptions = LayoutOptions.Center,
+                            FontAttributes = FontAttributes.Bold,
+                            TextColor = Color.HotPink,
+                            FontSize = 20
+                        };
+                        var newResponse = new Label
+                        {
+                            Text = "Response",
+                            HorizontalOptions = LayoutOptions.Center,
+                            FontAttributes = FontAttributes.Bold,
+                            TextColor = Color.HotPink,
+                            FontSize = 20
+                        };
+                        var questionLabel = new Label
+                        {
+                            Text = question,
+                            TextColor = Color.Black,
+                            HorizontalTextAlignment = TextAlignment.Center
+                        };
+                        var answerLabel = new Label
+                        {
+                            Text = answer,
+                            TextColor = Color.Black,
+                            HorizontalTextAlignment = TextAlignment.Center
+                        };
                         FemaleRankUpsContainer.Children.Add(newQuestion);
                         FemaleRankUpsContainer.Children.Add(questionLabel);
+                        FemaleRankUpsContainer.Children.Add(newResponse);
                         FemaleRankUpsContainer.Children.Add(answerLabel);
                     }
                     FemaleRankUpsContainer.Children.Add(new BoxView
                     {
-                        BackgroundColor = Color.Pink,
+                        BackgroundColor = Color.HotPink,
                         HeightRequest = 1,
                         VerticalOptions = LayoutOptions.FillAndExpand
                     });
