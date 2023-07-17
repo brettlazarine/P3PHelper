@@ -2,11 +2,107 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="P3PHelper.Views.SLinks.HierophantPage">
+    <ContentPage.Resources>
+        <!--Style for male Property titles in SLinks Arcana views-->
+        <Style x:Key="MalePropertyTitles" TargetType="Label">
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="25" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="TextColor" Value="Blue" />
+        </Style>
+        <!--Style for female Property titles in SLinks Arcana views-->
+        <Style x:Key="FemalePropertyTitles" TargetType="Label">
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="25" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="TextColor" Value="HotPink" />
+        </Style>
+        <!--Style for Property values in SLinks Arcana views-->
+        <Style x:Key="PropertyValues" TargetType="Label">
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="FontSize" Value="20" />
+        </Style>
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Hierophant"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout>
+                <!-- StackLayout with "Arcana" label and image -->
+                <StackLayout>
+                    <Label Text="{Binding Arcana}" HorizontalOptions="Center" FontSize="50" FontAttributes="Bold"
+                           TextColor="Blue" />
+                    <Image Source="arcanaHierophant.png" />
+                </StackLayout>
+                <!-- Spacer between header and scroll view -->
+                <BoxView HeightRequest="10" />
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <!-- For spacing between header and scroll view -->
+                        <RowDefinition Height="*" />
+                        <!-- For the ScrollView -->
+                    </Grid.RowDefinitions>
+
+                    <ScrollView Grid.Row="1" Padding="10">
+                        <!-- The rest of the content goes here -->
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <!-- For spacing between header and scroll view -->
+                                <RowDefinition Height="*" />
+                                <!-- For the ScrollView -->
+                            </Grid.RowDefinitions>
+
+                            <!-- Male Properties -->
+                            <StackLayout Grid.Column="0">
+                                <Label Text="Name" Style="{StaticResource MalePropertyTitles}" />
+                                <Label Text="{Binding MaleName}" Style="{StaticResource PropertyValues}" />
+                                <Label Text="Unlock Date"  Style="{StaticResource MalePropertyTitles}" />
+                                <Label Text="{Binding MaleUnlockDate}" Style="{StaticResource PropertyValues}" />
+                                <Label Text="How to Unlock"  Style="{StaticResource MalePropertyTitles}" />
+                                <Label Text="{Binding MaleHowToUnlock}" Style="{StaticResource PropertyValues}" />
+                                <Label Text="Availability"  Style="{StaticResource MalePropertyTitles}" />
+                                <Label Text="{Binding MaleAvailability}" Style="{StaticResource PropertyValues}" />
+                                <StackLayout x:Name="MaleNeedPersonaContainer">
+                                    <!--Requires Persona content-->
+                                </StackLayout>
+                                <Label Text="Rank Ups" Style="{StaticResource MalePropertyTitles}" />
+                                <StackLayout x:Name="MaleRankUpsContainer">
+                                    <!-- Male RankUps content -->
+                                </StackLayout>
+                            </StackLayout>
+
+                            <!-- Vertical line -->
+                            <BoxView Grid.Column="1" BackgroundColor="Blue" WidthRequest="1" HorizontalOptions="Center" />
+
+                            <!-- Female Properties -->
+                            <StackLayout Grid.Column="2">
+                                <Label Text="Name" Style="{StaticResource FemalePropertyTitles}" />
+                                <Label Text="{Binding FemaleName}" Style="{StaticResource PropertyValues}" />
+                                <Label Text="Unlock Date"  Style="{StaticResource FemalePropertyTitles}" />
+                                <Label Text="{Binding FemaleUnlockDate}" Style="{StaticResource PropertyValues}" />
+                                <Label Text="How to Unlock"  Style="{StaticResource FemalePropertyTitles}" />
+                                <Label Text="{Binding FemaleHowToUnlock}" Style="{StaticResource PropertyValues}" />
+                                <Label Text="Availability"  Style="{StaticResource FemalePropertyTitles}" />
+                                <Label Text="{Binding FemaleAvailability}" Style="{StaticResource PropertyValues}" />
+                                <StackLayout x:Name="FemaleNeedPersonaContainer">
+                                    <!--Requires Persona content-->
+                                </StackLayout>
+                                <Label Text="Rank Ups" Style="{StaticResource FemalePropertyTitles}" />
+                                <StackLayout x:Name="FemaleRankUpsContainer" Grid.Column="2">
+                                    <!-- Female RankUps content -->
+                                </StackLayout>
+                            </StackLayout>
+                        </Grid>
+                    </ScrollView>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

@@ -31,7 +31,7 @@
                 <StackLayout>
                     <Label Text="{Binding Arcana}" HorizontalOptions="Center" FontSize="50" FontAttributes="Bold"
                            TextColor="Blue" />
-                    <Image Source="arcanaAeon.png" />
+                    <Image Source="arcanaChariot.png" />
                 </StackLayout>
                 <!-- Spacer between header and scroll view -->
                 <BoxView HeightRequest="10" />
