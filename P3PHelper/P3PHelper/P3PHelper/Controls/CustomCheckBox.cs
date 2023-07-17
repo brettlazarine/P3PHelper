@@ -26,9 +26,9 @@ namespace P3PHelper.Controls
 
             // Set the color based on gender
             if (gender == "Male")
-                customCheckBox.Color = Color.Blue;
+                customCheckBox.Color = Color.White;
             else if (gender == "Female")
-                customCheckBox.Color = Color.HotPink;
+                customCheckBox.Color = Color.White;
             else
                 customCheckBox.Color = Color.Default;
         }

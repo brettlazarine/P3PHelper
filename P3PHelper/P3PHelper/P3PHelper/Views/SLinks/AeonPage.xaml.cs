@@ -81,15 +81,18 @@ namespace P3PHelper.Views.SLinks
             {
                 foreach (var rankUp in sLink.MaleRankUps)
                 {
-                    var rankLabel = new Label 
-                    { 
-                        Text = $"Rank {rankUp.RankNumber}", FontSize = 25, TextColor = Color.Blue,
-                        HorizontalTextAlignment = TextAlignment.Center, FontAttributes = FontAttributes.Bold
-                        
+                    var rankLabel = new Label
+                    {
+                        Text = $"Rank {rankUp.RankNumber}",
+                        FontSize = 25,
+                        TextColor = Color.White,
+                        HorizontalTextAlignment = TextAlignment.Center,
+                        FontAttributes = FontAttributes.Bold
                     };
                     var checkbox = new CustomCheckBox
                     {
-                        Gender = "Male", IsChecked = GetCheckboxState(rankUp.RankNumber)
+                        Gender = "Male",
+                        IsChecked = GetCheckboxState(rankUp.RankNumber)
                     };
                     checkbox.HorizontalOptions = LayoutOptions.Center;
 
@@ -99,46 +102,74 @@ namespace P3PHelper.Views.SLinks
                         SaveCheckboxState(rankUp.RankNumber, e.Value); // Save checkbox state
                     };
 
-                    MaleRankUpsContainer.Children.Add(rankLabel);
-                    MaleRankUpsContainer.Children.Add(checkbox);
+                    var rankLayout = new StackLayout
+                    {
+                        BackgroundColor = Color.Blue,
+                        Padding = 5,
+                        HeightRequest = 200
+                    };
+
+                    var rankAndCheckStack = new StackLayout
+                    {
+                        HorizontalOptions = LayoutOptions.Center,
+                        Orientation = StackOrientation.Horizontal
+                    };
+
+                    rankAndCheckStack.Children.Add(rankLabel);
+                    rankAndCheckStack.Children.Add(checkbox);
+
+                    rankLayout.Children.Add(rankAndCheckStack);
 
                     foreach (var (question, answer) in rankUp.Questions)
                     {
                         var newQuestion = new Label
                         {
-                            Text = "Question", HorizontalOptions = LayoutOptions.Center,
-                            FontAttributes = FontAttributes.Bold, TextColor = Color.Blue, FontSize = 20
+                            Text = "Question",
+                            HorizontalOptions = LayoutOptions.Center,
+                            FontAttributes = FontAttributes.Bold,
+                            TextColor = Color.White,
+                            FontSize = 20
                         };
                         var newResponse = new Label
                         {
                             Text = "Response",
                             HorizontalOptions = LayoutOptions.Center,
                             FontAttributes = FontAttributes.Bold,
-                            TextColor = Color.Blue,
+                            TextColor = Color.White,
                             FontSize = 20
                         };
-                        var questionLabel = new Label 
-                        { 
-                            Text = question, 
-                            TextColor = Color.Black, 
-                            HorizontalTextAlignment = TextAlignment.Center 
+                        var questionLabel = new Label
+                        {
+                            Text = question,
+                            TextColor = Color.White,
+                            HorizontalTextAlignment = TextAlignment.Center,
+                            FontAttributes = FontAttributes.Italic
                         };
-                        var answerLabel = new Label 
-                        { 
-                            Text = answer, 
-                            TextColor = Color.Black,
-                            HorizontalTextAlignment = TextAlignment.Center
+                        var answerLabel = new Label
+                        {
+                            Text = answer,
+                            TextColor = Color.White,
+                            HorizontalTextAlignment = TextAlignment.Center,
+                            FontAttributes = FontAttributes.Italic
                         };
-                        MaleRankUpsContainer.Children.Add(newQuestion);
-                        MaleRankUpsContainer.Children.Add(questionLabel);
-                        MaleRankUpsContainer.Children.Add(newResponse);
-                        MaleRankUpsContainer.Children.Add(answerLabel);
+                        rankLayout.Children.Add(newQuestion);
+                        rankLayout.Children.Add(questionLabel);
+                        rankLayout.Children.Add(newResponse);
+                        rankLayout.Children.Add(answerLabel);
                     }
-                    MaleRankUpsContainer.Children.Add(new BoxView { BackgroundColor = Color.Blue, HeightRequest = 1,
-                        VerticalOptions = LayoutOptions.FillAndExpand});
+
+                    rankLayout.Children.Add(new BoxView
+                    {
+                        BackgroundColor = Color.Blue,
+                        HeightRequest = 1,
+                        VerticalOptions = LayoutOptions.FillAndExpand
+                    });
+
+                    MaleRankUpsContainer.Children.Add(rankLayout); // Add the StackLayout to the MaleRankUpsContainer
                 }
             }
         }
+
 
         private void AddFemaleRankLabels()
         {
@@ -151,10 +182,9 @@ namespace P3PHelper.Views.SLinks
                     {
                         Text = $"Rank {rankUp.RankNumber}",
                         FontSize = 25,
-                        TextColor = Color.HotPink,
+                        TextColor = Color.White,
                         HorizontalTextAlignment = TextAlignment.Center,
                         FontAttributes = FontAttributes.Bold
-
                     };
                     var checkbox = new CustomCheckBox
                     {
@@ -169,8 +199,23 @@ namespace P3PHelper.Views.SLinks
                         SaveCheckboxState(rankUp.RankNumber, e.Value); // Save checkbox state
                     };
 
-                    FemaleRankUpsContainer.Children.Add(rankLabel);
-                    FemaleRankUpsContainer.Children.Add(checkbox);
+                    var rankLayout = new StackLayout
+                    {
+                        BackgroundColor = Color.HotPink,
+                        Padding = 5,
+                        HeightRequest = 200
+                    };
+
+                    var rankAndCheckStack = new StackLayout
+                    {
+                        HorizontalOptions = LayoutOptions.Center,
+                        Orientation = StackOrientation.Horizontal
+                    };
+
+                    rankAndCheckStack.Children.Add(rankLabel);
+                    rankAndCheckStack.Children.Add(checkbox);
+
+                    rankLayout.Children.Add(rankAndCheckStack);
 
                     foreach (var (question, answer) in rankUp.Questions)
                     {
@@ -179,7 +224,7 @@ namespace P3PHelper.Views.SLinks
                             Text = "Question",
                             HorizontalOptions = LayoutOptions.Center,
                             FontAttributes = FontAttributes.Bold,
-                            TextColor = Color.HotPink,
+                            TextColor = Color.White,
                             FontSize = 20
                         };
                         var newResponse = new Label
@@ -187,32 +232,37 @@ namespace P3PHelper.Views.SLinks
                             Text = "Response",
                             HorizontalOptions = LayoutOptions.Center,
                             FontAttributes = FontAttributes.Bold,
-                            TextColor = Color.HotPink,
+                            TextColor = Color.White,
                             FontSize = 20
                         };
                         var questionLabel = new Label
                         {
                             Text = question,
-                            TextColor = Color.Black,
-                            HorizontalTextAlignment = TextAlignment.Center
+                            TextColor = Color.White,
+                            HorizontalTextAlignment = TextAlignment.Center,
+                            FontAttributes = FontAttributes.Italic
                         };
                         var answerLabel = new Label
                         {
                             Text = answer,
-                            TextColor = Color.Black,
-                            HorizontalTextAlignment = TextAlignment.Center
+                            TextColor = Color.White,
+                            HorizontalTextAlignment = TextAlignment.Center,
+                            FontAttributes = FontAttributes.Italic
                         };
-                        FemaleRankUpsContainer.Children.Add(newQuestion);
-                        FemaleRankUpsContainer.Children.Add(questionLabel);
-                        FemaleRankUpsContainer.Children.Add(newResponse);
-                        FemaleRankUpsContainer.Children.Add(answerLabel);
+                        rankLayout.Children.Add(newQuestion);
+                        rankLayout.Children.Add(questionLabel);
+                        rankLayout.Children.Add(newResponse);
+                        rankLayout.Children.Add(answerLabel);
                     }
-                    FemaleRankUpsContainer.Children.Add(new BoxView
+
+                    rankLayout.Children.Add(new BoxView
                     {
                         BackgroundColor = Color.HotPink,
                         HeightRequest = 1,
                         VerticalOptions = LayoutOptions.FillAndExpand
                     });
+
+                    FemaleRankUpsContainer.Children.Add(rankLayout); // Add the StackLayout to the FemaleRankUpsContainer
                 }
             }
         }
