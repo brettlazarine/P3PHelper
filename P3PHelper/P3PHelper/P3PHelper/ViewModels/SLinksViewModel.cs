@@ -36,7 +36,7 @@ namespace P3PHelper.ViewModels
                 MaleUnlockDate = "1/8",
                 MaleHowToUnlock = "Talk to her in the classroom on 1/8.",
                 MaleAvailability = "Can be found in the classroom every day except Sunday.",
-                MaleRankUps = new List<RankUp>
+                MaleRankUps = new ObservableCollection<RankUp>
                 {
                     new RankUp()
                     {
@@ -124,7 +124,7 @@ namespace P3PHelper.ViewModels
                 FemaleUnlockDate = "1/8",
                 FemaleHowToUnlock = "Talk to her in the classroom on 1/8.",
                 FemaleAvailability = "Can be found in the classroom every day except Sunday.",
-                FemaleRankUps = new List<RankUp>
+                FemaleRankUps = new ObservableCollection<RankUp>
                 {
 
                     new RankUp()
@@ -221,7 +221,7 @@ namespace P3PHelper.ViewModels
                 MaleUnlockDate = "4/24",
                 MaleHowToUnlock = "Join a sports club.",
                 MaleAvailability = "Can be found in the classroom on Monday, Wednesday, Thursday, and Friday.",
-                MaleRankUps = new List<RankUp>
+                MaleRankUps = new ObservableCollection<RankUp>
                 {
                     new RankUp()
                     {
@@ -317,7 +317,7 @@ namespace P3PHelper.ViewModels
                 FemaleUnlockDate = "4/24",
                 FemaleHowToUnlock = "Join a sports club.",
                 FemaleAvailability = "Can be found outside the classroom on Monday, Wednesday, and Friday.",
-                FemaleRankUps = new List<RankUp>
+                FemaleRankUps = new ObservableCollection<RankUp>
                 {
 
                     new RankUp()
@@ -412,20 +412,21 @@ namespace P3PHelper.ViewModels
         {
             return new SLink()
             {
-                Arcana = "",
+                Arcana = "Death",
+                MaleRequiresPersona = false,
                 // Male
-                MaleName = "",
-                MaleUnlockDate = "",
-                MaleHowToUnlock = "",
-                MaleAvailability = "",
-                MaleRankUps = new List<RankUp>
+                MaleName = "Pharos",
+                MaleUnlockDate = "6/12",
+                MaleHowToUnlock = "Story related.",
+                MaleAvailability = "Story related.",
+                MaleRankUps = new ObservableCollection<RankUp>
                 {
                     new RankUp()
                     {
                         RankNumber = 1,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Story related." , "6/12")
                         }
                     },
                     new RankUp()
@@ -433,7 +434,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 2,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Story related." , "")
                         }
                     },
                     new RankUp()
@@ -441,7 +442,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 3,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Story related." , "7/12")
                         }
                     },
                     new RankUp()
@@ -449,7 +450,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 4,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Story related." , "")
                         }
                     },
                     new RankUp()
@@ -457,7 +458,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 5,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Story related." , "8/7")
                         }
                     },
                     new RankUp()
@@ -465,7 +466,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 6,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Story related." , "9/12")
                         }
                     },
                     new RankUp()
@@ -473,7 +474,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 7,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Story related." , "")
                         }
                     },
                     new RankUp()
@@ -481,7 +482,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 8,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Story related." , "10/6")
                         }
                     },
                     new RankUp()
@@ -489,7 +490,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 9,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Story related." , "")
                         }
                     },
                     new RankUp()
@@ -497,16 +498,17 @@ namespace P3PHelper.ViewModels
                         RankNumber = 10,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Story related." , "11/4")
                         }
                     }
                 },
                 // Female
-                FemaleName = "",
-                FemaleUnlockDate = "",
-                FemaleHowToUnlock = "",
-                FemaleAvailability = "",
-                FemaleRankUps = new List<RankUp>
+                FemaleRequiresPersona = false,
+                FemaleName = "Pharos",
+                FemaleUnlockDate = "6/12",
+                FemaleHowToUnlock = "Story related.",
+                FemaleAvailability = "Story related.",
+                FemaleRankUps = new ObservableCollection<RankUp>
                 {
 
                     new RankUp()
@@ -514,7 +516,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 1,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Story related." , "6/12")
                         }
                     },
                     new RankUp()
@@ -522,7 +524,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 2,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Story related." , "")
                         }
                     },
                     new RankUp()
@@ -530,7 +532,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 3,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Story related." , "7/12")
                         }
                     },
                     new RankUp()
@@ -538,7 +540,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 4,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Story related." , "")
                         }
                     },
                     new RankUp()
@@ -546,7 +548,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 5,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Story related." , "8/7")
                         }
                     },
                     new RankUp()
@@ -554,7 +556,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 6,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Story related." , "9/12")
                         }
                     },
                     new RankUp()
@@ -562,7 +564,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 7,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Story related." , "")
                         }
                     },
                     new RankUp()
@@ -570,7 +572,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 8,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Story related." , "10/6")
                         }
                     },
                     new RankUp()
@@ -578,7 +580,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 9,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Story related." , "")
                         }
                     },
                     new RankUp()
@@ -586,7 +588,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 10,
                         Questions = new List<(string, string)>
                         {
-                            ("Any response." , "Any response.")
+                            ("Story related." , "11/4")
                         }
                     }
                 }
@@ -603,7 +605,7 @@ namespace P3PHelper.ViewModels
                 MaleUnlockDate = "",
                 MaleHowToUnlock = "",
                 MaleAvailability = "",
-                MaleRankUps = new List<RankUp>
+                MaleRankUps = new ObservableCollection<RankUp>
                 {
                     new RankUp()
                     {
@@ -691,7 +693,7 @@ namespace P3PHelper.ViewModels
                 FemaleUnlockDate = "",
                 FemaleHowToUnlock = "",
                 FemaleAvailability = "",
-                FemaleRankUps = new List<RankUp>
+                FemaleRankUps = new ObservableCollection<RankUp>
                 {
 
                     new RankUp()
@@ -788,7 +790,7 @@ namespace P3PHelper.ViewModels
                 MaleUnlockDate = "",
                 MaleHowToUnlock = "",
                 MaleAvailability = "",
-                MaleRankUps = new List<RankUp>
+                MaleRankUps = new ObservableCollection<RankUp>
                 {
                     new RankUp()
                     {
@@ -876,7 +878,7 @@ namespace P3PHelper.ViewModels
                 FemaleUnlockDate = "",
                 FemaleHowToUnlock = "",
                 FemaleAvailability = "",
-                FemaleRankUps = new List<RankUp>
+                FemaleRankUps = new ObservableCollection<RankUp>
                 {
 
                     new RankUp()
@@ -973,7 +975,7 @@ namespace P3PHelper.ViewModels
                 MaleUnlockDate = "",
                 MaleHowToUnlock = "",
                 MaleAvailability = "",
-                MaleRankUps = new List<RankUp>
+                MaleRankUps = new ObservableCollection<RankUp>
                 {
                     new RankUp()
                     {
@@ -1061,7 +1063,7 @@ namespace P3PHelper.ViewModels
                 FemaleUnlockDate = "",
                 FemaleHowToUnlock = "",
                 FemaleAvailability = "",
-                FemaleRankUps = new List<RankUp>
+                FemaleRankUps = new ObservableCollection<RankUp>
                 {
 
                     new RankUp()
@@ -1158,7 +1160,7 @@ namespace P3PHelper.ViewModels
                 MaleUnlockDate = "",
                 MaleHowToUnlock = "",
                 MaleAvailability = "",
-                MaleRankUps = new List<RankUp>
+                MaleRankUps = new ObservableCollection<RankUp>
                 {
                     new RankUp()
                     {
@@ -1246,7 +1248,7 @@ namespace P3PHelper.ViewModels
                 FemaleUnlockDate = "",
                 FemaleHowToUnlock = "",
                 FemaleAvailability = "",
-                FemaleRankUps = new List<RankUp>
+                FemaleRankUps = new ObservableCollection<RankUp>
                 {
 
                     new RankUp()
@@ -1343,7 +1345,7 @@ namespace P3PHelper.ViewModels
                 MaleUnlockDate = "",
                 MaleHowToUnlock = "",
                 MaleAvailability = "",
-                MaleRankUps = new List<RankUp>
+                MaleRankUps = new ObservableCollection<RankUp>
                 {
                     new RankUp()
                     {
@@ -1431,7 +1433,7 @@ namespace P3PHelper.ViewModels
                 FemaleUnlockDate = "",
                 FemaleHowToUnlock = "",
                 FemaleAvailability = "",
-                FemaleRankUps = new List<RankUp>
+                FemaleRankUps = new ObservableCollection<RankUp>
                 {
 
                     new RankUp()
@@ -1528,7 +1530,7 @@ namespace P3PHelper.ViewModels
                 MaleUnlockDate = "",
                 MaleHowToUnlock = "",
                 MaleAvailability = "",
-                MaleRankUps = new List<RankUp>
+                MaleRankUps = new ObservableCollection<RankUp>
                 {
                     new RankUp()
                     {
@@ -1616,7 +1618,7 @@ namespace P3PHelper.ViewModels
                 FemaleUnlockDate = "",
                 FemaleHowToUnlock = "",
                 FemaleAvailability = "",
-                FemaleRankUps = new List<RankUp>
+                FemaleRankUps = new ObservableCollection<RankUp>
                 {
 
                     new RankUp()
@@ -1713,7 +1715,7 @@ namespace P3PHelper.ViewModels
                 MaleUnlockDate = "",
                 MaleHowToUnlock = "",
                 MaleAvailability = "",
-                MaleRankUps = new List<RankUp>
+                MaleRankUps = new ObservableCollection<RankUp>
                 {
                     new RankUp()
                     {
@@ -1801,7 +1803,7 @@ namespace P3PHelper.ViewModels
                 FemaleUnlockDate = "",
                 FemaleHowToUnlock = "",
                 FemaleAvailability = "",
-                FemaleRankUps = new List<RankUp>
+                FemaleRankUps = new ObservableCollection<RankUp>
                 {
 
                     new RankUp()
@@ -1898,7 +1900,7 @@ namespace P3PHelper.ViewModels
                 MaleUnlockDate = "",
                 MaleHowToUnlock = "",
                 MaleAvailability = "",
-                MaleRankUps = new List<RankUp>
+                MaleRankUps = new ObservableCollection<RankUp>
                 {
                     new RankUp()
                     {
@@ -1986,7 +1988,7 @@ namespace P3PHelper.ViewModels
                 FemaleUnlockDate = "",
                 FemaleHowToUnlock = "",
                 FemaleAvailability = "",
-                FemaleRankUps = new List<RankUp>
+                FemaleRankUps = new ObservableCollection<RankUp>
                 {
 
                     new RankUp()
@@ -2083,7 +2085,7 @@ namespace P3PHelper.ViewModels
                 MaleUnlockDate = "",
                 MaleHowToUnlock = "",
                 MaleAvailability = "",
-                MaleRankUps = new List<RankUp>
+                MaleRankUps = new ObservableCollection<RankUp>
                 {
                     new RankUp()
                     {
@@ -2171,7 +2173,7 @@ namespace P3PHelper.ViewModels
                 FemaleUnlockDate = "",
                 FemaleHowToUnlock = "",
                 FemaleAvailability = "",
-                FemaleRankUps = new List<RankUp>
+                FemaleRankUps = new ObservableCollection<RankUp>
                 {
 
                     new RankUp()
@@ -2268,7 +2270,7 @@ namespace P3PHelper.ViewModels
                 MaleUnlockDate = "",
                 MaleHowToUnlock = "",
                 MaleAvailability = "",
-                MaleRankUps = new List<RankUp>
+                MaleRankUps = new ObservableCollection<RankUp>
                 {
                     new RankUp()
                     {
@@ -2356,7 +2358,7 @@ namespace P3PHelper.ViewModels
                 FemaleUnlockDate = "",
                 FemaleHowToUnlock = "",
                 FemaleAvailability = "",
-                FemaleRankUps = new List<RankUp>
+                FemaleRankUps = new ObservableCollection<RankUp>
                 {
 
                     new RankUp()
@@ -2453,7 +2455,7 @@ namespace P3PHelper.ViewModels
                 MaleUnlockDate = "",
                 MaleHowToUnlock = "",
                 MaleAvailability = "",
-                MaleRankUps = new List<RankUp>
+                MaleRankUps = new ObservableCollection<RankUp>
                 {
                     new RankUp()
                     {
@@ -2541,7 +2543,7 @@ namespace P3PHelper.ViewModels
                 FemaleUnlockDate = "",
                 FemaleHowToUnlock = "",
                 FemaleAvailability = "",
-                FemaleRankUps = new List<RankUp>
+                FemaleRankUps = new ObservableCollection<RankUp>
                 {
 
                     new RankUp()
@@ -2638,7 +2640,7 @@ namespace P3PHelper.ViewModels
                 MaleUnlockDate = "",
                 MaleHowToUnlock = "",
                 MaleAvailability = "",
-                MaleRankUps = new List<RankUp>
+                MaleRankUps = new ObservableCollection<RankUp>
                 {
                     new RankUp()
                     {
@@ -2726,7 +2728,7 @@ namespace P3PHelper.ViewModels
                 FemaleUnlockDate = "",
                 FemaleHowToUnlock = "",
                 FemaleAvailability = "",
-                FemaleRankUps = new List<RankUp>
+                FemaleRankUps = new ObservableCollection<RankUp>
                 {
 
                     new RankUp()
@@ -2823,7 +2825,7 @@ namespace P3PHelper.ViewModels
                 MaleUnlockDate = "",
                 MaleHowToUnlock = "",
                 MaleAvailability = "",
-                MaleRankUps = new List<RankUp>
+                MaleRankUps = new ObservableCollection<RankUp>
                 {
                     new RankUp()
                     {
@@ -2911,7 +2913,7 @@ namespace P3PHelper.ViewModels
                 FemaleUnlockDate = "",
                 FemaleHowToUnlock = "",
                 FemaleAvailability = "",
-                FemaleRankUps = new List<RankUp>
+                FemaleRankUps = new ObservableCollection<RankUp>
                 {
 
                     new RankUp()
@@ -3008,7 +3010,7 @@ namespace P3PHelper.ViewModels
                 MaleUnlockDate = "",
                 MaleHowToUnlock = "",
                 MaleAvailability = "",
-                MaleRankUps = new List<RankUp>
+                MaleRankUps = new ObservableCollection<RankUp>
                 {
                     new RankUp()
                     {
@@ -3096,7 +3098,7 @@ namespace P3PHelper.ViewModels
                 FemaleUnlockDate = "",
                 FemaleHowToUnlock = "",
                 FemaleAvailability = "",
-                FemaleRankUps = new List<RankUp>
+                FemaleRankUps = new ObservableCollection<RankUp>
                 {
 
                     new RankUp()
@@ -3193,7 +3195,7 @@ namespace P3PHelper.ViewModels
                 MaleUnlockDate = "",
                 MaleHowToUnlock = "",
                 MaleAvailability = "",
-                MaleRankUps = new List<RankUp>
+                MaleRankUps = new ObservableCollection<RankUp>
                 {
                     new RankUp()
                     {
@@ -3281,7 +3283,7 @@ namespace P3PHelper.ViewModels
                 FemaleUnlockDate = "",
                 FemaleHowToUnlock = "",
                 FemaleAvailability = "",
-                FemaleRankUps = new List<RankUp>
+                FemaleRankUps = new ObservableCollection<RankUp>
                 {
 
                     new RankUp()
@@ -3378,7 +3380,7 @@ namespace P3PHelper.ViewModels
                 MaleUnlockDate = "",
                 MaleHowToUnlock = "",
                 MaleAvailability = "",
-                MaleRankUps = new List<RankUp>
+                MaleRankUps = new ObservableCollection<RankUp>
                 {
                     new RankUp()
                     {
@@ -3466,7 +3468,7 @@ namespace P3PHelper.ViewModels
                 FemaleUnlockDate = "",
                 FemaleHowToUnlock = "",
                 FemaleAvailability = "",
-                FemaleRankUps = new List<RankUp>
+                FemaleRankUps = new ObservableCollection<RankUp>
                 {
 
                     new RankUp()
@@ -3563,7 +3565,7 @@ namespace P3PHelper.ViewModels
                 MaleUnlockDate = "",
                 MaleHowToUnlock = "",
                 MaleAvailability = "",
-                MaleRankUps = new List<RankUp>
+                MaleRankUps = new ObservableCollection<RankUp>
                 {
                     new RankUp()
                     {
@@ -3651,7 +3653,7 @@ namespace P3PHelper.ViewModels
                 FemaleUnlockDate = "",
                 FemaleHowToUnlock = "",
                 FemaleAvailability = "",
-                FemaleRankUps = new List<RankUp>
+                FemaleRankUps = new ObservableCollection<RankUp>
                 {
 
                     new RankUp()
@@ -3748,7 +3750,7 @@ namespace P3PHelper.ViewModels
                 MaleUnlockDate = "",
                 MaleHowToUnlock = "",
                 MaleAvailability = "",
-                MaleRankUps = new List<RankUp>
+                MaleRankUps = new ObservableCollection<RankUp>
                 {
                     new RankUp()
                     {
@@ -3836,7 +3838,7 @@ namespace P3PHelper.ViewModels
                 FemaleUnlockDate = "",
                 FemaleHowToUnlock = "",
                 FemaleAvailability = "",
-                FemaleRankUps = new List<RankUp>
+                FemaleRankUps = new ObservableCollection<RankUp>
                 {
 
                     new RankUp()
@@ -3933,7 +3935,7 @@ namespace P3PHelper.ViewModels
                 MaleUnlockDate = "",
                 MaleHowToUnlock = "",
                 MaleAvailability = "",
-                MaleRankUps = new List<RankUp>
+                MaleRankUps = new ObservableCollection<RankUp>
                 {
                     new RankUp()
                     {
@@ -4021,7 +4023,7 @@ namespace P3PHelper.ViewModels
                 FemaleUnlockDate = "",
                 FemaleHowToUnlock = "",
                 FemaleAvailability = "",
-                FemaleRankUps = new List<RankUp>
+                FemaleRankUps = new ObservableCollection<RankUp>
                 {
 
                     new RankUp()

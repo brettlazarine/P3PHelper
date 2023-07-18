@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "ig90a2beQuwU7hmXlWPPrUmt5jLYx+nMvuMJ6WsrzZNhWZHzVmyjZ514alIImFIJrs61Ezq5EtS0Vul0S1x5rQ==",
+  "dgSpecHash": "0NrgQYcD2PkydY8OLhRcBsHLJCTKTar/aWG5QGkpyHEwyqAMyAnhZv0wEZS7DW8JCzKPpFI4R2g5KtoNcMmJ1A==",
   "success": true,
   "projectFilePath": "C:\\GitHubRepos\\P3PHelper\\P3PHelper\\P3PHelper\\P3PHelper.iOS\\P3PHelper.iOS.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\jblaz\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\jblaz\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\jblaz\\.nuget\\packages\\xamarin.essentials\\1.7.6\\xamarin.essentials.1.7.6.nupkg.sha512",
     "C:\\Users\\jblaz\\.nuget\\packages\\xamarin.forms\\5.0.0.2578\\xamarin.forms.5.0.0.2578.nupkg.sha512"

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace P3PHelper.Models
@@ -17,7 +18,7 @@ namespace P3PHelper.Models
         string MaleAvailability { get; set; }
         bool FemaleRequiresPersona { get; set; }
         bool MaleRequiresPersona { get; set; }
-        List<RankUp> FemaleRankUps { get; set; }
-        List<RankUp> MaleRankUps { get; set; }
+        ObservableCollection<RankUp> FemaleRankUps { get; set; }
+        ObservableCollection<RankUp> MaleRankUps { get; set; }
     }
 }

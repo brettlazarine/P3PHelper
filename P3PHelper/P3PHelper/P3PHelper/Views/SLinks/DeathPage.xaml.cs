@@ -46,7 +46,14 @@ namespace P3PHelper.Views.SLinks
                 }
                 else
                 {
-                    var personaLabel = new Label { Text = "A Persona is NOT required for faster rank-ups, but you can use one if you would like." };
+                    var personaLabel = new Label
+                    {
+                        Text = "A Persona is NOT required for faster rank-ups, but you can use one if you would like.",
+                        TextColor = Color.Black,
+                        HorizontalTextAlignment = TextAlignment.Center,
+                        FontSize = 20,
+                        FontAttributes = FontAttributes.Bold
+                    };
                     MaleNeedPersonaContainer.Children.Add(personaLabel);
                 }
             }
@@ -71,7 +78,14 @@ namespace P3PHelper.Views.SLinks
                 }
                 else
                 {
-                    var personaLabel = new Label { Text = "A Persona is NOT required for faster rank-ups, but you can use one if you would like." };
+                    var personaLabel = new Label
+                    {
+                        Text = "A Persona is NOT required for faster rank-ups, but you can use one if you would like.",
+                        TextColor = Color.Black,
+                        HorizontalTextAlignment = TextAlignment.Center,
+                        FontSize = 20,
+                        FontAttributes = FontAttributes.Bold
+                    };
                     FemaleNeedPersonaContainer.Children.Add(personaLabel);
                 }
             }
@@ -94,7 +108,7 @@ namespace P3PHelper.Views.SLinks
                     };
                     var checkbox = new CustomCheckBox
                     {
-                        Gender = "Male",
+
                         IsChecked = GetCheckboxState(rankUp.RankNumber)
                     };
                     checkbox.HorizontalOptions = LayoutOptions.Center;
@@ -127,7 +141,7 @@ namespace P3PHelper.Views.SLinks
                     {
                         var newQuestion = new Label
                         {
-                            Text = "Question",
+                            Text = "How",
                             HorizontalOptions = LayoutOptions.Center,
                             FontAttributes = FontAttributes.Bold,
                             TextColor = Color.White,
@@ -135,7 +149,7 @@ namespace P3PHelper.Views.SLinks
                         };
                         var newResponse = new Label
                         {
-                            Text = "Response",
+                            Text = "Date",
                             HorizontalOptions = LayoutOptions.Center,
                             FontAttributes = FontAttributes.Bold,
                             TextColor = Color.White,
@@ -191,7 +205,7 @@ namespace P3PHelper.Views.SLinks
                     };
                     var checkbox = new CustomCheckBox
                     {
-                        Gender = "Female",
+
                         IsChecked = GetCheckboxState(rankUp.RankNumber)
                     };
                     checkbox.HorizontalOptions = LayoutOptions.Center;
@@ -224,7 +238,7 @@ namespace P3PHelper.Views.SLinks
                     {
                         var newQuestion = new Label
                         {
-                            Text = "Question",
+                            Text = "How",
                             HorizontalOptions = LayoutOptions.Center,
                             FontAttributes = FontAttributes.Bold,
                             TextColor = Color.White,
@@ -232,7 +246,7 @@ namespace P3PHelper.Views.SLinks
                         };
                         var newResponse = new Label
                         {
-                            Text = "Response",
+                            Text = "Date",
                             HorizontalOptions = LayoutOptions.Center,
                             FontAttributes = FontAttributes.Bold,
                             TextColor = Color.White,

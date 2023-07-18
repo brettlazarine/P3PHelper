@@ -93,7 +93,7 @@ namespace P3PHelper.Views.SLinks
                     };
                     var checkbox = new CustomCheckBox
                     {
-                        Gender = "Male",
+
                         IsChecked = GetCheckboxState(rankUp.RankNumber)
                     };
                     checkbox.HorizontalOptions = LayoutOptions.Center;
@@ -190,7 +190,6 @@ namespace P3PHelper.Views.SLinks
                     };
                     var checkbox = new CustomCheckBox
                     {
-                        Gender = "Female",
                         IsChecked = GetCheckboxState(rankUp.RankNumber)
                     };
                     checkbox.HorizontalOptions = LayoutOptions.Center;

@@ -1,31 +1,32 @@
-﻿using P3PHelper.Controls;
+﻿using Newtonsoft.Json;
+using P3PHelper.Controls;
 using P3PHelper.Models;
 using P3PHelper.ViewModels;
 using System;
-using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using static P3PHelper.Controls.Serialization;
 
 namespace P3PHelper.Views.SLinks
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AeonPage : ContentPage
     {
+
         public AeonPage()
         {
             InitializeComponent();
-            BindingContext = new SLinksViewModel().CreateAeonInstance();
+            var vm = new SLinksViewModel();
+            var sLink = vm.CreateAeonInstance();
+            BindingContext = sLink;
             MaleNeedsPersona();
             FemaleNeedsPersona();
             AddMaleRankLabels();
             AddFemaleRankLabels();
         }
-
-        private Dictionary<int, bool> checkboxStates = new Dictionary<int, bool>();
 
         private void MaleNeedsPersona()
         {
@@ -34,16 +35,26 @@ namespace P3PHelper.Views.SLinks
             {
                 if (sLink.MaleRequiresPersona || sLink.FemaleRequiresPersona)
                 {
-                    var personaLabel = new Label 
-                    { 
-                        Text = "A Persona IS required for faster rank-ups!", TextColor = Color.Black,
-                        HorizontalTextAlignment = TextAlignment.Center, FontSize = 20, FontAttributes = FontAttributes.Bold 
+                    var personaLabel = new Label
+                    {
+                        Text = "A Persona IS required for faster rank-ups!",
+                        TextColor = Color.Black,
+                        HorizontalTextAlignment = TextAlignment.Center,
+                        FontSize = 20,
+                        FontAttributes = FontAttributes.Bold
                     };
                     MaleNeedPersonaContainer.Children.Add(personaLabel);
                 }
                 else
                 {
-                    var personaLabel = new Label { Text = "A Persona is NOT required for faster rank-ups, but you can use one if you would like." };
+                    var personaLabel = new Label
+                    {
+                        Text = "A Persona is NOT required for faster rank-ups, but you can use one if you would like.",
+                        TextColor = Color.Black,
+                        HorizontalTextAlignment = TextAlignment.Center,
+                        FontSize = 20,
+                        FontAttributes = FontAttributes.Bold
+                    };
                     MaleNeedPersonaContainer.Children.Add(personaLabel);
                 }
             }
@@ -68,7 +79,14 @@ namespace P3PHelper.Views.SLinks
                 }
                 else
                 {
-                    var personaLabel = new Label { Text = "A Persona is NOT required for faster rank-ups, but you can use one if you would like." };
+                    var personaLabel = new Label
+                    {
+                        Text = "A Persona is NOT required for faster rank-ups, but you can use one if you would like.",
+                        TextColor = Color.Black,
+                        HorizontalTextAlignment = TextAlignment.Center,
+                        FontSize = 20,
+                        FontAttributes = FontAttributes.Bold
+                    };
                     FemaleNeedPersonaContainer.Children.Add(personaLabel);
                 }
             }
@@ -89,24 +107,19 @@ namespace P3PHelper.Views.SLinks
                         HorizontalTextAlignment = TextAlignment.Center,
                         FontAttributes = FontAttributes.Bold
                     };
-                    var checkbox = new CustomCheckBox
-                    {
-                        Gender = "Male",
-                        IsChecked = GetCheckboxState(rankUp.RankNumber)
-                    };
-                    checkbox.HorizontalOptions = LayoutOptions.Center;
 
-                    checkbox.CheckedChanged += (sender, e) =>
+                    var customCheckbox = new CustomCheckBox
                     {
-                        rankUp.IsCompleted = e.Value;
-                        SaveCheckboxState(rankUp.RankNumber, e.Value); // Save checkbox state
+                        BindingContext = rankUp // Set the binding context to the rankUp instance
                     };
+                    customCheckbox.SetBinding(CustomCheckBox.IsCheckedProperty, new Binding("IsCompleted")); // Bind to the IsCompleted property
+
 
                     var rankLayout = new StackLayout
                     {
                         BackgroundColor = Color.Blue,
                         Padding = 5,
-                        HeightRequest = 200
+                        //HeightRequest = 300
                     };
 
                     var rankAndCheckStack = new StackLayout
@@ -116,7 +129,7 @@ namespace P3PHelper.Views.SLinks
                     };
 
                     rankAndCheckStack.Children.Add(rankLabel);
-                    rankAndCheckStack.Children.Add(checkbox);
+                    rankAndCheckStack.Children.Add(customCheckbox);
 
                     rankLayout.Children.Add(rankAndCheckStack);
 
@@ -152,10 +165,15 @@ namespace P3PHelper.Views.SLinks
                             HorizontalTextAlignment = TextAlignment.Center,
                             FontAttributes = FontAttributes.Italic
                         };
+                        var completed = new Label
+                        {
+                            Text = rankUp.IsCompleted.ToString()
+                        };
                         rankLayout.Children.Add(newQuestion);
                         rankLayout.Children.Add(questionLabel);
                         rankLayout.Children.Add(newResponse);
                         rankLayout.Children.Add(answerLabel);
+                        rankLayout.Children.Add(completed);
                     }
 
                     rankLayout.Children.Add(new BoxView
@@ -169,7 +187,6 @@ namespace P3PHelper.Views.SLinks
                 }
             }
         }
-
 
         private void AddFemaleRankLabels()
         {
@@ -186,18 +203,13 @@ namespace P3PHelper.Views.SLinks
                         HorizontalTextAlignment = TextAlignment.Center,
                         FontAttributes = FontAttributes.Bold
                     };
-                    var checkbox = new CustomCheckBox
-                    {
-                        Gender = "Female",
-                        IsChecked = GetCheckboxState(rankUp.RankNumber)
-                    };
-                    checkbox.HorizontalOptions = LayoutOptions.Center;
 
-                    checkbox.CheckedChanged += (sender, e) =>
+                    var customCheckbox = new CustomCheckBox
                     {
-                        rankUp.IsCompleted = e.Value;
-                        SaveCheckboxState(rankUp.RankNumber, e.Value); // Save checkbox state
+                        BindingContext = rankUp // Set the binding context to the rankUp instance
                     };
+                    customCheckbox.SetBinding(CustomCheckBox.IsCheckedProperty, new Binding("IsCompleted")); // Bind to the IsCompleted property
+
 
                     var rankLayout = new StackLayout
                     {
@@ -213,7 +225,7 @@ namespace P3PHelper.Views.SLinks
                     };
 
                     rankAndCheckStack.Children.Add(rankLabel);
-                    rankAndCheckStack.Children.Add(checkbox);
+                    rankAndCheckStack.Children.Add(customCheckbox);
 
                     rankLayout.Children.Add(rankAndCheckStack);
 
@@ -249,10 +261,15 @@ namespace P3PHelper.Views.SLinks
                             HorizontalTextAlignment = TextAlignment.Center,
                             FontAttributes = FontAttributes.Italic
                         };
+                        var completed = new Label
+                        {
+                            Text = rankUp.IsCompleted.ToString()
+                        };
                         rankLayout.Children.Add(newQuestion);
                         rankLayout.Children.Add(questionLabel);
                         rankLayout.Children.Add(newResponse);
                         rankLayout.Children.Add(answerLabel);
+                        rankLayout.Children.Add(completed);
                     }
 
                     rankLayout.Children.Add(new BoxView
@@ -267,21 +284,95 @@ namespace P3PHelper.Views.SLinks
             }
         }
 
-        private bool GetCheckboxState(int rankNumber)
+        protected override void OnAppearing()
         {
-            // Retrieve checkbox state from Application Properties
-            if (Application.Current.Properties.ContainsKey($"CheckboxState_{rankNumber}"))
+            base.OnAppearing();
+
+            var sLink = BindingContext as SLink;
+            if (sLink == null)
             {
-                return (bool)Application.Current.Properties[$"CheckboxState_{rankNumber}"];
+                // If the BindingContext is not of type SLink, we can't proceed.
+                // You may want to handle this situation accordingly, such as showing an error message or logging.
+                return;
             }
-            return false;
+
+            // Retrieve the JSON string from Preferences
+            string jsonData = Preferences.Get("rankUpData", "");
+
+            try
+            {
+                if (!string.IsNullOrEmpty(jsonData))
+                {
+                    // Deserialize the JSON string back to the SLinkSerializedData instance
+                    var serializedData = JsonConvert.DeserializeObject<SLinkSerializedData>(jsonData);
+
+                    // Update the MaleRankUps collection
+                    foreach (var rankUpData in serializedData.MaleRankUps)
+                    {
+                        var rankUp = sLink.MaleRankUps.FirstOrDefault(r => r.RankNumber == rankUpData.RankNumber);
+                        if (rankUp != null)
+                        {
+                            rankUp.IsCompleted = rankUpData.IsCompleted;
+                        }
+                    }
+
+                    // Update the FemaleRankUps collection
+                    foreach (var rankUpData in serializedData.FemaleRankUps)
+                    {
+                        var rankUp = sLink.FemaleRankUps.FirstOrDefault(r => r.RankNumber == rankUpData.RankNumber);
+                        if (rankUp != null)
+                        {
+                            rankUp.IsCompleted = rankUpData.IsCompleted;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log or display the exception details
+                // This can help you identify the cause of any potential issues during deserialization
+                Console.WriteLine($"Exception during deserialization: {ex}");
+            }
         }
 
-        private void SaveCheckboxState(int rankNumber, bool state)
+        private void Checkbox_CheckedChanged(object sender, CheckedChangedEventArgs e)
         {
-            // Save checkbox state to Application Properties
-            Application.Current.Properties[$"CheckboxState_{rankNumber}"] = state;
-            Application.Current.SavePropertiesAsync();
+            var checkbox = (CustomCheckBox)sender;
+            var rankUp = checkbox.BindingContext as RankUp;
+
+            // Save the data as JSON string
+            var sLink = BindingContext as SLink; // Get the instance of SLink from the BindingContext
+            if (sLink == null)
+            {
+                // If the BindingContext is not of type SLink, we can't proceed.
+                // You may want to handle this situation accordingly, such as showing an error message or logging.
+                return;
+            }
+
+            // Create a new instance to hold serialized data
+            var serializedData = new SLinkSerializedData
+            {
+                MaleRankUps = sLink.MaleRankUps.Select(r => new RankUpSerializedData
+                {
+                    RankNumber = r.RankNumber,
+                    IsCompleted = r.IsCompleted
+                }).ToList(),
+                FemaleRankUps = sLink.FemaleRankUps.Select(r => new RankUpSerializedData
+                {
+                    RankNumber = r.RankNumber,
+                    IsCompleted = r.IsCompleted
+                }).ToList()
+            };
+
+            // Serialize the data to JSON string
+            string jsonData = JsonConvert.SerializeObject(serializedData);
+            Preferences.Set("rankUpData", jsonData);
         }
+
+
+
+
+
+
     }
 }

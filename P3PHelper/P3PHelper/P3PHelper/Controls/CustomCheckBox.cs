@@ -1,36 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Xamarin.Forms;
 
 namespace P3PHelper.Controls
 {
     public class CustomCheckBox : CheckBox
     {
-        public static readonly BindableProperty GenderProperty = BindableProperty.Create(
-            nameof(Gender),
-            typeof(string),
+        public static readonly BindableProperty IsCompletedProperty = BindableProperty.Create(
+            nameof(IsCompleted),
+            typeof(bool),
             typeof(CustomCheckBox),
-            propertyChanged: OnGenderChanged);
+            propertyChanged: OnIsCompletedChanged);
 
-        public string Gender
+        public bool IsCompleted
         {
-            get { return (string)GetValue(GenderProperty); }
-            set { SetValue(GenderProperty, value); }
+            get { return (bool)GetValue(IsCompletedProperty); }
+            set { SetValue(IsCompletedProperty, value); }
         }
 
-        private static void OnGenderChanged(BindableObject bindable, object oldValue, object newValue)
+        private static void OnIsCompletedChanged(BindableObject bindable, object oldValue, object newValue)
         {
             var customCheckBox = (CustomCheckBox)bindable;
-            var gender = (string)newValue;
+            var isCompleted = (bool)newValue;
 
-            // Set the color based on gender
-            if (gender == "Male")
-                customCheckBox.Color = Color.White;
-            else if (gender == "Female")
-                customCheckBox.Color = Color.White;
-            else
-                customCheckBox.Color = Color.Default;
+            // Update the custom CheckBox state based on the IsCompleted property
+            customCheckBox.IsChecked = isCompleted;
         }
     }
 }
