@@ -110,7 +110,8 @@ namespace P3PHelper.Views.SLinks
 
                     var customCheckbox = new CustomCheckBox
                     {
-                        BindingContext = rankUp // Set the binding context to the rankUp instance
+                        BindingContext = rankUp, // Set the binding context to the rankUp instance
+                        Color = Color.White
                     };
                     customCheckbox.SetBinding(CustomCheckBox.IsCheckedProperty, new Binding("IsCompleted")); // Bind to the IsCompleted property
 
@@ -165,15 +166,10 @@ namespace P3PHelper.Views.SLinks
                             HorizontalTextAlignment = TextAlignment.Center,
                             FontAttributes = FontAttributes.Italic
                         };
-                        var completed = new Label
-                        {
-                            Text = rankUp.IsCompleted.ToString()
-                        };
                         rankLayout.Children.Add(newQuestion);
                         rankLayout.Children.Add(questionLabel);
                         rankLayout.Children.Add(newResponse);
                         rankLayout.Children.Add(answerLabel);
-                        rankLayout.Children.Add(completed);
                     }
 
                     rankLayout.Children.Add(new BoxView
@@ -206,7 +202,8 @@ namespace P3PHelper.Views.SLinks
 
                     var customCheckbox = new CustomCheckBox
                     {
-                        BindingContext = rankUp // Set the binding context to the rankUp instance
+                        BindingContext = rankUp, // Set the binding context to the rankUp instance
+                        Color = Color.White
                     };
                     customCheckbox.SetBinding(CustomCheckBox.IsCheckedProperty, new Binding("IsCompleted")); // Bind to the IsCompleted property
 
@@ -215,7 +212,7 @@ namespace P3PHelper.Views.SLinks
                     {
                         BackgroundColor = Color.HotPink,
                         Padding = 5,
-                        HeightRequest = 200
+                        //HeightRequest = 200
                     };
 
                     var rankAndCheckStack = new StackLayout
@@ -261,15 +258,10 @@ namespace P3PHelper.Views.SLinks
                             HorizontalTextAlignment = TextAlignment.Center,
                             FontAttributes = FontAttributes.Italic
                         };
-                        var completed = new Label
-                        {
-                            Text = rankUp.IsCompleted.ToString()
-                        };
                         rankLayout.Children.Add(newQuestion);
                         rankLayout.Children.Add(questionLabel);
                         rankLayout.Children.Add(newResponse);
                         rankLayout.Children.Add(answerLabel);
-                        rankLayout.Children.Add(completed);
                     }
 
                     rankLayout.Children.Add(new BoxView
@@ -335,13 +327,11 @@ namespace P3PHelper.Views.SLinks
             }
         }
 
-        private void Checkbox_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        protected override void OnDisappearing()
         {
-            var checkbox = (CustomCheckBox)sender;
-            var rankUp = checkbox.BindingContext as RankUp;
+            base.OnDisappearing();
 
-            // Save the data as JSON string
-            var sLink = BindingContext as SLink; // Get the instance of SLink from the BindingContext
+            var sLink = BindingContext as SLink;
             if (sLink == null)
             {
                 // If the BindingContext is not of type SLink, we can't proceed.
@@ -349,30 +339,36 @@ namespace P3PHelper.Views.SLinks
                 return;
             }
 
-            // Create a new instance to hold serialized data
+            // Create the SLinkSerializedData instance with the necessary data
             var serializedData = new SLinkSerializedData
             {
-                MaleRankUps = sLink.MaleRankUps.Select(r => new RankUpSerializedData
+                MaleRankUps = sLink.MaleRankUps.Select(rankUp => new RankUpSerializedData
                 {
-                    RankNumber = r.RankNumber,
-                    IsCompleted = r.IsCompleted
+                    RankNumber = rankUp.RankNumber,
+                    IsCompleted = rankUp.IsCompleted
                 }).ToList(),
-                FemaleRankUps = sLink.FemaleRankUps.Select(r => new RankUpSerializedData
+                FemaleRankUps = sLink.FemaleRankUps.Select(rankUp => new RankUpSerializedData
                 {
-                    RankNumber = r.RankNumber,
-                    IsCompleted = r.IsCompleted
+                    RankNumber = rankUp.RankNumber,
+                    IsCompleted = rankUp.IsCompleted
                 }).ToList()
             };
 
-            // Serialize the data to JSON string
+            // Save the SLinkSerializedData instance to the Preferences
             string jsonData = JsonConvert.SerializeObject(serializedData);
             Preferences.Set("rankUpData", jsonData);
         }
 
+        private void Checkbox_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            var checkbox = (CustomCheckBox)sender;
+            var rankUp = checkbox.BindingContext as RankUp;
+            rankUp.IsCompleted = e.Value;
 
-
-
-
-
+            // Save the data as JSON string
+            var vm = (SLinksViewModel)BindingContext;
+            string jsonData = JsonConvert.SerializeObject(vm.SLinks);
+            Preferences.Set("rankUpData", jsonData);
+        }
     }
 }

@@ -11,6 +11,7 @@ namespace P3PHelper.Controls
             typeof(CustomCheckBox),
             propertyChanged: OnIsCompletedChanged);
 
+
         public bool IsCompleted
         {
             get { return (bool)GetValue(IsCompletedProperty); }
