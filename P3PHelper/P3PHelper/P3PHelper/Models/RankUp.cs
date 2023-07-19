@@ -19,12 +19,12 @@ namespace P3PHelper.Models
                 }
             }
         }
-
         public int RankNumber { get; set; }
         public List<(string Question, string Answer)> Questions { get; set; }
 
         public RankUp()
         {
+            // Constructor defaults to FALSE so that users can update their progress with checkboxes in SLink views
             IsCompleted = false;
         }
 

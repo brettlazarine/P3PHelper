@@ -19,65 +19,13 @@ namespace P3PHelper.Models
         public bool FemaleRequiresPersona { get; set; }
         public bool MaleRequiresPersona { get; set; }
         public ObservableCollection<RankUp> MaleRankUps { get; set; }
-
-        // Female rank-ups collection
         public ObservableCollection<RankUp> FemaleRankUps { get; set; }
 
         public SLink()
         {
+            // Most SLinks will require a Persona, constructor will default to TRUE for convenience
             FemaleRequiresPersona = true;
             MaleRequiresPersona = true;
-        }
-
-        public void CopyFrom(SLink other)
-        {
-            if (other != null)
-            {
-                // Copy relevant properties from 'other' to 'this'
-                this.Arcana = other.Arcana;
-                this.MaleName = other.MaleName;
-                this.MaleUnlockDate = other.MaleUnlockDate;
-                this.MaleHowToUnlock = other.MaleHowToUnlock;
-                this.MaleAvailability = other.MaleAvailability;
-                this.MaleRequiresPersona = other.MaleRequiresPersona;
-                this.FemaleName = other.FemaleName;
-                this.FemaleUnlockDate = other.FemaleUnlockDate;
-                this.FemaleHowToUnlock = other.FemaleHowToUnlock;
-                this.FemaleAvailability = other.FemaleAvailability;
-                this.FemaleRequiresPersona = other.FemaleRequiresPersona;
-
-                // Copy MaleRankUps
-                this.MaleRankUps.Clear();
-                foreach (var rankUp in other.MaleRankUps)
-                {
-                    var newRankUp = new RankUp
-                    {
-                        RankNumber = rankUp.RankNumber,
-                        IsCompleted = rankUp.IsCompleted
-                    };
-                    foreach (var (question, answer) in rankUp.Questions)
-                    {
-                        newRankUp.Questions.Add((question, answer));
-                    }
-                    this.MaleRankUps.Add(newRankUp);
-                }
-
-                // Copy FemaleRankUps
-                this.FemaleRankUps.Clear();
-                foreach (var rankUp in other.FemaleRankUps)
-                {
-                    var newRankUp = new RankUp
-                    {
-                        RankNumber = rankUp.RankNumber,
-                        IsCompleted = rankUp.IsCompleted
-                    };
-                    foreach (var (question, answer) in rankUp.Questions)
-                    {
-                        newRankUp.Questions.Add((question, answer));
-                    }
-                    this.FemaleRankUps.Add(newRankUp);
-                }
-            }
         }
     }
 }

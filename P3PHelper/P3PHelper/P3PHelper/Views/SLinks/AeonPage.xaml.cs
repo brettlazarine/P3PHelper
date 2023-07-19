@@ -15,7 +15,6 @@ namespace P3PHelper.Views.SLinks
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AeonPage : ContentPage
     {
-
         public AeonPage()
         {
             InitializeComponent();
@@ -28,12 +27,12 @@ namespace P3PHelper.Views.SLinks
             AddFemaleRankLabels();
         }
 
-        private void MaleNeedsPersona()
+        private void MaleNeedsPersona() // Bool check, converts bool to string indicating requirements for Persona in SLinks
         {
             var sLink = BindingContext as SLink;
             if (sLink != null)
             {
-                if (sLink.MaleRequiresPersona || sLink.FemaleRequiresPersona)
+                if (sLink.MaleRequiresPersona)
                 {
                     var personaLabel = new Label
                     {
@@ -43,11 +42,11 @@ namespace P3PHelper.Views.SLinks
                         FontSize = 20,
                         FontAttributes = FontAttributes.Bold
                     };
-                    MaleNeedPersonaContainer.Children.Add(personaLabel);
+                    MaleNeedPersonaContainer.Children.Add(personaLabel); // Label for REQUIRED
                 }
                 else
                 {
-                    var personaLabel = new Label
+                    var personaLabel = new Label // Label for NOT required
                     {
                         Text = "A Persona is NOT required for faster rank-ups, but you can use one if you would like.",
                         TextColor = Color.Black,
@@ -60,14 +59,14 @@ namespace P3PHelper.Views.SLinks
             }
         }
 
-        private void FemaleNeedsPersona()
+        private void FemaleNeedsPersona() // Bool check, converts bool to string indicating requirements for Persona in SLinks
         {
             var sLink = BindingContext as SLink;
             if (sLink != null)
             {
-                if (sLink.MaleRequiresPersona || sLink.FemaleRequiresPersona)
+                if (sLink.FemaleRequiresPersona)
                 {
-                    var personaLabel = new Label
+                    var personaLabel = new Label // Label for REQUIRED
                     {
                         Text = "A Persona IS required for faster rank-ups!",
                         TextColor = Color.Black,
@@ -79,7 +78,7 @@ namespace P3PHelper.Views.SLinks
                 }
                 else
                 {
-                    var personaLabel = new Label
+                    var personaLabel = new Label // Label for NOT required
                     {
                         Text = "A Persona is NOT required for faster rank-ups, but you can use one if you would like.",
                         TextColor = Color.Black,
@@ -91,13 +90,20 @@ namespace P3PHelper.Views.SLinks
                 }
             }
         }
-
+        /*
+        
+        MALE MC
+        Create layouts and labels for each SLink rank
+        Add blue color to implement a thematic link to the Male MC
+        Checkbox placed next to RankNumber for aesthetic means of marking completion
+        
+        */
         private void AddMaleRankLabels()
         {
-            var sLink = BindingContext as SLink;
-            if (sLink != null)
+            var sLink = BindingContext as SLink; // Cast sLink so that it can be worked with below
+            if (sLink != null) // Ensure sLink is not null to avoid exceptions
             {
-                foreach (var rankUp in sLink.MaleRankUps)
+                foreach (var rankUp in sLink.MaleRankUps) // MaleRankUps is a collection that requires iteration
                 {
                     var rankLabel = new Label
                     {
@@ -108,35 +114,40 @@ namespace P3PHelper.Views.SLinks
                         FontAttributes = FontAttributes.Bold
                     };
 
-                    var customCheckbox = new CustomCheckBox
+                    var customCheckbox = new CustomCheckBox // Bind checkbox to rankUp
                     {
-                        BindingContext = rankUp, // Set the binding context to the rankUp instance
+                        BindingContext = rankUp,
                         Color = Color.White
                     };
-                    customCheckbox.SetBinding(CustomCheckBox.IsCheckedProperty, new Binding("IsCompleted")); // Bind to the IsCompleted property
+                    // Bind to IsCompleted property
+                    customCheckbox.SetBinding(CustomCheckBox.IsCheckedProperty, new Binding("IsCompleted"));
 
-
+                    // Create StackLayout for each SLink rank
                     var rankLayout = new StackLayout
                     {
                         BackgroundColor = Color.Blue,
                         Padding = 5,
-                        //HeightRequest = 300
+                        //HeightRequest = 200
                     };
 
+                    // Create StackLayout so that RankNumber and checkbox can be horizontally oriented
                     var rankAndCheckStack = new StackLayout
                     {
                         HorizontalOptions = LayoutOptions.Center,
                         Orientation = StackOrientation.Horizontal
                     };
 
+                    // Add RankNumber and checkbox to their StackLayout
                     rankAndCheckStack.Children.Add(rankLabel);
                     rankAndCheckStack.Children.Add(customCheckbox);
 
+                    // Add rankAndCheckStack to SLink rank StackLayout
                     rankLayout.Children.Add(rankAndCheckStack);
 
+                    // Create labels for each question and response FOR EACH SLink rank level
                     foreach (var (question, answer) in rankUp.Questions)
                     {
-                        var newQuestion = new Label
+                        var newQuestion = new Label // Title label denoting the question text is below
                         {
                             Text = "Question",
                             HorizontalOptions = LayoutOptions.Center,
@@ -144,7 +155,7 @@ namespace P3PHelper.Views.SLinks
                             TextColor = Color.White,
                             FontSize = 20
                         };
-                        var newResponse = new Label
+                        var newResponse = new Label // Title label denoting the response text is below
                         {
                             Text = "Response",
                             HorizontalOptions = LayoutOptions.Center,
@@ -152,44 +163,52 @@ namespace P3PHelper.Views.SLinks
                             TextColor = Color.White,
                             FontSize = 20
                         };
-                        var questionLabel = new Label
+                        var questionLabel = new Label // Label for the question text, derived from rankUp.Questions
                         {
                             Text = question,
                             TextColor = Color.White,
                             HorizontalTextAlignment = TextAlignment.Center,
                             FontAttributes = FontAttributes.Italic
                         };
-                        var answerLabel = new Label
+                        var answerLabel = new Label // Label for the response text, derived from rankUp.Questions
                         {
                             Text = answer,
                             TextColor = Color.White,
                             HorizontalTextAlignment = TextAlignment.Center,
                             FontAttributes = FontAttributes.Italic
                         };
+                        // Add question and response labels to the rankLayout
                         rankLayout.Children.Add(newQuestion);
                         rankLayout.Children.Add(questionLabel);
                         rankLayout.Children.Add(newResponse);
                         rankLayout.Children.Add(answerLabel);
                     }
-
+                    // Adds a blue line between each SLink rank, may consider removing
                     rankLayout.Children.Add(new BoxView
                     {
                         BackgroundColor = Color.Blue,
                         HeightRequest = 1,
                         VerticalOptions = LayoutOptions.FillAndExpand
                     });
-
-                    MaleRankUpsContainer.Children.Add(rankLayout); // Add the StackLayout to the MaleRankUpsContainer
+                    // Add the StackLayout to the MaleRankUpsContainer
+                    MaleRankUpsContainer.Children.Add(rankLayout); 
                 }
             }
         }
-
+        /*
+        
+        FEMALE MC
+        Create layouts and labels for each SLink rank
+        Add blue color to implement a thematic link to the Male MC
+        Checkbox placed next to RankNumber for aesthetic means of marking completion
+        
+        */
         private void AddFemaleRankLabels()
         {
-            var sLink = BindingContext as SLink;
-            if (sLink != null)
+            var sLink = BindingContext as SLink; // Cast sLink so that it can be worked with below
+            if (sLink != null) // Ensure sLink is not null to avoid exceptions
             {
-                foreach (var rankUp in sLink.FemaleRankUps)
+                foreach (var rankUp in sLink.FemaleRankUps) // FemaleRankUps is a collection that requires iteration
                 {
                     var rankLabel = new Label
                     {
@@ -200,14 +219,15 @@ namespace P3PHelper.Views.SLinks
                         FontAttributes = FontAttributes.Bold
                     };
 
-                    var customCheckbox = new CustomCheckBox
+                    var customCheckbox = new CustomCheckBox // Bind checkbox to rankUp
                     {
-                        BindingContext = rankUp, // Set the binding context to the rankUp instance
+                        BindingContext = rankUp,
                         Color = Color.White
                     };
-                    customCheckbox.SetBinding(CustomCheckBox.IsCheckedProperty, new Binding("IsCompleted")); // Bind to the IsCompleted property
+                    // Bind to IsCompleted property
+                    customCheckbox.SetBinding(CustomCheckBox.IsCheckedProperty, new Binding("IsCompleted"));
 
-
+                    // Create StackLayout for each SLink rank
                     var rankLayout = new StackLayout
                     {
                         BackgroundColor = Color.HotPink,
@@ -215,20 +235,24 @@ namespace P3PHelper.Views.SLinks
                         //HeightRequest = 200
                     };
 
+                    // Create StackLayout so that RankNumber and checkbox can be horizontally oriented
                     var rankAndCheckStack = new StackLayout
                     {
                         HorizontalOptions = LayoutOptions.Center,
                         Orientation = StackOrientation.Horizontal
                     };
 
+                    // Add RankNumber and checkbox to their StackLayout
                     rankAndCheckStack.Children.Add(rankLabel);
                     rankAndCheckStack.Children.Add(customCheckbox);
 
+                    // Add rankAndCheckStack to SLink rank StackLayout
                     rankLayout.Children.Add(rankAndCheckStack);
 
+                    // Create labels for each question and response FOR EACH SLink rank level
                     foreach (var (question, answer) in rankUp.Questions)
                     {
-                        var newQuestion = new Label
+                        var newQuestion = new Label // Title label denoting the question text is below
                         {
                             Text = "Question",
                             HorizontalOptions = LayoutOptions.Center,
@@ -236,7 +260,7 @@ namespace P3PHelper.Views.SLinks
                             TextColor = Color.White,
                             FontSize = 20
                         };
-                        var newResponse = new Label
+                        var newResponse = new Label // Title label denoting the response text is below
                         {
                             Text = "Response",
                             HorizontalOptions = LayoutOptions.Center,
@@ -244,61 +268,68 @@ namespace P3PHelper.Views.SLinks
                             TextColor = Color.White,
                             FontSize = 20
                         };
-                        var questionLabel = new Label
+                        var questionLabel = new Label // Label for the question text, derived from rankUp.Questions
                         {
                             Text = question,
                             TextColor = Color.White,
                             HorizontalTextAlignment = TextAlignment.Center,
                             FontAttributes = FontAttributes.Italic
                         };
-                        var answerLabel = new Label
+                        var answerLabel = new Label // Label for the response text, derived from rankUp.Questions
                         {
                             Text = answer,
                             TextColor = Color.White,
                             HorizontalTextAlignment = TextAlignment.Center,
                             FontAttributes = FontAttributes.Italic
                         };
+                        // Add question and response labels to the rankLayout
                         rankLayout.Children.Add(newQuestion);
                         rankLayout.Children.Add(questionLabel);
                         rankLayout.Children.Add(newResponse);
                         rankLayout.Children.Add(answerLabel);
                     }
-
+                    // Adds a hotpink line between each SLink rank, may consider removing
                     rankLayout.Children.Add(new BoxView
                     {
                         BackgroundColor = Color.HotPink,
                         HeightRequest = 1,
                         VerticalOptions = LayoutOptions.FillAndExpand
                     });
-
-                    FemaleRankUpsContainer.Children.Add(rankLayout); // Add the StackLayout to the FemaleRankUpsContainer
+                    // Add the StackLayout to the FemaleRankUpsContainer
+                    FemaleRankUpsContainer.Children.Add(rankLayout);
                 }
             }
         }
-
+        /*  
+          
+        Override OnAppearing() to restore the state of the checkboxes bound to RankUp.IsCompleted property
+        Retrieves data from JSON string saved in Preferences
+        Selects data from JSON based on Arcana
+         
+        */
         protected override void OnAppearing()
         {
             base.OnAppearing();
 
-            var sLink = BindingContext as SLink;
+            var sLink = BindingContext as SLink; // Cast sLink so that it can be worked with below
             if (sLink == null)
             {
-                // If the BindingContext is not of type SLink, we can't proceed.
-                // You may want to handle this situation accordingly, such as showing an error message or logging.
+                // If BindingContext is not of type SLink, display custom error message and return
+                DisplayAlert("Oops!", "SLink data didn't come through.\nVerify instance properties!", "OK");
                 return;
             }
 
-            // Retrieve the JSON string from Preferences
-            string jsonData = Preferences.Get("rankUpData", "");
+            // Retrieve JSON string from Preferences for the RankUp properties, checkbox
+            string jsonData = Preferences.Get($"rankUpData_Aeon_{sLink.Arcana}", ""); // Use Arcana property from SLink as unique identifier
 
             try
             {
                 if (!string.IsNullOrEmpty(jsonData))
                 {
-                    // Deserialize the JSON string back to the SLinkSerializedData instance
+                    // Deserialize JSON string back to SLinkSerializedData instance
                     var serializedData = JsonConvert.DeserializeObject<SLinkSerializedData>(jsonData);
 
-                    // Update the MaleRankUps collection
+                    // Update MaleRankUps IsCompleted, checkbox for page 
                     foreach (var rankUpData in serializedData.MaleRankUps)
                     {
                         var rankUp = sLink.MaleRankUps.FirstOrDefault(r => r.RankNumber == rankUpData.RankNumber);
@@ -308,7 +339,7 @@ namespace P3PHelper.Views.SLinks
                         }
                     }
 
-                    // Update the FemaleRankUps collection
+                    // Update FemaleRankUps IsCompleted, checkbox for page
                     foreach (var rankUpData in serializedData.FemaleRankUps)
                     {
                         var rankUp = sLink.FemaleRankUps.FirstOrDefault(r => r.RankNumber == rankUpData.RankNumber);
@@ -321,25 +352,30 @@ namespace P3PHelper.Views.SLinks
             }
             catch (Exception ex)
             {
-                // Log or display the exception details
-                // This can help you identify the cause of any potential issues during deserialization
+                // Log exception details
                 Console.WriteLine($"Exception during deserialization: {ex}");
             }
         }
-
+        /*
+          
+        Override OnDisappearing() to save the state of the checkboxes bound to RankUp.IsCompleted property
+        Saves data as JSON object in Preferences
+        Saves data using Aracana as unique identifier
+         
+        */
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
 
-            var sLink = BindingContext as SLink;
+            var sLink = BindingContext as SLink; // Cast sLink so that it can be worked with below
             if (sLink == null)
             {
-                // If the BindingContext is not of type SLink, we can't proceed.
-                // You may want to handle this situation accordingly, such as showing an error message or logging.
+                // If BindingContext is not of type SLink, display custom error message and return
+                DisplayAlert("Bad news!", "SLink data didn't save.\nVerify instance properties in Preferences!", "OK");
                 return;
             }
 
-            // Create the SLinkSerializedData instance with the necessary data
+            // Create SLinkSerializedData instance with MaleRankUps and FemaleRankUps properties
             var serializedData = new SLinkSerializedData
             {
                 MaleRankUps = sLink.MaleRankUps.Select(rankUp => new RankUpSerializedData
@@ -354,21 +390,25 @@ namespace P3PHelper.Views.SLinks
                 }).ToList()
             };
 
-            // Save the SLinkSerializedData instance to the Preferences
+            // Save SLinkSerializedData instance to Preferences, save checkbox state for when the page or app are reloaded
             string jsonData = JsonConvert.SerializeObject(serializedData);
-            Preferences.Set("rankUpData", jsonData);
+            Preferences.Set($"rankUpData_Aeon_{sLink.Arcana}", jsonData); // Use Arcana property from SLink as unique identifier
         }
-
+        /*
+         
+        Handles checkbox being checked
+        Updates RankUp.IsCompleted property when the checkbox is checked
+         
+        */
         private void Checkbox_CheckedChanged(object sender, CheckedChangedEventArgs e)
         {
-            var checkbox = (CustomCheckBox)sender;
-            var rankUp = checkbox.BindingContext as RankUp;
-            rankUp.IsCompleted = e.Value;
-
-            // Save the data as JSON string
-            var vm = (SLinksViewModel)BindingContext;
-            string jsonData = JsonConvert.SerializeObject(vm.SLinks);
-            Preferences.Set("rankUpData", jsonData);
+            var checkbox = (CustomCheckBox)sender; // Cast to access properties
+            var rankUp = checkbox.BindingContext as RankUp; // Cast to access properties
+            rankUp.IsCompleted = e.Value; // Update value
+            // Save the data for current SLink page using unique Arcana property
+            string jsonData = JsonConvert.SerializeObject(rankUp);
+            var sLink = (SLink)this.BindingContext;
+            Preferences.Set($"rankUpData_Aeon_{sLink.Arcana}", jsonData);
         }
     }
 }
