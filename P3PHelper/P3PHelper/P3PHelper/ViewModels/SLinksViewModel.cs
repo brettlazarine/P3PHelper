@@ -83,7 +83,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 6,
                         Questions = new List<(string, string)>
                         {
-                            ("Did I do something wrong?" , "No, you didn't.  +3   OR   He saw me as a boyfriend.  +3")
+                            ("Did I do something wrong?" , "No, you didn't.  +3\nOR\nHe saw me as a boyfriend.  +3")
                         }
                     },
                     new RankUp()
@@ -172,7 +172,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 6,
                         Questions = new List<(string, string)>
                         {
-                            ("Did I do something wrong?" , "He wanted to date you.  +3   OR   No you didn’t.  +3")
+                            ("Did I do something wrong?" , "He wanted to date you.  +3\nOR\nNo you didn’t.  +3")
                         }
                     },
                     new RankUp()
@@ -188,7 +188,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 8,
                         Questions = new List<(string, string)>
                         {
-                            ("I was just curious…" , "Not yet…  +3   OR   Sometimes.  +3")
+                            ("I was just curious…" , "Not yet…  +3\nOR\nSometimes.  +3")
                         }
                     },
                     new RankUp()
@@ -640,7 +640,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 4,
                         Questions = new List<(string, string)>
                         {
-                            ("Have you ever wondered what it would be like to be able to see through people’s bathing suits at the beach?" , "I sure have!  +3")
+                            ("Have you ever wondered what it would be like to be able to see through people’s " +
+                            "bathing suits at the beach?" , "I sure have!  +3")
                         }
                     },
                     new RankUp()
@@ -737,7 +738,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 4,
                         Questions = new List<(string, string)>
                         {
-                            ("Have you ever wondered what it would be like to be able to see through people’s bathing suits at the beach?" ,
+                            ("Have you ever wondered what it would be like to be able to see through people’s " +
+                            "bathing suits at the beach?" ,
                             "I have.  +3")
                         }
                     },
@@ -1123,7 +1125,8 @@ namespace P3PHelper.ViewModels
                             ("Mitsuru seems dejected." , "Anyways, let’s eat."),
                             ("Perhaps he’s just maturing…" , "Does that make you happy?  +3"),
                             ("I can’t explain why, though…" , "...Love?  +2"),
-                            ("Sorry for subjecting you to my incoherent ramblings… Please forget what I just said." , "Okay, I will.  +2")
+                            ("Sorry for subjecting you to my incoherent ramblings… Please forget what I just said." , 
+                            "Okay, I will.  +2")
                         }
                     },
                     new RankUp()
@@ -1384,7 +1387,7 @@ namespace P3PHelper.ViewModels
         {
             return new SLink()
             {
-                Arcana = "Fool",
+                Arcana = "Fortune",
                 // Male
                 MaleName = "Keisuke Hiraga",
                 MaleUnlockDate = "6/17",
@@ -1579,12 +1582,15 @@ namespace P3PHelper.ViewModels
         {
             return new SLink()
             {
-                Arcana = "",
+                Arcana = "Hanged Man",
                 // Male
-                MaleName = "",
-                MaleUnlockDate = "",
-                MaleHowToUnlock = "",
-                MaleAvailability = "",
+                MaleName = "Maiko Oohashi",
+                MaleUnlockDate = "5/6",
+                MaleHowToUnlock = "Buy a Mad Bull from the Dormitory's 2nd floor Vending Machine, and a Weird Takoyaki from " +
+                "Octopia at the Iwatodai Strip Mall. Go to Naganaki Shrine and give them to the little girl at the playground. Speak to " +
+                "her again another day after giving her the Mad Bull and Weird Takoyaki to get the first rank.",
+                MaleAvailability = "Can be found at Naganaki Shrine by the playground every day except Sunday. She must also " +
+                "be rescued from Tartarus between 10/21 and 11/3.",
                 MaleRankUps = new ObservableCollection<RankUp>
                 {
                     new RankUp()
@@ -1592,7 +1598,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 1,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Any response." , "Any response.")
                         }
                     },
                     new RankUp()
@@ -1600,7 +1606,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 2,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Can we go to Wild-duck Burger?" , "Sure, let’s go.  +3")
                         }
                     },
                     new RankUp()
@@ -1608,7 +1614,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 3,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Oh! Do you think he’ll come home for my birthday?" , "Don’t worry, he’ll be there.  +3")
                         }
                     },
                     new RankUp()
@@ -1616,7 +1622,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 4,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("They remembered!" , "I’m happy for you.  +3\nOR\nNobody could forget you.  +3")
                         }
                     },
                     new RankUp()
@@ -1624,7 +1630,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 5,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("I don’t know what to do…" , "That’s terrible.  +3"),
+                            ("I bet they wouldn’t care if I wasn’t even here at all!" , "That isn’t true.  +2")
                         }
                     },
                     new RankUp()
@@ -1632,7 +1639,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 6,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("I made up my mind! I have to run away from home!" , "Calm down.  +2"),
+                            ("What about my health insurance card?" , "That should be enough.  +3")
                         }
                     },
                     new RankUp()
@@ -1640,7 +1648,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 7,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Any response." , "Any response.")
                         }
                     },
                     new RankUp()
@@ -1648,7 +1656,9 @@ namespace P3PHelper.ViewModels
                         RankNumber = 8,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("What do you feel like eating?" , "Hamburgers.  +2"),
+                            ("I was sad, but I listened to what they said. Did I do good?" , "Yeah, you did good.  +3"),
+                            ("You decide for me, okay?" , "Choose your dad.  +3")
                         }
                     },
                     new RankUp()
@@ -1656,7 +1666,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 9,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("We’ll still be friends though, right?" , "We’re friends forever.  +3")
                         }
                     },
                     new RankUp()
@@ -1664,15 +1674,18 @@ namespace P3PHelper.ViewModels
                         RankNumber = 10,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Any response." , "Any response.")
                         }
                     }
                 },
                 // Female
-                FemaleName = "",
-                FemaleUnlockDate = "",
-                FemaleHowToUnlock = "",
-                FemaleAvailability = "",
+                FemaleName = "Maiko Oohashi",
+                FemaleUnlockDate = "5/6",
+                FemaleHowToUnlock = "Buy a Mad Bull from the Dormitory's 2nd floor Vending Machine, and a Weird Takoyaki from " +
+                "Octopia at the Iwatodai Strip Mall. Go to Naganaki Shrine and give them to the little girl at the playground. Speak to " +
+                "her again another day after giving her the Mad Bull and Weird Takoyaki to get the first rank.",
+                FemaleAvailability = "Can be found at Naganaki Shrine by the playground every day except Sunday. She must also " +
+                "be rescued from Tartarus between 10/21 and 11/3.",
                 FemaleRankUps = new ObservableCollection<RankUp>
                 {
 
@@ -1681,7 +1694,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 1,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Any response." , "Any response.")
                         }
                     },
                     new RankUp()
@@ -1689,7 +1702,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 2,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Can we go to Wild-duck Burger?" , "Sure, let’s go.  +3")
                         }
                     },
                     new RankUp()
@@ -1697,7 +1710,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 3,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Oh! Do you think he’ll come home for my birthday?" , "Don’t worry, he’ll be there.  +3")
                         }
                     },
                     new RankUp()
@@ -1705,7 +1718,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 4,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("They remembered!" , "Good for you!  +3\nOR\nOf course, they love you!  +3")
                         }
                     },
                     new RankUp()
@@ -1713,7 +1726,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 5,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("I don’t know what to do…" , "That’s mean!  +3"),
+                            ("I bet they wouldn’t care if I wasn’t even here at all!" , "That isn’t true.  +3")
                         }
                     },
                     new RankUp()
@@ -1721,7 +1735,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 6,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("I made up my mind! I have to run away from home!" , "Calm down.  +2"),
+                            ("What about my health insurance card?" , "That’s good enough.  +3")
                         }
                     },
                     new RankUp()
@@ -1729,7 +1744,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 7,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Any response." , "Any response.")
                         }
                     },
                     new RankUp()
@@ -1737,7 +1752,9 @@ namespace P3PHelper.ViewModels
                         RankNumber = 8,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("What do you feel like eating?" , "How about hamburgers?  +3"),
+                            ("I was sad, but I listened to what they said. Did I do good?" , "Good girl!  +3"),
+                            ("You decide for me, okay?" , "Your dad.  +3")
                         }
                     },
                     new RankUp()
@@ -1745,7 +1762,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 9,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("We’ll still be friends though, right?" , "We’re friends forever.  +3\nOR\nWe’re sisters forever.  +3")
                         }
                     },
                     new RankUp()
