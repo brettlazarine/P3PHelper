@@ -1197,12 +1197,13 @@ namespace P3PHelper.ViewModels
         {
             return new SLink()
             {
-                Arcana = "",
+                Arcana = "Fool",
                 // Male
-                MaleName = "",
-                MaleUnlockDate = "",
-                MaleHowToUnlock = "",
-                MaleAvailability = "",
+                MaleName = "S.E.E.S.",
+                MaleUnlockDate = "4/20",
+                MaleHowToUnlock = "Story related.",
+                MaleAvailability = "Story related.",
+                MaleRequiresPersona = false,
                 MaleRankUps = new ObservableCollection<RankUp>
                 {
                     new RankUp()
@@ -1210,7 +1211,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 1,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Story related." , "4/20")
                         }
                     },
                     new RankUp()
@@ -1218,7 +1219,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 2,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Story related." , "4/21")
                         }
                     },
                     new RankUp()
@@ -1226,7 +1227,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 3,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Story related." , "5/9")
                         }
                     },
                     new RankUp()
@@ -1234,7 +1235,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 4,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Story related." , "7/7")
                         }
                     },
                     new RankUp()
@@ -1242,7 +1243,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 5,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Story related." , "7/22")
                         }
                     },
                     new RankUp()
@@ -1250,7 +1251,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 6,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Story related." , "11/2")
                         }
                     },
                     new RankUp()
@@ -1258,7 +1259,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 7,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Story related." , "11/4")
                         }
                     },
                     new RankUp()
@@ -1266,7 +1267,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 8,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Story related." , "")
                         }
                     },
                     new RankUp()
@@ -1274,7 +1275,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 9,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Story related." , "11/28")
                         }
                     },
                     new RankUp()
@@ -1282,15 +1283,16 @@ namespace P3PHelper.ViewModels
                         RankNumber = 10,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Story related." , "12/31")
                         }
                     }
                 },
                 // Female
-                FemaleName = "",
-                FemaleUnlockDate = "",
-                FemaleHowToUnlock = "",
-                FemaleAvailability = "",
+                FemaleName = "S.E.E.S.",
+                FemaleUnlockDate = "4/20",
+                FemaleHowToUnlock = "Story related.",
+                FemaleAvailability = "Story related.",
+                FemaleRequiresPersona = false, 
                 FemaleRankUps = new ObservableCollection<RankUp>
                 {
 
@@ -1299,7 +1301,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 1,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Story related." , "4/20")
                         }
                     },
                     new RankUp()
@@ -1307,7 +1309,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 2,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Story related." , "4/21")
                         }
                     },
                     new RankUp()
@@ -1315,7 +1317,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 3,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Story related." , "5/9")
                         }
                     },
                     new RankUp()
@@ -1323,7 +1325,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 4,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Story related." , "7/7")
                         }
                     },
                     new RankUp()
@@ -1331,7 +1333,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 5,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Story related." , "7/22")
                         }
                     },
                     new RankUp()
@@ -1339,7 +1341,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 6,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Story related." , "11/2")
                         }
                     },
                     new RankUp()
@@ -1347,7 +1349,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 7,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Story related." , "11/4")
                         }
                     },
                     new RankUp()
@@ -1355,7 +1357,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 8,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Story related." , "")
                         }
                     },
                     new RankUp()
@@ -1363,7 +1365,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 9,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Story related." , "11/28")
                         }
                     },
                     new RankUp()
@@ -1371,7 +1373,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 10,
                         Questions = new List<(string, string)>
                         {
-                            ("Any response." , "Any response.")
+                            ("Story related." , "12/31")
                         }
                     }
                 }

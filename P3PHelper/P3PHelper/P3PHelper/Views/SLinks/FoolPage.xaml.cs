@@ -151,7 +151,7 @@ namespace P3PHelper.Views.SLinks
                     {
                         var newQuestion = new Label // Title label denoting the question text is below
                         {
-                            Text = "Question",
+                            Text = "How",
                             HorizontalOptions = LayoutOptions.Center,
                             FontAttributes = FontAttributes.Bold,
                             TextColor = Color.White,
@@ -159,7 +159,7 @@ namespace P3PHelper.Views.SLinks
                         };
                         var newResponse = new Label // Title label denoting the response text is below
                         {
-                            Text = "Response",
+                            Text = "Date",
                             HorizontalOptions = LayoutOptions.Center,
                             FontAttributes = FontAttributes.Bold,
                             TextColor = Color.White,
@@ -256,7 +256,7 @@ namespace P3PHelper.Views.SLinks
                     {
                         var newQuestion = new Label // Title label denoting the question text is below
                         {
-                            Text = "Question",
+                            Text = "How",
                             HorizontalOptions = LayoutOptions.Center,
                             FontAttributes = FontAttributes.Bold,
                             TextColor = Color.White,
@@ -264,7 +264,7 @@ namespace P3PHelper.Views.SLinks
                         };
                         var newResponse = new Label // Title label denoting the response text is below
                         {
-                            Text = "Response",
+                            Text = "Date",
                             HorizontalOptions = LayoutOptions.Center,
                             FontAttributes = FontAttributes.Bold,
                             TextColor = Color.White,
