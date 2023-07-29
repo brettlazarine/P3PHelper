@@ -1384,12 +1384,12 @@ namespace P3PHelper.ViewModels
         {
             return new SLink()
             {
-                Arcana = "",
+                Arcana = "Fool",
                 // Male
-                MaleName = "",
-                MaleUnlockDate = "",
-                MaleHowToUnlock = "",
-                MaleAvailability = "",
+                MaleName = "Keisuke Hiraga",
+                MaleUnlockDate = "6/17",
+                MaleHowToUnlock = "Join one of the culture clubs.",
+                MaleAvailability = "Can be found outside the entrance to the culture club you chose on Tuesday, Wednesday, and Thursday.",
                 MaleRankUps = new ObservableCollection<RankUp>
                 {
                     new RankUp()
@@ -1397,7 +1397,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 1,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Any response." , "Any response.")
                         }
                     },
                     new RankUp()
@@ -1405,7 +1405,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 2,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Any response." , "Any response.")
                         }
                     },
                     new RankUp()
@@ -1413,7 +1413,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 3,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("What will you say to him?" , "Great job!  +3")
                         }
                     },
                     new RankUp()
@@ -1421,7 +1421,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 4,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Ugh, I can’t take it anymore! I have my own dreams, you know!" , "Complaining won’t help.  +3")
                         }
                     },
                     new RankUp()
@@ -1429,7 +1429,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 5,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Th-Then, that means…." , "You should tell your dad.  +3")
                         }
                     },
                     new RankUp()
@@ -1437,7 +1437,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 6,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("I don’t know what I should do. *sigh* I’m so confused…" , "Do whatever you want.  +3")
                         }
                     },
                     new RankUp()
@@ -1445,7 +1445,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 7,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("It’s like he thinks he understands me now…" , "Are you gonna be a doctor?  +3")
                         }
                     },
                     new RankUp()
@@ -1453,7 +1453,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 8,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("How is your memory? Can you tell me your name?" , "Yeah, I’m fine.  +3")
                         }
                     },
                     new RankUp()
@@ -1461,96 +1461,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 9,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
-                        }
-                    },
-                    new RankUp()
-                    {
-                        RankNumber = 10,
-                        Questions = new List<(string, string)>
-                        {
-                            ("" , "")
-                        }
-                    }
-                },
-                // Female
-                FemaleName = "",
-                FemaleUnlockDate = "",
-                FemaleHowToUnlock = "",
-                FemaleAvailability = "",
-                FemaleRankUps = new ObservableCollection<RankUp>
-                {
-
-                    new RankUp()
-                    {
-                        RankNumber = 1,
-                        Questions = new List<(string, string)>
-                        {
-                            ("" , "")
-                        }
-                    },
-                    new RankUp()
-                    {
-                        RankNumber = 2,
-                        Questions = new List<(string, string)>
-                        {
-                            ("" , "")
-                        }
-                    },
-                    new RankUp()
-                    {
-                        RankNumber = 3,
-                        Questions = new List<(string, string)>
-                        {
-                            ("" , "")
-                        }
-                    },
-                    new RankUp()
-                    {
-                        RankNumber = 4,
-                        Questions = new List<(string, string)>
-                        {
-                            ("" , "")
-                        }
-                    },
-                    new RankUp()
-                    {
-                        RankNumber = 5,
-                        Questions = new List<(string, string)>
-                        {
-                            ("" , "")
-                        }
-                    },
-                    new RankUp()
-                    {
-                        RankNumber = 6,
-                        Questions = new List<(string, string)>
-                        {
-                            ("" , "")
-                        }
-                    },
-                    new RankUp()
-                    {
-                        RankNumber = 7,
-                        Questions = new List<(string, string)>
-                        {
-                            ("" , "")
-                        }
-                    },
-                    new RankUp()
-                    {
-                        RankNumber = 8,
-                        Questions = new List<(string, string)>
-                        {
-                            ("" , "")
-                        }
-                    },
-                    new RankUp()
-                    {
-                        RankNumber = 9,
-                        Questions = new List<(string, string)>
-                        {
-                            ("" , "")
+                            ("Will you try to stop Keisuke from going?" , "Try to stop him.  +3")
                         }
                     },
                     new RankUp()
@@ -1559,6 +1470,105 @@ namespace P3PHelper.ViewModels
                         Questions = new List<(string, string)>
                         {
                             ("Any response." , "Any response.")
+                        }
+                    }
+                },
+                // Female
+                FemaleName = "Ryoji Mochizuki",
+                FemaleUnlockDate = "11/9",
+                FemaleHowToUnlock = "Story related.",
+                FemaleAvailability = "You MUST agree to each of his requests to spend time together. REFUSING WILL END THE SOCIAL LINK!",
+                FemaleRequiresPersona = false,
+                FemaleRankUps = new ObservableCollection<RankUp>
+                {
+
+                    new RankUp()
+                    {
+                        RankNumber = 1,
+                        Questions = new List<(string, string)>
+                        {
+                            ("Any response." , "Any response.")
+                        }
+                    },
+                    new RankUp()
+                    {
+                        RankNumber = 2,
+                        Questions = new List<(string, string)>
+                        {
+                            ("On 11/12\nAny response." , "Any response.")
+                        }
+                    },
+                    new RankUp()
+                    {
+                        RankNumber = 3,
+                        Questions = new List<(string, string)>
+                        {
+                            ("On 11/13, you MUST hang out with him.\nAny response." , "Any response.")
+                        }
+                    },
+                    new RankUp()
+                    {
+                        RankNumber = 4,
+                        Questions = new List<(string, string)>
+                        {
+                            ("On 11/15\nAny response." , "Any response.")
+                        }
+                    },
+                    new RankUp()
+                    {
+                        RankNumber = 5,
+                        Questions = new List<(string, string)>
+                        {
+                            ("On 11/19\n" +
+                            "You can't find this in Iwatodai. *chuckle* It makes me kind of happy." , 
+                            "What makes you happy?  +3"),
+                            ("The light reflects off the river in a different way than it shines off of the ocean..." , 
+                            "Is it because it's flowing?  +3"),
+                            ("I'd like to spend some more time with you..." , "Okay.  +3")
+                        }
+                    },
+                    new RankUp()
+                    {
+                        RankNumber = 6,
+                        Questions = new List<(string, string)>
+                        {
+                            ("On 11/22\nAny response." , "Any response.")
+                        }
+                    },
+                    new RankUp()
+                    {
+                        RankNumber = 7,
+                        Questions = new List<(string, string)>
+                        {
+                            ("On 11/27\nAny response." , "Any response.")
+                        }
+                    },
+                    new RankUp()
+                    {
+                        RankNumber = 8,
+                        Questions = new List<(string, string)>
+                        {
+                            ("On 11/29\nI wonder if we'll get in trouble if someone finds us." , "We'll just have to not be seen.  +3"),
+                            ("I'm..." , "You're Ryoji."),
+                            ("You feel that you need to respond carefully to this." , 
+                            "Romantic: Okay.  +3\nPlatonic: As a friend, then...  +3")
+                        }
+                    },
+                    new RankUp()
+                    {
+                        RankNumber = 9,
+                        Questions = new List<(string, string)>
+                        {
+                            ("On 12/1, you MUST hang out with him.\nAny response." , "Any response.")
+                        }
+                    },
+                    new RankUp()
+                    {
+                        RankNumber = 10,
+                        Questions = new List<(string, string)>
+                        {
+                            ("On 12/31\nThis response results in the True or Bad ending. The True ending will max out the Social Link." , 
+                            "True Ending: Let Ryoji live\n Bad Ending: Kill Ryoji")
                         }
                     }
                 }
