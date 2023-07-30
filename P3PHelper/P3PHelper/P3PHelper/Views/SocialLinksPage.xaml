@@ -66,14 +66,14 @@
                         <Label Text="Hanged Man" HorizontalOptions="Center" TextColor="Black" FontAttributes="Bold" />
                     </StackLayout>
                     <StackLayout Orientation="Vertical">
-                        <ImageButton Clicked="Hierophant_Button_Clicked"  Source="arcanaHierophant.png"
-                            Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
-                        <Label Text="Hierophant" HorizontalOptions="Center" TextColor="Black" FontAttributes="Bold" />
-                    </StackLayout>
-                    <StackLayout Orientation="Vertical">
                         <ImageButton Clicked="Hermit_Button_Clicked"  Source="arcanaHermit.png"
                             Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
                         <Label Text="Hermit" HorizontalOptions="Center" TextColor="Black" FontAttributes="Bold" />
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical">
+                        <ImageButton Clicked="Hierophant_Button_Clicked"  Source="arcanaHierophant.png"
+                            Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
+                        <Label Text="Hierophant" HorizontalOptions="Center" TextColor="Black" FontAttributes="Bold" />
                     </StackLayout>
                     <StackLayout Orientation="Vertical">
                         <ImageButton Clicked="Judgement_Button_Clicked"  Source="arcanaJudgement.png"

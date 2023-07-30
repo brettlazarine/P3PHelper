@@ -1781,12 +1781,13 @@ namespace P3PHelper.ViewModels
         {
             return new SLink()
             {
-                Arcana = "",
+                Arcana = "Hermit",
                 // Male
-                MaleName = "",
-                MaleUnlockDate = "",
-                MaleHowToUnlock = "",
-                MaleAvailability = "",
+                MaleName = "Maya",
+                MaleUnlockDate = "4/29",
+                MaleHowToUnlock = "Talk to Junepi on the evening of 4/28 at the Dormitory to get a copy of " +
+                "the Innocent Sin Online MMORPG.",
+                MaleAvailability = "Can be interacted with on the computer on the desk in your room on Sunday.",
                 MaleRankUps = new ObservableCollection<RankUp>
                 {
                     new RankUp()
@@ -1794,7 +1795,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 1,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Any response." , "Any response.")
                         }
                     },
                     new RankUp()
@@ -1802,7 +1803,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 2,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("u remember me rite? =/" , "Of course.  +3"),
+                            ("hmmm… what kinda people r we, playing inside on such a beautiful day?" , "Sunshine is overrated.  +3")
                         }
                     },
                     new RankUp()
@@ -1810,7 +1812,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 3,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("so ummmmm…… i’m drunk! xD" , "Oh really?! o_O"),
+                            ("but lately i cant get motivated to get ne work done @ work. =/" , "So you don’t like your job?  +3")
                         }
                     },
                     new RankUp()
@@ -1818,7 +1821,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 4,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("…ugh. its like all she cares about is marrying me to some dude >=/" , "Why don’t we get married?  +3")
                         }
                     },
                     new RankUp()
@@ -1826,7 +1829,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 5,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Mr. E is such a stupid eh so bee!! t(-_-t)" , "Don’t you mean S.O.B.?  +3"),
+                            ("…oh noes! u can’t figure out what my job is can u? O_o?" , "Are you a teacher?  +3")
                         }
                     },
                     new RankUp()
@@ -1834,7 +1838,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 6,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("actually, i only went cuz i was so pissed at that bastard! >=/" , "Which bastard?!  +3")
                         }
                     },
                     new RankUp()
@@ -1842,7 +1846,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 7,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("…do men only want younger women? be honest w/ me =3" , "Guys like younger chicks.  +3"),
+                            ("she even stuffs her bra!! lol" , "She um… what?  +3")
                         }
                     },
                     new RankUp()
@@ -1850,7 +1855,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 8,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("oh noes… now i’m starting to get sweaty =/" , "Hurry up and tell me.  +3"),
+                            ("goin for younger guys is kinda new for me >_>" , "What is he like?  +3")
                         }
                     },
                     new RankUp()
@@ -1858,7 +1864,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 9,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("it said their canceling innocent sin. …think its for real?!" , "No way!  +3"),
+                            ("maya’s not goin quietly! >=/ i’ll beat them to the punch!" , "What are you planning?  +3")
                         }
                     },
                     new RankUp()
@@ -1866,15 +1873,16 @@ namespace P3PHelper.ViewModels
                         RankNumber = 10,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Any response." , "Any response.")
                         }
                     }
                 },
                 // Female
-                FemaleName = "",
-                FemaleUnlockDate = "",
-                FemaleHowToUnlock = "",
-                FemaleAvailability = "",
+                FemaleName = "Saori Hasegawa",
+                FemaleUnlockDate = "5/8",
+                FemaleHowToUnlock = "Join either the Library or Health committee.",
+                FemaleAvailability = "Can be found outside either the Library (Library committee)" +
+                    " or the Nurse's Office (Health committee) on Tuesday and Thursday.",
                 FemaleRankUps = new ObservableCollection<RankUp>
                 {
 
@@ -1883,7 +1891,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 1,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Any response." , "Any response.")
                         }
                     },
                     new RankUp()
@@ -1891,7 +1899,9 @@ namespace P3PHelper.ViewModels
                         RankNumber = 2,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("We should put them on the shelves. Can you help me out?" , "Of course!  +3"),
+                            ("I see you sometimes in the hall, and you always look like you’re having fun." ,
+                            "You should’ve come talk to me.  +3")
                         }
                     },
                     new RankUp()
@@ -1899,7 +1909,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 3,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Whew. Today was pretty rough, don’t you think?" , "Let’s stay here a little longer.  +3"),
+                            ("Well, there’s no point complaining about what I don’t have." , "Won’t you confront her?  +3")
                         }
                     },
                     new RankUp()
@@ -1907,7 +1918,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 4,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("If he really wants to go out with me, then…" , "Aren’t you being a doormat?  +3"),
+                            ("Do you think it’s wrong to think that way?" , "I can understand that.  +3")
                         }
                     },
                     new RankUp()
@@ -1915,7 +1927,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 5,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("I’m sorry you had to see that…" , "I don’t mind at all.  +3")
                         }
                     },
                     new RankUp()
@@ -1923,7 +1935,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 6,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("I wonder… Is it my fault that nobody’s come in today?" , "What did you do?  +3"),
+                            ("If they see you with me, they might start new rumors…" , "Let them talk.  +3")
                         }
                     },
                     new RankUp()
@@ -1931,7 +1944,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 7,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("If you stay near me, you’re going to lose any reputation you had." , "Don’t worry about it.  +3")
                         }
                     },
                     new RankUp()
@@ -1939,7 +1952,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 8,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Saori hangs her head low…" , "Don’t let it get to you.  +3"),
+                            ("…I don’t want to get you involved." , "I don’t mind that at all.  +3")
                         }
                     },
                     new RankUp()
@@ -1947,7 +1961,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 9,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("……" , "I’m going to punch them.  +3"),
+                            ("I don’t care how other people see me… But I want you to know that." , "I believe you.  +3")
                         }
                     },
                     new RankUp()
@@ -1966,12 +1981,16 @@ namespace P3PHelper.ViewModels
         {
             return new SLink()
             {
-                Arcana = "",
+                Arcana = "Hierophant",
                 // Male
-                MaleName = "",
-                MaleUnlockDate = "",
-                MaleHowToUnlock = "",
-                MaleAvailability = "",
+                MaleName = "Bunkichi and Mitsuko",
+                MaleUnlockDate = "4/25",
+                MaleHowToUnlock = "Visit Bookworms at Iwatodai Strip Mall and talk to Bunkichi and Mitsuko until they have mentioned " +
+                    "the Persimmon tree. Go to Gekkoukan High and find the Persimmon tree by heading out of the main building " +
+                    "toward the sports clubs. Find the tree on the left, and interact with it to find a Persimmon Leaf. Return to " +
+                    "Bookworms and deliver the leaf to Bunkichi and Mitsuko.",
+                MaleAvailability = "Can be found in Bookworms at Iwatodai Strip Mall every day except Monday. Must be rescued " +
+                    "from Tartarus between 9/12 and 10/4.",
                 MaleRankUps = new ObservableCollection<RankUp>
                 {
                     new RankUp()
@@ -2056,10 +2075,14 @@ namespace P3PHelper.ViewModels
                     }
                 },
                 // Female
-                FemaleName = "",
-                FemaleUnlockDate = "",
-                FemaleHowToUnlock = "",
-                FemaleAvailability = "",
+                FemaleName = "Bunkichi and Mitsuko",
+                FemaleUnlockDate = "4/25",
+                FemaleHowToUnlock = "Visit Bookworms at Iwatodai Strip Mall and talk to Bunkichi and Mitsuko until they have mentioned " +
+                    "the Persimmon tree. Go to Gekkoukan High and find the Persimmon tree by heading out of the main building " +
+                    "toward the sports clubs. Find the tree on the left, and interact with it to find a Persimmon Leaf. Return to " +
+                    "Bookworms and deliver the leaf to Bunkichi and Mitsuko.",
+                FemaleAvailability = "Can be found in Bookworms at Iwatodai Strip Mall every day except Monday. Must be rescued " +
+                    "from Tartarus between 9/12 and 10/4.",
                 FemaleRankUps = new ObservableCollection<RankUp>
                 {
 
