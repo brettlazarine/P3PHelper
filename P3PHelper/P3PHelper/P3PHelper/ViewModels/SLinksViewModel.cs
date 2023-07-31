@@ -1998,7 +1998,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 1,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Any response." , "Any response.")
                         }
                     },
                     new RankUp()
@@ -2006,7 +2006,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 2,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("What was your name again?" , "Tell him.  +2"),
+                            ("Someone gave them to me, but I have more than enough. Go ahead, take one." , "Thanks!  +3")
                         }
                     },
                     new RankUp()
@@ -2014,7 +2015,9 @@ namespace P3PHelper.ViewModels
                         RankNumber = 3,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("But I can’t seem to find it." , "Looking for something?  +2"),
+                            ("I’m looking for my glasses… No, not my glasses - my wallet. I can’t seem to find it." ,
+                            "I’ll help you look.  +3")
                         }
                     },
                     new RankUp()
@@ -2022,7 +2025,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 4,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("My wife just left for Gekkoukan." , "I should go there too.  +3"),
+                            ("Do you know anything about it, ...?" , "Now, you have me worried.  +2")
                         }
                     },
                     new RankUp()
@@ -2030,7 +2034,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 5,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("I’m sorry for troubling you about the persimmon tree…" , "I’ll ‘root’ out the truth!  +2"),
+                            ("Why now…? Why do they want to cut it down now?" , "Don’t worry.  +2")
                         }
                     },
                     new RankUp()
@@ -2038,7 +2043,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 6,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("But, if that tree is removed, I feel like the memory of my son will vanish with it…" ,
+                            "Please stop quarreling.  +3")
                         }
                     },
                     new RankUp()
@@ -2046,7 +2052,10 @@ namespace P3PHelper.ViewModels
                         RankNumber = 7,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Mitsuko is crying." , "Ask why she’s crying.  +2"),
+                            ("They say the tree is a memorial to their former teacher… They don’t want it to be cut down." ,
+                            "That’s great.  +2"),
+                            ("..., were you the one who called them all?" , "What are you talking about?  +2")
                         }
                     },
                     new RankUp()
@@ -2054,7 +2063,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 8,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Any response." , "Any response.")
                         }
                     },
                     new RankUp()
@@ -2062,7 +2071,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 9,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Any response." , "Any response.")
                         }
                     },
                     new RankUp()
@@ -2070,7 +2079,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 10,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Any response." , "Any response.")
                         }
                     }
                 },
@@ -2091,7 +2100,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 1,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Any response." , "Any response.")
                         }
                     },
                     new RankUp()
@@ -2099,7 +2108,9 @@ namespace P3PHelper.ViewModels
                         RankNumber = 2,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("What was your name again?" , "I’m from Gekkoukan.  +3"),
+                            ("Someone gave them to me, but I have more than enough. Go ahead, take one." , "Thank you.  +3"),
+                            ("He should be here helping customers. I’m sorry, ...-chan." , "It’s okay.  +3")
                         }
                     },
                     new RankUp()
@@ -2107,7 +2118,9 @@ namespace P3PHelper.ViewModels
                         RankNumber = 3,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("But I can’t seem to find it." , "Looking for something?  +3"),
+                            ("I’m looking for my glasses… No, not my glasses - my wallet. I can’t seem to find it." ,
+                            "I’ll help look for it.  +3")
                         }
                     },
                     new RankUp()
@@ -2115,7 +2128,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 4,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("My wife just left for Gekkoukan." , "Maybe I’ll run after her.  +3"),
+                            ("Do you know anything about it, ...?" , "That makes me worry...  +2")
                         }
                     },
                     new RankUp()
@@ -2123,7 +2137,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 5,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("I’m sorry for troubling you about the persimmon tree…" , "It’s what you ‘beleave’.  +3"),
+                            ("Why now…? Why do they want to cut it down now?" , "Don’t worry.  +2")
                         }
                     },
                     new RankUp()
@@ -2131,7 +2146,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 6,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Mitsuko looks upset…" , "Please stop fighting.  +3")
                         }
                     },
                     new RankUp()
@@ -2139,7 +2154,9 @@ namespace P3PHelper.ViewModels
                         RankNumber = 7,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Mitsuko is crying." , "What’s wrong?  +3"),
+                            ("They say the tree is a memorial to their former teacher… They don’t want it to be cut down." ,
+                            "Thank goodness...  +3")
                         }
                     },
                     new RankUp()
@@ -2147,7 +2164,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 8,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("I have to tell my son the good news!" , "Let’s go!  +3")
                         }
                     },
                     new RankUp()
@@ -2155,7 +2172,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 9,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Any response." , "Any response.")
                         }
                     },
                     new RankUp()
