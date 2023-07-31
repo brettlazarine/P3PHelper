@@ -2191,12 +2191,13 @@ namespace P3PHelper.ViewModels
         {
             return new SLink()
             {
-                Arcana = "",
+                Arcana = "Judgement",
                 // Male
-                MaleName = "",
-                MaleUnlockDate = "",
-                MaleHowToUnlock = "",
-                MaleAvailability = "",
+                MaleName = "Nyx Annihilation Team",
+                MaleUnlockDate = "12/31",
+                MaleHowToUnlock = "Let Ryoji live.",
+                MaleAvailability = "Story related.",
+                MaleRequiresPersona = false,
                 MaleRankUps = new ObservableCollection<RankUp>
                 {
                     new RankUp()
@@ -2204,7 +2205,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 1,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Story related." , "12/31")
                         }
                     },
                     new RankUp()
@@ -2212,7 +2213,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 2,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Reach floor 215 of Tartarus." , "Starting 1/1, must complete before 1/31.")
                         }
                     },
                     new RankUp()
@@ -2220,7 +2221,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 3,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Reach floor 220 of Tartarus." , "Starting 1/1, must complete before 1/31.")
                         }
                     },
                     new RankUp()
@@ -2228,7 +2229,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 4,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Reach floor 224 of Tartarus." , "Starting 1/1, must complete before 1/31.")
                         }
                     },
                     new RankUp()
@@ -2236,7 +2237,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 5,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Reach floor 228 of Tartarus." , "Starting 1/1, must complete before 1/31.")
                         }
                     },
                     new RankUp()
@@ -2244,7 +2245,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 6,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Reach floor 236 of Tartarus." , "Starting 1/1, must complete before 1/31.")
                         }
                     },
                     new RankUp()
@@ -2252,7 +2253,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 7,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Reach floor 240 of Tartarus." , "Starting 1/1, must complete before 1/31.")
                         }
                     },
                     new RankUp()
@@ -2260,7 +2261,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 8,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Reach floor 244 of Tartarus." , "Starting 1/1, must complete before 1/31.")
                         }
                     },
                     new RankUp()
@@ -2268,7 +2269,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 9,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Reach floor 252 of Tartarus." , "Starting 1/1, must complete before 1/31.")
                         }
                     },
                     new RankUp()
@@ -2276,15 +2277,16 @@ namespace P3PHelper.ViewModels
                         RankNumber = 10,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Reach floor 254 of Tartarus." , "Starting 1/1, must complete before 1/31.")
                         }
                     }
                 },
                 // Female
-                FemaleName = "",
-                FemaleUnlockDate = "",
-                FemaleHowToUnlock = "",
-                FemaleAvailability = "",
+                FemaleName = "Nyx Annihilation Team",
+                FemaleUnlockDate = "12/31",
+                FemaleHowToUnlock = "Let Ryoji live.",
+                FemaleAvailability = "Story related.",
+                FemaleRequiresPersona = false,
                 FemaleRankUps = new ObservableCollection<RankUp>
                 {
 
@@ -2293,7 +2295,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 1,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Story related." , "12/31")
                         }
                     },
                     new RankUp()
@@ -2301,7 +2303,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 2,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Reach floor 215 of Tartarus." , "Starting 1/1, must complete before 1/31.")
                         }
                     },
                     new RankUp()
@@ -2309,7 +2311,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 3,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Reach floor 220 of Tartarus." , "Starting 1/1, must complete before 1/31.")
                         }
                     },
                     new RankUp()
@@ -2317,7 +2319,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 4,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Reach floor 224 of Tartarus." , "Starting 1/1, must complete before 1/31.")
                         }
                     },
                     new RankUp()
@@ -2325,7 +2327,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 5,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Reach floor 228 of Tartarus." , "Starting 1/1, must complete before 1/31.")
                         }
                     },
                     new RankUp()
@@ -2333,7 +2335,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 6,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Reach floor 236 of Tartarus." , "Starting 1/1, must complete before 1/31.")
                         }
                     },
                     new RankUp()
@@ -2341,7 +2343,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 7,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Reach floor 240 of Tartarus." , "Starting 1/1, must complete before 1/31.")
                         }
                     },
                     new RankUp()
@@ -2349,7 +2351,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 8,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Reach floor 244 of Tartarus." , "Starting 1/1, must complete before 1/31.")
                         }
                     },
                     new RankUp()
@@ -2357,7 +2359,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 9,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Reach floor 252 of Tartarus." , "Starting 1/1, must complete before 1/31.")
                         }
                     },
                     new RankUp()
@@ -2365,7 +2367,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 10,
                         Questions = new List<(string, string)>
                         {
-                            ("Any response." , "Any response.")
+                            ("Reach floor 254 of Tartarus." , "Starting 1/1, must complete before 1/31.")
                         }
                     }
                 }
