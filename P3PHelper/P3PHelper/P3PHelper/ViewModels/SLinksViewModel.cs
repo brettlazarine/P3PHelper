@@ -3181,12 +3181,12 @@ namespace P3PHelper.ViewModels
         {
             return new SLink()
             {
-                Arcana = "",
+                Arcana = "Priestess",
                 // Male
-                MaleName = "",
-                MaleUnlockDate = "",
-                MaleHowToUnlock = "",
-                MaleAvailability = "",
+                MaleName = "Fuuka Yamagishi",
+                MaleUnlockDate = "6/15",
+                MaleHowToUnlock = "Courage must be level 2 and the Fortune Social Link must be at least rank 1.",
+                MaleAvailability = "Can be found on the school's 2nd floor on Monday, Friday, and Saturday.",
                 MaleRankUps = new ObservableCollection<RankUp>
                 {
                     new RankUp()
@@ -3194,7 +3194,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 1,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Any response." , "Any response.")
                         }
                     },
                     new RankUp()
@@ -3202,7 +3202,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 2,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Maybe I should give him some food. What do you think, ...-kun?" , "Sure.  +2")
                         }
                     },
                     new RankUp()
@@ -3210,7 +3210,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 3,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Everything I make still tastes terrible..." , "I believe in you.  +3")
                         }
                     },
                     new RankUp()
@@ -3218,7 +3218,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 4,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Not to mention that I'm kind of embarrassed about it all. I mean, it's not a very feminine hobby." ,
+                            "Oh, I don't think so.  +3")
                         }
                     },
                     new RankUp()
@@ -3226,7 +3227,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 5,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("W-Well, h-how does it taste?" , "You did a great job.  +3"),
+                            ("You've taught me so much, ...-kun. Thank you for everything..." , "I'm glad I could help.  +2")
                         }
                     },
                     new RankUp()
@@ -3234,7 +3236,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 6,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Just for a little while...?" , "Okay.  +3")
                         }
                     },
                     new RankUp()
@@ -3242,7 +3244,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 7,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Any response." , "Any response.")
                         }
                     },
                     new RankUp()
@@ -3250,7 +3252,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 8,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("I want to be with you, ...-kun..." , "I want to be with you too.  +3")
                         }
                     },
                     new RankUp()
@@ -3258,7 +3260,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 9,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Any response." , "Any response.")
                         }
                     },
                     new RankUp()
@@ -3266,15 +3268,15 @@ namespace P3PHelper.ViewModels
                         RankNumber = 10,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Any response." , "Any response.")
                         }
                     }
                 },
                 // Female
-                FemaleName = "",
-                FemaleUnlockDate = "",
-                FemaleHowToUnlock = "",
-                FemaleAvailability = "",
+                FemaleName = "Fuuka Yamagishi",
+                FemaleUnlockDate = "6/15",
+                FemaleHowToUnlock = "Courage must be level 2 and the Fortune Social Link must be at least rank 1.",
+                FemaleAvailability = "Can be found on the school's 2nd floor on Monday, Thursday, and Saturday.",
                 FemaleRankUps = new ObservableCollection<RankUp>
                 {
 
@@ -3283,7 +3285,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 1,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Any response." , "Any response.")
                         }
                     },
                     new RankUp()
@@ -3291,7 +3293,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 2,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Fuuka is muttering things to herself..." , "Do you need any help?  +3")
                         }
                     },
                     new RankUp()
@@ -3299,7 +3301,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 3,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("So, you can relax a little too, ...-chan." , "Let's do our best.  +3")
                         }
                     },
                     new RankUp()
@@ -3307,7 +3309,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 4,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("If only there was something I was actually good at..." , "You're good with machines.  +3")
                         }
                     },
                     new RankUp()
@@ -3315,7 +3317,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 5,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("D-Do you think I can make something that difficult...?" , "Let's make it together.  +3"),
+                            ("...Whenever I try that..." , "You did your best, too.  +3")
                         }
                     },
                     new RankUp()
@@ -3323,7 +3326,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 6,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("H-How is it...?" , "You really did your best.  +3")
                         }
                     },
                     new RankUp()
@@ -3331,7 +3334,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 7,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Seriously... I'm hopeless at everything..." , "Just try harder next time.  +3")
                         }
                     },
                     new RankUp()
@@ -3339,7 +3342,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 8,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Any response." , "Any response.")
                         }
                     },
                     new RankUp()
@@ -3347,7 +3350,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 9,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Any response." , "Any response.")
                         }
                     },
                     new RankUp()
