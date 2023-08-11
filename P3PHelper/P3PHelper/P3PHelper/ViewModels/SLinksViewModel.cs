@@ -3770,12 +3770,15 @@ namespace P3PHelper.ViewModels
         {
             return new SLink()
             {
-                Arcana = "",
+                Arcana = "Sun",
                 // Male
-                MaleName = "",
-                MaleUnlockDate = "",
-                MaleHowToUnlock = "",
-                MaleAvailability = "",
+                MaleName = "Akinari Kamiki",
+                MaleUnlockDate = "8/9",
+                MaleHowToUnlock = "Academics must be level 4, the Hanged Man Social Link must be rank 3 to meet him. " +
+                "Visit Akinari again and talk to him until he mentions his lost pen. Talk to Koromaru in the Dormitory " +
+                "Lounge after he joins SEES to get the Red Fountain Pen, and then return the pen to Akinari.",
+                MaleAvailability = "Can be found at Naganaki Shrine every Sunday during the day.",
+                MaleRequiresPersona = false,
                 MaleRankUps = new ObservableCollection<RankUp>
                 {
                     new RankUp()
@@ -3783,7 +3786,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 1,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Any response." , "Any response.")
                         }
                     },
                     new RankUp()
@@ -3791,7 +3794,9 @@ namespace P3PHelper.ViewModels
                         RankNumber = 2,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("You're... not like the others." , "...Really?  +3"),
+                            ("Dying isn't so unusual, is it? What is there to gain by staying in this world for a long time, anyway?" ,
+                            "That's a good point.  +3")
                         }
                     },
                     new RankUp()
@@ -3799,7 +3804,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 3,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("...Why is this only happening to me?" , "I don't know.  +3"),
+                            ("When I'm alone... it feels like it could end at any second." , "Try not to talk so much.  +3")
                         }
                     },
                     new RankUp()
@@ -3807,7 +3813,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 4,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("...Do you read many books?" , "Yeah, I like reading.  +3"),
+                            ("...Do you read books all the way to the end?" , "If it's boring, I stop reading.  +3")
                         }
                     },
                     new RankUp()
@@ -3815,7 +3822,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 5,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("...I guess my condition won't improve if I keep taking chances, though." , "Reprimand Akinari.  +3")
                         }
                     },
                     new RankUp()
@@ -3823,7 +3830,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 6,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Hey, how do you feel about a pink alligator?" , "Hey, that's cool.  +3"),
+                            ("But, anyway... How does the story sound to you?" , "It sounds interesting.  +3")
                         }
                     },
                     new RankUp()
@@ -3831,7 +3839,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 7,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("...That's as far as I've written. I haven't decided on an ending." , "It sounds really depressing.  +3")
                         }
                     },
                     new RankUp()
@@ -3839,7 +3847,9 @@ namespace P3PHelper.ViewModels
                         RankNumber = 8,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Akinari is having trouble breathing." , "Stay at his side.  +3"),
+                            ("It's not going to fix me anyway, right? ...It just helps for the pain and... ...spasming..." ,
+                            "What are you thinking?  +3")
                         }
                     },
                     new RankUp()
@@ -3847,7 +3857,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 9,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("So... I'd like you to congratulate me. As of today, I am a free individual." , 
+                            "Oh, did you finish the story?  +3")
                         }
                     },
                     new RankUp()
@@ -3855,15 +3866,18 @@ namespace P3PHelper.ViewModels
                         RankNumber = 10,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Any response." , "Any response.")
                         }
                     }
                 },
                 // Female
-                FemaleName = "",
-                FemaleUnlockDate = "",
-                FemaleHowToUnlock = "",
-                FemaleAvailability = "",
+                FemaleName = "Akinari Kamiki",
+                FemaleUnlockDate = "8/9",
+                FemaleHowToUnlock = "Academics must be level 4, the Hanged Man Social Link must be rank 3 to meet him. " +
+                "Visit Akinari again and talk to him until he mentions his lost pen. Talk to Koromaru in the Dormitory " +
+                "Lounge after he joins SEES to get the Red Fountain Pen, and then return the pen to Akinari.",
+                FemaleAvailability = "Can be found at Naganaki Shrine every Sunday during the day.",
+                FemaleRequiresPersona = false,
                 FemaleRankUps = new ObservableCollection<RankUp>
                 {
 
@@ -3872,7 +3886,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 1,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Any response." , "Any response.")
                         }
                     },
                     new RankUp()
@@ -3880,7 +3894,9 @@ namespace P3PHelper.ViewModels
                         RankNumber = 2,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("You're... not like the others." , "You think so?  +3"),
+                            ("Dying isn't so unusual, is it? What is there to gain by staying in this world for a long time, anyway?" ,
+                            "You may be right.  +3")
                         }
                     },
                     new RankUp()
@@ -3888,7 +3904,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 3,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("...Why is this only happening to me?" , "I don't know.  +3"),
+                            ("When I'm alone... it feels like it could end at any second." , "Talking makes it hurt worse.  +3")
                         }
                     },
                     new RankUp()
@@ -3896,7 +3913,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 4,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("...Do you read many books?" , "I love reading!  +3"),
+                            ("...Do you read books all the way to the end?" , "Not if it's boring.  +3")
                         }
                     },
                     new RankUp()
@@ -3904,7 +3922,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 5,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("...I guess my condition won't improve if I keep taking chances, though." , "Don't push yourself!  +3")
                         }
                     },
                     new RankUp()
@@ -3912,7 +3930,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 6,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Hey, how do you feel about a pink alligator?" , "That sounds wonderful.  +3"),
+                            ("But, anyway... How does the story sound to you?" , "Sounds interesting.  +3")
                         }
                     },
                     new RankUp()
@@ -3920,7 +3939,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 7,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("...That's as far as I've written. I haven't decided on an ending." , "It's a gloomy story.  +3")
                         }
                     },
                     new RankUp()
@@ -3928,7 +3947,9 @@ namespace P3PHelper.ViewModels
                         RankNumber = 8,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Akinari is having trouble breathing." , "Stay at his side.  +3"),
+                            ("It's not going to fix me anyway, right? ...It just helps for the pain and... ...spasming..." ,
+                            "Why!?  +3")
                         }
                     },
                     new RankUp()
@@ -3936,7 +3957,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 9,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("So... I'd like you to congratulate me. As of today, I am a free individual." , 
+                            "You finished the story?  +3")
                         }
                     },
                     new RankUp()
