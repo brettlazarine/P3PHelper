@@ -3573,12 +3573,12 @@ namespace P3PHelper.ViewModels
         {
             return new SLink()
             {
-                Arcana = "",
+                Arcana = "Strength",
                 // Male
-                MaleName = "",
-                MaleUnlockDate = "",
-                MaleHowToUnlock = "",
-                MaleAvailability = "",
+                MaleName = "Yuko Nishiwaki",
+                MaleUnlockDate = "4/28",
+                MaleHowToUnlock = "Offer to walk Yuko home on ranks 2 and 3 of the Chariot Social Link.",
+                MaleAvailability = "Can be found outside the classroom on Wednesday and Saturday.",
                 MaleRankUps = new ObservableCollection<RankUp>
                 {
                     new RankUp()
@@ -3586,7 +3586,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 1,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Any response." , "Any response.")
                         }
                     },
                     new RankUp()
@@ -3594,7 +3594,9 @@ namespace P3PHelper.ViewModels
                         RankNumber = 2,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("I'm mentally exhausted..." , "What happened?  +2"),
+                            ("Right, ...-kun!?" , "I agree.  +3"),
+                            ("My reputation as an 'intellectual' would be ruined. *blush*" , "That's true.  +2")
                         }
                     },
                     new RankUp()
@@ -3602,7 +3604,10 @@ namespace P3PHelper.ViewModels
                         RankNumber = 3,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Hey, ...-kun, do you think I eat too much?" , "Not really.  +2"),
+                            ("You must love being around good-looking girls like Mitsuru and Yukari..." ,
+                            "Not necessarily.  +2\nOR\nYou're much cuter, Yuko.  +2"),
+                            ("Oh, shoot! It's already this late?" , "Let's go.  +2")
                         }
                     },
                     new RankUp()
@@ -3610,7 +3615,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 4,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("I'm sorry, <protagonist>-kun... I didn't mean to get you involved." , "No worries.  +2"),
+                            ("Are you mad?" , "I'm honored.  +3")
                         }
                     },
                     new RankUp()
@@ -3618,7 +3624,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 5,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("I'm not as tall as you, so I can't walk as fast..." , "Hold her hand.  +2"),
+                            ("Heeey!" , "Do you know him?  +2")
                         }
                     },
                     new RankUp()
@@ -3626,7 +3633,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 6,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("So, what's your honest opinion? Can they win?" , "Let's hope for the best.  +2")
                         }
                     },
                     new RankUp()
@@ -3634,7 +3641,9 @@ namespace P3PHelper.ViewModels
                         RankNumber = 7,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Well, there they go..." , "Are you relieved?  +2"),
+                            ("Maybe we should have a little party... You know, to celebrate our first attempt at coaching..." ,
+                            "Sure.  +3")
                         }
                     },
                     new RankUp()
@@ -3642,7 +3651,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 8,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Would you want it to be a boy or a girl?" , "A boy.  +2\nOR\nA girl.  +2")
                         }
                     },
                     new RankUp()
@@ -3650,7 +3659,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 9,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("C-Can we just forget about that?" , "Forget about what?  +2"),
+                            ("Guess what I wanna be." , "An instructor?  +3")
                         }
                     },
                     new RankUp()
@@ -3658,15 +3668,15 @@ namespace P3PHelper.ViewModels
                         RankNumber = 10,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Any response." , "Any response.")
                         }
                     }
                 },
                 // Female
-                FemaleName = "",
-                FemaleUnlockDate = "",
-                FemaleHowToUnlock = "",
-                FemaleAvailability = "",
+                FemaleName = "Koromaru",
+                FemaleUnlockDate = "8/15",
+                FemaleHowToUnlock = "Priestess Social Link must be at least rank 1, then give Koromaru the Dog Food from Fuuka.",
+                FemaleAvailability = "Can be found in the Dormitory Lounge every night.",
                 FemaleRankUps = new ObservableCollection<RankUp>
                 {
 
@@ -3675,7 +3685,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 1,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Any response." , "Any response.")
                         }
                     },
                     new RankUp()
@@ -3683,7 +3693,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 2,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Woof." , "Does it feel good?  +3")
                         }
                     },
                     new RankUp()
@@ -3691,7 +3701,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 3,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("There's a ball at Koromaru's feet..." , "Pick it up.  +3")
                         }
                     },
                     new RankUp()
@@ -3699,7 +3709,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 4,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Arf." , "Can you do it boy?  +3")
                         }
                     },
                     new RankUp()
@@ -3707,7 +3717,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 5,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Koromaru is sitting patiently..." , "We're with you.  +3"),
+                            ("Other dogs return the howl from every direction..." , "Saying hi to the priest?  +3")
                         }
                     },
                     new RankUp()
@@ -3715,7 +3726,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 6,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Koromaru is on guard as he watches the two leave..." , "It's all right now.  +3")
                         }
                     },
                     new RankUp()
@@ -3723,7 +3734,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 7,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Koromaru is wagging his tail happily..." , "Glad we found his owner.  +3")
                         }
                     },
                     new RankUp()
@@ -3731,7 +3742,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 8,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("If you recall correctly, what you did was..." , "Brushed him.  +3"),
+                            ("Where would you start brushing him...?" , "The back.  +3")
                         }
                     },
                     new RankUp()
@@ -3739,7 +3751,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 9,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("The way Koromaru thinks of us is..." , "He sees us as friends.  +3")
                         }
                     },
                     new RankUp()
