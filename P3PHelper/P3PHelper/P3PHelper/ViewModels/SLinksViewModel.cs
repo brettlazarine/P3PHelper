@@ -4184,12 +4184,15 @@ namespace P3PHelper.ViewModels
         {
             return new SLink()
             {
-                Arcana = "",
+                Arcana = "Tower",
                 // Male
-                MaleName = "",
-                MaleUnlockDate = "",
-                MaleHowToUnlock = "",
-                MaleAvailability = "",
+                MaleName = "Mutatsu",
+                MaleUnlockDate = "After Yuko mentions the monk in Club Escapade.",
+                MaleHowToUnlock = "Strength Social Link must be rank 4, and Courage must be level 4. Talk to the Monk" +
+                "in Club Escapade, then the bartender. The bartender will want to know the drink orders of the patrons." +
+                "Give him the orders: Bloody Mary, Margarita, Screwdriver, and Oolong Tea. Go back to Mutatsu after.",
+                MaleAvailability = "Can be found in Club Escapade on the 2nd floor on Thursday, Friday, Saturday," +
+                "and Sunday nights.",
                 MaleRankUps = new ObservableCollection<RankUp>
                 {
                     new RankUp()
@@ -4197,7 +4200,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 1,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Any response." , "Any response.")
                         }
                     },
                     new RankUp()
@@ -4205,7 +4208,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 2,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("...So, what're you doin' here, kid?" , "None of your business.  +3"),
+                            ("You don't have to revere me, but at least show me some respect." , "I'm sorry, um...  +2")
                         }
                     },
                     new RankUp()
@@ -4213,7 +4217,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 3,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("...How come you're always alone when I see ya? Don'tcha got any friends, kid?" ,
+                            "I don't have any friends.  +3")
                         }
                     },
                     new RankUp()
@@ -4221,7 +4226,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 4,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("You should cut it. No, better yet, shave it all off... smooth like me." ,
+                            "Yeah, that might look cool.  +3")
                         }
                     },
                     new RankUp()
@@ -4229,7 +4235,9 @@ namespace P3PHelper.ViewModels
                         RankNumber = 5,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("High school kids don't have much money, do they? At least, I never gave much to my son." ,
+                            "I have enough.  +2"),
+                            ("Is there anything you want right now?" , "No.  +3")
                         }
                     },
                     new RankUp()
@@ -4237,7 +4245,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 6,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Ugh... I'm in bad shape..." , "You should go home.  +3"),
+                            ("It's times like these I wish I didn't live alone..." , "What about the others?  +2")
                         }
                     },
                     new RankUp()
@@ -4245,7 +4254,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 7,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("...Hey! There's a microphone over there. Bring it over, kid! I'll perform a live sutra reading." ,
+                            "I don't think you should.  +3")
                         }
                     },
                     new RankUp()
@@ -4253,7 +4263,11 @@ namespace P3PHelper.ViewModels
                         RankNumber = 8,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Didn't Dad tell you not to do that, ehhh?" , "Dad?  +3"),
+                            ("What the hell were ya doin' thish late!?" ,
+                            "I was with a friend.  +3\nOR\nNone of your business.  +3"),
+                            ("...Now when I go home, I don't know what to do with myself, so I just come here and drink every night." ,
+                            "Are you running away?  +3")
                         }
                     },
                     new RankUp()
@@ -4261,7 +4275,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 9,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Any response." , "Any response.")
                         }
                     },
                     new RankUp()
@@ -4269,15 +4283,18 @@ namespace P3PHelper.ViewModels
                         RankNumber = 10,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Any response." , "Any response.")
                         }
                     }
                 },
                 // Female
-                FemaleName = "",
-                FemaleUnlockDate = "",
-                FemaleHowToUnlock = "",
-                FemaleAvailability = "",
+                FemaleName = "Mutatsu",
+                FemaleUnlockDate = "After Yuko mentions the monk in Club Escapade.",
+                FemaleHowToUnlock = "Chariot Social Link must be rank 3, and Courage must be level 4. Talk to the Monk " +
+                "in Club Escapade, then the bartender. The bartender will want to know the drink orders of the patrons. " +
+                "Give him the orders: Bloody Mary, Margarita, Screwdriver, and Oolong Tea. Go back to Mutatsu after.",
+                FemaleAvailability = "Can be found in Club Escapade on the 2nd floor on Thursday, Friday, Saturday, " +
+                "and Sunday nights.",
                 FemaleRankUps = new ObservableCollection<RankUp>
                 {
 
@@ -4286,7 +4303,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 1,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Any response." , "Any response.")
                         }
                     },
                     new RankUp()
@@ -4294,7 +4311,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 2,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("...So, what're you doin' here, kid?" , "I don't need to tell you.  +3"),
+                            ("You don't have to revere me, but at least show me some respect." , "What should I call you?  +2")
                         }
                     },
                     new RankUp()
@@ -4302,7 +4320,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 3,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("...How come you're always alone when I see ya? Don'tcha got any friends, kid?" ,
+                            "I have no friends.  +3")
                         }
                     },
                     new RankUp()
@@ -4310,7 +4329,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 4,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Why don't ya give it a try? The bald look..." , "I've always wanted to try that.  +3")
                         }
                     },
                     new RankUp()
@@ -4318,7 +4337,9 @@ namespace P3PHelper.ViewModels
                         RankNumber = 5,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("High school kids don't have much money, do they? At least, I never gave much to my son." ,
+                            "I get by.  +2"),
+                            ("Is there anything you want right now?" , "There isn't.  +3")
                         }
                     },
                     new RankUp()
@@ -4326,7 +4347,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 6,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Ugh... I'm in bad shape..." , "You should get home.  +3"),
+                            ("It's times like these I wish I didn't live alone..." , "What about your workers?  +2")
                         }
                     },
                     new RankUp()
@@ -4334,7 +4356,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 7,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("...Hey! There's a microphone over there. Bring it over, kid! I'll perform a live sutra reading." ,
+                            "You probably shouldn't.  +3")
                         }
                     },
                     new RankUp()
@@ -4342,7 +4365,11 @@ namespace P3PHelper.ViewModels
                         RankNumber = 8,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Didn't Dad tell you not to do that, ehhh?" , "Dad?  +3"),
+                            ("What the hell were ya doin' thish late!?" ,
+                            "I was with friends.  +3\nOR\nI don't need to tell you!  +3"),
+                            ("...Now when I go home, I don't know what to do with myself, so I just come here and drink every night." ,
+                            "You're just running away.  +3")
                         }
                     },
                     new RankUp()
@@ -4350,7 +4377,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 9,
                         Questions = new List<(string, string)>
                         {
-                            ("" , "")
+                            ("Any response." , "Any response.")
                         }
                     },
                     new RankUp()
