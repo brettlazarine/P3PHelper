@@ -308,7 +308,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 10,
                         Questions = new List<(string, string)>
                         {
-                            ("I’ve made up my mind. I’m going to have surgery to fix my knee…" , "What about the big meet?  +3")
+                            ("Any response." , "Any response.")
                         }
                     }
                 },
@@ -1172,8 +1172,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 8,
                         Questions = new List<(string, string)>
                         {
-                            ("Mitsuru is trembling with anger." , "Say something to the guy.  +3"),
-                            ("Mitsuru is leaving…" , "Stop her.  +3")
+                            ("Mitsuru is trembling with anger." , "How dare you!?  +3")
                         }
                     },
                     new RankUp()
@@ -1181,7 +1180,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 9,
                         Questions = new List<(string, string)>
                         {
-                            ("I’m so sorry about what happened the other day. It must have upset you." , "You were cool.  +3")
+                            ("I’m so sorry about what happened the other day. It must have upset you." , 
+                            "You were cool.  +3")
                         }
                     },
                     new RankUp()
@@ -2063,7 +2063,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 8,
                         Questions = new List<(string, string)>
                         {
-                            ("Any response." , "Any response.")
+                            ("I have to tell my son the good news!" , "Let's go.  +3")
                         }
                     },
                     new RankUp()
@@ -2556,7 +2556,7 @@ namespace P3PHelper.ViewModels
                         Questions = new List<(string, string)>
                         {
                             ("…" , "Platonic:\nI have one.\nOR\nWho cares about stuff like that!\n" +
-                                "Romance:\nA romance option does exist for Ken, but you're on your own for this one.")
+                                "Romantic:\nA romance option does exist for Ken, but you're on your own for this one.")
                         }
                     },
                     new RankUp()
@@ -2957,6 +2957,8 @@ namespace P3PHelper.ViewModels
                         RankNumber = 8,
                         Questions = new List<(string, string)>
                         {
+                            ("I’m sorry. I just can’t figure this homework out by myself." ,
+                            "We had homework?  +3\nOR\nAsk me anything.  +3"),
                             ("Alright, I’m gonna do this today! I’m gonna overcome my fear of math!" , "You’re on fire!  +3"),
                             ("Haha!" , "You actually did it!  +3"),
                             ("Friends are important, after all…" , "I think I understand.  +3")
@@ -3506,7 +3508,7 @@ namespace P3PHelper.ViewModels
                         Questions = new List<(string, string)>
                         {
                             ("Oh, no, it was just a rumor I heard. Sorry." , "Platonic\nIt's all right.  +3\n" +
-                            "Romance\nDon't get the wrong idea, Senpai."),
+                            "Romantic\nDon't get the wrong idea, Senpai."),
                             ("If I hear anyone say that again, I'll tell them it's not true." , "Please do.  +3")
                         }
                     },
@@ -3525,7 +3527,7 @@ namespace P3PHelper.ViewModels
                         Questions = new List<(string, string)>
                         {
                             ("Akihiko is absentmindedly watching them off..." , "He's just a child.  +3"),
-                            ("Do you think I'm... strange?" , "Platonic\nYou're normal.  +2\nRomance\nYou're charming.  +3")
+                            ("Do you think I'm... strange?" , "Platonic\nYou're normal.  +2\nRomantic\nYou're charming.  +3")
                         }
                     },
                     new RankUp()
@@ -3553,8 +3555,8 @@ namespace P3PHelper.ViewModels
                         {
                             ("That's a pity, since the wind is so nice right now." , "Do you come here often?  +3"),
                             ("...It's the weirdest thing." , "Platonic\nThat's just how things are.\nOR\nThat is pretty odd.\n" +
-                            "Romance\nYou're in love."),
-                            ("Will you be my girl?" , "Breaks Social Link\nI'm sorry, but...\nRomance\nYes!")
+                            "Romantic\nYou're in love."),
+                            ("Will you be my girl?" , "Breaks Social Link\nI'm sorry, but...\nRomantic\nYes!")
                         }
                     },
                     new RankUp()
