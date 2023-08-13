@@ -685,3 +685,4 @@ C:\GitHubRepos\P3PHelper\P3PHelper\P3PHelper\P3PHelper.Android\obj\Debug\130\res
 C:\GitHubRepos\P3PHelper\P3PHelper\P3PHelper\P3PHelper.Android\obj\Debug\130\res\drawable\arcanatower.png
 C:\GitHubRepos\P3PHelper\P3PHelper\P3PHelper\P3PHelper.Android\obj\Debug\130\res\drawable\arcanajudgement.png
 C:\GitHubRepos\P3PHelper\P3PHelper\P3PHelper\P3PHelper.Android\obj\Debug\130\android\assets\Newtonsoft.Json.dll
+C:\GitHubRepos\P3PHelper\P3PHelper\P3PHelper\P3PHelper.Android\obj\Debug\130\res\drawable\downarrow.png

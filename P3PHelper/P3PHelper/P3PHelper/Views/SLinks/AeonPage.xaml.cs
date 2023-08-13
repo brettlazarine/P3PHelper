@@ -111,7 +111,8 @@ namespace P3PHelper.Views.SLinks
                         FontSize = 25,
                         TextColor = Color.White,
                         HorizontalTextAlignment = TextAlignment.Center,
-                        FontAttributes = FontAttributes.Bold
+                        FontAttributes = FontAttributes.Bold,
+                        Padding = 5
                     };
 
                     var customCheckbox = new CustomCheckBox // Bind checkbox to rankUp
@@ -125,24 +126,38 @@ namespace P3PHelper.Views.SLinks
                     // Create StackLayout for each SLink rank
                     var rankLayout = new StackLayout
                     {
-                        BackgroundColor = Color.Blue,
+                        // = Color.Blue,
                         Padding = 5,
-                        //HeightRequest = 200
+                        //HeightRequest = 200,
+                        Spacing = 0
                     };
 
-                    // Create StackLayout so that RankNumber and checkbox can be horizontally oriented
-                    var rankAndCheckStack = new StackLayout
+                    // Create StackLayout for rank label and arrow icon
+                    var rankCheckboxArrowLayout = new StackLayout
                     {
-                        HorizontalOptions = LayoutOptions.Center,
-                        Orientation = StackOrientation.Horizontal
+                        Orientation = StackOrientation.Horizontal,
+                        BackgroundColor = Color.Blue,
+                        HorizontalOptions = LayoutOptions.FillAndExpand
                     };
 
-                    // Add RankNumber and checkbox to their StackLayout
-                    rankAndCheckStack.Children.Add(rankLabel);
-                    rankAndCheckStack.Children.Add(customCheckbox);
+                    // Create arrow icon for toggling the collapsible content
+                    var arrowIcon = new Image
+                    {
+                        Source = "downArrow.png", // Replace with your arrow icon source
+                        HeightRequest = 20,
+                        WidthRequest = 20,
+                        VerticalOptions = LayoutOptions.Center
+                    };
 
-                    // Add rankAndCheckStack to SLink rank StackLayout
-                    rankLayout.Children.Add(rankAndCheckStack);
+                    bool isArrowRotated = false; // Flag to track arrow rotation
+
+                    // Create StackLayout for questions and answers
+                    var questionsAndAnswersLayout = new StackLayout
+                    {
+                        IsVisible = false, // Collapsible content starts as not visible
+                        BackgroundColor = Color.RoyalBlue,
+                        Padding = 5
+                    };
 
                     // Create labels for each question and response FOR EACH SLink rank level
                     foreach (var (question, answer) in rankUp.Questions)
@@ -177,24 +192,51 @@ namespace P3PHelper.Views.SLinks
                             HorizontalTextAlignment = TextAlignment.Center,
                             FontAttributes = FontAttributes.Italic
                         };
-                        // Add question and response labels to the rankLayout
-                        rankLayout.Children.Add(newQuestion);
-                        rankLayout.Children.Add(questionLabel);
-                        rankLayout.Children.Add(newResponse);
-                        rankLayout.Children.Add(answerLabel);
+
+                        // Add question and answer labels to the questionsAndAnswersLayout
+                        questionsAndAnswersLayout.Children.Add(newQuestion);
+                        questionsAndAnswersLayout.Children.Add(questionLabel);
+                        questionsAndAnswersLayout.Children.Add(newResponse);
+                        questionsAndAnswersLayout.Children.Add(answerLabel);
                     }
-                    // Adds a blue line between each SLink rank, may consider removing
-                    rankLayout.Children.Add(new BoxView
+
+                    // Toggle visibility and rotation of the arrowIcon when rankCheckboxArrowLayout is tapped
+                    rankCheckboxArrowLayout.GestureRecognizers.Add(new TapGestureRecognizer
                     {
-                        BackgroundColor = Color.Blue,
-                        HeightRequest = 1,
-                        VerticalOptions = LayoutOptions.FillAndExpand
+                        Command = new Command(() =>
+                        {
+                            questionsAndAnswersLayout.IsVisible = !questionsAndAnswersLayout.IsVisible;
+                            // Rotate the arrow icon by 180 degrees
+                            arrowIcon.Rotation = isArrowRotated ? 0 : 180;
+                            isArrowRotated = !isArrowRotated;
+                        })
                     });
+
+                    // Add rank label and arrow icon to rankCheckboxArrowLayout
+                    rankCheckboxArrowLayout.Children.Add(rankLabel);
+
+                    var checkboxArrowLayout = new StackLayout
+                    {
+                        Orientation = StackOrientation.Horizontal,
+                        HorizontalOptions = LayoutOptions.EndAndExpand,
+                        Spacing = 5,
+                        Padding = 3
+                    };
+
+                    checkboxArrowLayout.Children.Add(customCheckbox);
+                    checkboxArrowLayout.Children.Add(arrowIcon);
+
+                    rankCheckboxArrowLayout.Children.Add(checkboxArrowLayout);
+
                     // Add the StackLayout to the MaleRankUpsContainer
-                    MaleRankUpsContainer.Children.Add(rankLayout); 
+                    rankLayout.Children.Add(rankCheckboxArrowLayout);
+                    rankLayout.Children.Add(questionsAndAnswersLayout);
+                    MaleRankUpsContainer.Children.Add(rankLayout);
                 }
             }
         }
+
+
         /*
         
         FEMALE MC

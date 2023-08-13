@@ -174,5 +174,8 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\arcanaTower.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\downArrow.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
