@@ -3020,7 +3020,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 3,
                         Questions = new List<(string, string)>
                         {
-                            ("So, do you ‘get me’? Why would you say I was…?" , "You are the Gourmet King!  +3")
+                            ("So, do you ‘get me’? Who would you say I was…?" , "You are the Gourmet King!  +3")
                         }
                     },
                     new RankUp()
@@ -3172,7 +3172,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 10,
                         Questions = new List<(string, string)>
                         {
-                            ("Any response." , "Any response.")
+                            ("Must get his watch from the police station first.\nAny response." , "Any response.")
                         }
                     }
                 }
@@ -3617,7 +3617,7 @@ namespace P3PHelper.ViewModels
                         RankNumber = 4,
                         Questions = new List<(string, string)>
                         {
-                            ("I'm sorry, <protagonist>-kun... I didn't mean to get you involved." , "No worries.  +2"),
+                            ("I'm sorry, ...-kun... I didn't mean to get you involved." , "No worries.  +2"),
                             ("Are you mad?" , "I'm honored.  +3")
                         }
                     },
