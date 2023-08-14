@@ -37,7 +37,7 @@ namespace P3PHelper.Views.SLinks
                     var personaLabel = new Label
                     {
                         Text = "A Persona IS required for faster rank-ups!",
-                        TextColor = Color.Black,
+                        TextColor = Color.FromHex("#0c3bc5"),
                         HorizontalTextAlignment = TextAlignment.Center,
                         FontSize = 20,
                         FontAttributes = FontAttributes.Bold
@@ -49,7 +49,7 @@ namespace P3PHelper.Views.SLinks
                     var personaLabel = new Label // Label for NOT required
                     {
                         Text = "A Persona is NOT required for faster rank-ups, but you can use one if you would like.",
-                        TextColor = Color.Black,
+                        TextColor = Color.FromHex("#0c3bc5"),
                         HorizontalTextAlignment = TextAlignment.Center,
                         FontSize = 20,
                         FontAttributes = FontAttributes.Bold
@@ -69,7 +69,7 @@ namespace P3PHelper.Views.SLinks
                     var personaLabel = new Label // Label for REQUIRED
                     {
                         Text = "A Persona IS required for faster rank-ups!",
-                        TextColor = Color.Black,
+                        TextColor = Color.FromHex("#fd4d7b"),
                         HorizontalTextAlignment = TextAlignment.Center,
                         FontSize = 20,
                         FontAttributes = FontAttributes.Bold
@@ -81,7 +81,7 @@ namespace P3PHelper.Views.SLinks
                     var personaLabel = new Label // Label for NOT required
                     {
                         Text = "A Persona is NOT required for faster rank-ups, but you can use one if you would like.",
-                        TextColor = Color.Black,
+                        TextColor = Color.FromHex("#fd4d7b"),
                         HorizontalTextAlignment = TextAlignment.Center,
                         FontSize = 20,
                         FontAttributes = FontAttributes.Bold
@@ -94,8 +94,9 @@ namespace P3PHelper.Views.SLinks
         
         MALE MC
         Create layouts and labels for each SLink rank
-        Add blue color to implement a thematic link to the Male MC
+        Add blue colors to implement a thematic link to the Male MC
         Checkbox placed next to RankNumber for aesthetic means of marking completion
+        Arrow icon placed next to RankNumber for collapsible content
         
         */
         private void AddMaleRankLabels()
@@ -126,36 +127,34 @@ namespace P3PHelper.Views.SLinks
                     // Create StackLayout for each SLink rank
                     var rankLayout = new StackLayout
                     {
-                        // = Color.Blue,
                         Padding = 5,
-                        //HeightRequest = 200,
                         Spacing = 0
                     };
 
-                    // Create StackLayout for rank label and arrow icon
+                    // Create StackLayout for rank label, checkbox, and arrow icon
                     var rankCheckboxArrowLayout = new StackLayout
                     {
                         Orientation = StackOrientation.Horizontal,
-                        BackgroundColor = Color.Blue,
+                        BackgroundColor = Color.FromHex("#0c3bc5"),
                         HorizontalOptions = LayoutOptions.FillAndExpand
                     };
 
                     // Create arrow icon for toggling the collapsible content
                     var arrowIcon = new Image
                     {
-                        Source = "downArrow.png", // Replace with your arrow icon source
+                        Source = "downArrow.png",
                         HeightRequest = 20,
                         WidthRequest = 20,
                         VerticalOptions = LayoutOptions.Center
                     };
 
-                    bool isArrowRotated = false; // Flag to track arrow rotation
+                    bool isArrowRotated = false; // Initializes arrow rotation to false
 
                     // Create StackLayout for questions and answers
                     var questionsAndAnswersLayout = new StackLayout
                     {
                         IsVisible = false, // Collapsible content starts as not visible
-                        BackgroundColor = Color.RoyalBlue,
+                        BackgroundColor = Color.FromHex("#04fcfd"),
                         Padding = 5
                     };
 
@@ -167,7 +166,7 @@ namespace P3PHelper.Views.SLinks
                             Text = "Question",
                             HorizontalOptions = LayoutOptions.Center,
                             FontAttributes = FontAttributes.Bold,
-                            TextColor = Color.White,
+                            TextColor = Color.FromHex("#0c3bc5"),
                             FontSize = 20
                         };
                         var newResponse = new Label // Title label denoting the response text is below
@@ -175,20 +174,20 @@ namespace P3PHelper.Views.SLinks
                             Text = "Response",
                             HorizontalOptions = LayoutOptions.Center,
                             FontAttributes = FontAttributes.Bold,
-                            TextColor = Color.White,
+                            TextColor = Color.FromHex("#0c3bc5"),
                             FontSize = 20
                         };
                         var questionLabel = new Label // Label for the question text, derived from rankUp.Questions
                         {
                             Text = question,
-                            TextColor = Color.White,
+                            TextColor = Color.FromHex("#0c3bc5"),
                             HorizontalTextAlignment = TextAlignment.Center,
                             FontAttributes = FontAttributes.Italic
                         };
                         var answerLabel = new Label // Label for the response text, derived from rankUp.Questions
                         {
                             Text = answer,
-                            TextColor = Color.White,
+                            TextColor = Color.FromHex("#0c3bc5"),
                             HorizontalTextAlignment = TextAlignment.Center,
                             FontAttributes = FontAttributes.Italic
                         };
@@ -206,15 +205,16 @@ namespace P3PHelper.Views.SLinks
                         Command = new Command(() =>
                         {
                             questionsAndAnswersLayout.IsVisible = !questionsAndAnswersLayout.IsVisible;
-                            // Rotate the arrow icon by 180 degrees
+                            // Rotate the arrow icon up and down
                             arrowIcon.Rotation = isArrowRotated ? 0 : 180;
                             isArrowRotated = !isArrowRotated;
                         })
                     });
 
-                    // Add rank label and arrow icon to rankCheckboxArrowLayout
+                    // Add rank label, checbox,  and arrow icon to rankCheckboxArrowLayout
                     rankCheckboxArrowLayout.Children.Add(rankLabel);
 
+                    // Create StackLayout for checkbox and arrow icon to force them to the right
                     var checkboxArrowLayout = new StackLayout
                     {
                         Orientation = StackOrientation.Horizontal,
@@ -243,6 +243,7 @@ namespace P3PHelper.Views.SLinks
         Create layouts and labels for each SLink rank
         Add blue color to implement a thematic link to the Male MC
         Checkbox placed next to RankNumber for aesthetic means of marking completion
+        Arrow icon placed next to RankNumber for collapsible content
         
         */
         private void AddFemaleRankLabels()
@@ -250,7 +251,7 @@ namespace P3PHelper.Views.SLinks
             var sLink = BindingContext as SLink; // Cast sLink so that it can be worked with below
             if (sLink != null) // Ensure sLink is not null to avoid exceptions
             {
-                foreach (var rankUp in sLink.FemaleRankUps) // FemaleRankUps is a collection that requires iteration
+                foreach (var rankUp in sLink.MaleRankUps) // FemaleRankUps is a collection that requires iteration
                 {
                     var rankLabel = new Label
                     {
@@ -258,7 +259,8 @@ namespace P3PHelper.Views.SLinks
                         FontSize = 25,
                         TextColor = Color.White,
                         HorizontalTextAlignment = TextAlignment.Center,
-                        FontAttributes = FontAttributes.Bold
+                        FontAttributes = FontAttributes.Bold,
+                        Padding = 5
                     };
 
                     var customCheckbox = new CustomCheckBox // Bind checkbox to rankUp
@@ -272,24 +274,36 @@ namespace P3PHelper.Views.SLinks
                     // Create StackLayout for each SLink rank
                     var rankLayout = new StackLayout
                     {
-                        BackgroundColor = Color.HotPink,
                         Padding = 5,
-                        //HeightRequest = 200
+                        Spacing = 0
                     };
 
-                    // Create StackLayout so that RankNumber and checkbox can be horizontally oriented
-                    var rankAndCheckStack = new StackLayout
+                    // Create StackLayout for rank label, checkbox, and arrow icon
+                    var rankCheckboxArrowLayout = new StackLayout
                     {
-                        HorizontalOptions = LayoutOptions.Center,
-                        Orientation = StackOrientation.Horizontal
+                        Orientation = StackOrientation.Horizontal,
+                        BackgroundColor = Color.FromHex("#fd4d7b"),
+                        HorizontalOptions = LayoutOptions.FillAndExpand
                     };
 
-                    // Add RankNumber and checkbox to their StackLayout
-                    rankAndCheckStack.Children.Add(rankLabel);
-                    rankAndCheckStack.Children.Add(customCheckbox);
+                    // Create arrow icon for toggling the collapsible content
+                    var arrowIcon = new Image
+                    {
+                        Source = "downArrow.png",
+                        HeightRequest = 20,
+                        WidthRequest = 20,
+                        VerticalOptions = LayoutOptions.Center
+                    };
 
-                    // Add rankAndCheckStack to SLink rank StackLayout
-                    rankLayout.Children.Add(rankAndCheckStack);
+                    bool isArrowRotated = false; // Initializes arrow rotation to false
+
+                    // Create StackLayout for questions and answers
+                    var questionsAndAnswersLayout = new StackLayout
+                    {
+                        IsVisible = false, // Collapsible content starts as not visible
+                        BackgroundColor = Color.FromHex("#febfd8"),
+                        Padding = 5
+                    };
 
                     // Create labels for each question and response FOR EACH SLink rank level
                     foreach (var (question, answer) in rankUp.Questions)
@@ -299,7 +313,7 @@ namespace P3PHelper.Views.SLinks
                             Text = "Question",
                             HorizontalOptions = LayoutOptions.Center,
                             FontAttributes = FontAttributes.Bold,
-                            TextColor = Color.White,
+                            TextColor = Color.FromHex("#fd4d7b"),
                             FontSize = 20
                         };
                         var newResponse = new Label // Title label denoting the response text is below
@@ -307,37 +321,63 @@ namespace P3PHelper.Views.SLinks
                             Text = "Response",
                             HorizontalOptions = LayoutOptions.Center,
                             FontAttributes = FontAttributes.Bold,
-                            TextColor = Color.White,
+                            TextColor = Color.FromHex("#fd4d7b"),
                             FontSize = 20
                         };
                         var questionLabel = new Label // Label for the question text, derived from rankUp.Questions
                         {
                             Text = question,
-                            TextColor = Color.White,
+                            TextColor = Color.FromHex("#fd4d7b"),
                             HorizontalTextAlignment = TextAlignment.Center,
                             FontAttributes = FontAttributes.Italic
                         };
                         var answerLabel = new Label // Label for the response text, derived from rankUp.Questions
                         {
                             Text = answer,
-                            TextColor = Color.White,
+                            TextColor = Color.FromHex("#fd4d7b"),
                             HorizontalTextAlignment = TextAlignment.Center,
                             FontAttributes = FontAttributes.Italic
                         };
-                        // Add question and response labels to the rankLayout
-                        rankLayout.Children.Add(newQuestion);
-                        rankLayout.Children.Add(questionLabel);
-                        rankLayout.Children.Add(newResponse);
-                        rankLayout.Children.Add(answerLabel);
+
+                        // Add question and answer labels to the questionsAndAnswersLayout
+                        questionsAndAnswersLayout.Children.Add(newQuestion);
+                        questionsAndAnswersLayout.Children.Add(questionLabel);
+                        questionsAndAnswersLayout.Children.Add(newResponse);
+                        questionsAndAnswersLayout.Children.Add(answerLabel);
                     }
-                    // Adds a hotpink line between each SLink rank, may consider removing
-                    rankLayout.Children.Add(new BoxView
+
+                    // Toggle visibility and rotation of the arrowIcon when rankCheckboxArrowLayout is tapped
+                    rankCheckboxArrowLayout.GestureRecognizers.Add(new TapGestureRecognizer
                     {
-                        BackgroundColor = Color.HotPink,
-                        HeightRequest = 1,
-                        VerticalOptions = LayoutOptions.FillAndExpand
+                        Command = new Command(() =>
+                        {
+                            questionsAndAnswersLayout.IsVisible = !questionsAndAnswersLayout.IsVisible;
+                            // Rotate the arrow icon up and down
+                            arrowIcon.Rotation = isArrowRotated ? 0 : 180;
+                            isArrowRotated = !isArrowRotated;
+                        })
                     });
+
+                    // Add rank label, checkbox, and arrow icon to rankCheckboxArrowLayout
+                    rankCheckboxArrowLayout.Children.Add(rankLabel);
+
+                    // Create StackLayout for checkbox and arrow icon to force them to the right
+                    var checkboxArrowLayout = new StackLayout
+                    {
+                        Orientation = StackOrientation.Horizontal,
+                        HorizontalOptions = LayoutOptions.EndAndExpand,
+                        Spacing = 5,
+                        Padding = 3
+                    };
+
+                    checkboxArrowLayout.Children.Add(customCheckbox);
+                    checkboxArrowLayout.Children.Add(arrowIcon);
+
+                    rankCheckboxArrowLayout.Children.Add(checkboxArrowLayout);
+
                     // Add the StackLayout to the FemaleRankUpsContainer
+                    rankLayout.Children.Add(rankCheckboxArrowLayout);
+                    rankLayout.Children.Add(questionsAndAnswersLayout);
                     FemaleRankUpsContainer.Children.Add(rankLayout);
                 }
             }

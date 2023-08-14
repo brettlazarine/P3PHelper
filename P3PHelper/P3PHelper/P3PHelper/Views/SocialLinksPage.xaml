@@ -2,6 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="P3PHelper.Views.SocialLinksPage">
+    <ContentPage.Resources>
+        <Style x:Key="ArcanaStyle" TargetType="Label">
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="TextColor" Value="#0c3bc5" />
+        </Style>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <ScrollView Padding="15">
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
@@ -11,28 +18,28 @@
                 HorizontalTextAlignment="Center"
                 FontSize="50"
                 FontAttributes="Bold"
-                TextColor="Blue"/>
+                TextColor="#0c3bc5"/>
             <!--First Row-->
             <StackLayout Orientation="Horizontal">
                     <StackLayout Orientation="Vertical">
                         <ImageButton Clicked="Aeon_Button_Clicked" Source="arcanaAeon.png" 
                             Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
-                        <Label Text="Aeon" HorizontalOptions="Center" TextColor="Black" FontAttributes="Bold" />
+                        <Label Text="Aeon" Style="{StaticResource ArcanaStyle}" />
                     </StackLayout>
                     <StackLayout Orientation="Vertical">
                         <ImageButton Clicked="Chariot_Button_Clicked" Source="arcanaChariot.png"
                             Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
-                        <Label Text="Chariot" HorizontalOptions="Center" TextColor="Black" FontAttributes="Bold" />
+                        <Label Text="Chariot" Style="{StaticResource ArcanaStyle}" />
                     </StackLayout>
                     <StackLayout Orientation="Vertical" >
                         <ImageButton Clicked="Death_Button_Clicked"  Source="arcanaDeath.png"
                             Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
-                        <Label Text="Death" HorizontalOptions="Center" TextColor="Black" FontAttributes="Bold" />
+                        <Label Text="Death" Style="{StaticResource ArcanaStyle}" />
                     </StackLayout>
                     <StackLayout Orientation="Vertical">
                         <ImageButton Clicked="Devil_Button_Clicked"  Source="arcanaDevil.png"
                             Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
-                        <Label Text="Devil" HorizontalOptions="Center" TextColor="Black" FontAttributes="Bold" />
+                        <Label Text="Devil" Style="{StaticResource ArcanaStyle}" />
                     </StackLayout>
                 </StackLayout>
             <!--Second Row-->
@@ -40,22 +47,22 @@
                     <StackLayout Orientation="Vertical">
                         <ImageButton Clicked="Emperor_Button_Clicked"  Source="arcanaEmperor.png"
                             Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
-                        <Label Text="Emperor" HorizontalOptions="Center" TextColor="Black" FontAttributes="Bold" />
+                        <Label Text="Emperor" Style="{StaticResource ArcanaStyle}" />
                     </StackLayout>
                     <StackLayout Orientation="Vertical">
                         <ImageButton Clicked="Empress_Button_Clicked"  Source="arcanaEmpress.png"
                             Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
-                        <Label Text="Empress" HorizontalOptions="Center" TextColor="Black" FontAttributes="Bold" />
+                        <Label Text="Empress" Style="{StaticResource ArcanaStyle}" />
                     </StackLayout>
                     <StackLayout Orientation="Vertical">
                         <ImageButton Clicked="Fool_Button_Clicked"  Source="arcanaFool.png"
                             Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
-                        <Label Text="Fool" HorizontalOptions="Center" TextColor="Black" FontAttributes="Bold" />
+                        <Label Text="Fool" Style="{StaticResource ArcanaStyle}" />
                     </StackLayout>
                     <StackLayout Orientation="Vertical">
                         <ImageButton Clicked="Fortune_Button_Clicked"  Source="arcanaFortune.png"
                             Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
-                        <Label Text="Fortune" HorizontalOptions="Center" TextColor="Black" FontAttributes="Bold" />
+                        <Label Text="Fortune" Style="{StaticResource ArcanaStyle}" />
                     </StackLayout>
                 </StackLayout>
             <!--Third Row-->
@@ -63,22 +70,22 @@
                     <StackLayout Orientation="Vertical">
                         <ImageButton Clicked="HangedMan_Button_Clicked"  Source="arcanaHangedMan.png"
                             Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
-                        <Label Text="Hanged Man" HorizontalOptions="Center" TextColor="Black" FontAttributes="Bold" />
+                        <Label Text="Hanged Man" Style="{StaticResource ArcanaStyle}" />
                     </StackLayout>
                     <StackLayout Orientation="Vertical">
                         <ImageButton Clicked="Hermit_Button_Clicked"  Source="arcanaHermit.png"
                             Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
-                        <Label Text="Hermit" HorizontalOptions="Center" TextColor="Black" FontAttributes="Bold" />
+                        <Label Text="Hermit" Style="{StaticResource ArcanaStyle}" />
                     </StackLayout>
                     <StackLayout Orientation="Vertical">
                         <ImageButton Clicked="Hierophant_Button_Clicked"  Source="arcanaHierophant.png"
                             Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
-                        <Label Text="Hierophant" HorizontalOptions="Center" TextColor="Black" FontAttributes="Bold" />
+                        <Label Text="Hierophant" Style="{StaticResource ArcanaStyle}" />
                     </StackLayout>
                     <StackLayout Orientation="Vertical">
                         <ImageButton Clicked="Judgement_Button_Clicked"  Source="arcanaJudgement.png"
                 Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
-                        <Label Text="Judgement" HorizontalOptions="Center" TextColor="Black" FontAttributes="Bold" />
+                        <Label Text="Judgement" Style="{StaticResource ArcanaStyle}" />
                     </StackLayout>
                 </StackLayout>
             <!--Fourth Row-->
@@ -86,22 +93,22 @@
                     <StackLayout Orientation="Vertical">
                         <ImageButton Clicked="Justice_Button_Clicked"  Source="arcanaJustice.png"
                             Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
-                        <Label Text="Justice" HorizontalOptions="Center" TextColor="Black" FontAttributes="Bold" />
+                        <Label Text="Justice" Style="{StaticResource ArcanaStyle}" />
                     </StackLayout>
                     <StackLayout Orientation="Vertical">
                         <ImageButton Clicked="Lovers_Button_Clicked"  Source="arcanaLovers.png"
                             Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
-                        <Label Text="Lovers" HorizontalOptions="Center" TextColor="Black" FontAttributes="Bold" />
+                        <Label Text="Lovers" Style="{StaticResource ArcanaStyle}" />
                     </StackLayout>
                     <StackLayout Orientation="Vertical">
                         <ImageButton Clicked="Magician_Button_Clicked"  Source="arcanaMagician.png"
                             Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
-                        <Label Text="Magician" HorizontalOptions="Center" TextColor="Black" FontAttributes="Bold" />
+                        <Label Text="Magician" Style="{StaticResource ArcanaStyle}" />
                     </StackLayout>
                     <StackLayout Orientation="Vertical">
                         <ImageButton Clicked="Moon_Button_Clicked"  Source="arcanaMoon.png"
                             Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
-                        <Label Text="Moon" HorizontalOptions="Center" TextColor="Black" FontAttributes="Bold" />
+                        <Label Text="Moon" Style="{StaticResource ArcanaStyle}" />
                     </StackLayout>
                 </StackLayout>
             <!--Fifth Row-->
@@ -109,22 +116,22 @@
                     <StackLayout Orientation="Vertical">
                         <ImageButton Clicked="Priestess_Button_Clicked"  Source="arcanaPriestess.png"
                             Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
-                        <Label Text="Priestess" HorizontalOptions="Center" TextColor="Black" FontAttributes="Bold" />
+                        <Label Text="Priestess" Style="{StaticResource ArcanaStyle}" />
                     </StackLayout>
                     <StackLayout Orientation="Vertical">
                         <ImageButton Clicked="Star_Button_Clicked"  Source="arcanaStar.png"
                             Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
-                        <Label Text="Star" HorizontalOptions="Center" TextColor="Black" FontAttributes="Bold" />
+                        <Label Text="Star" Style="{StaticResource ArcanaStyle}" />
                     </StackLayout>
                     <StackLayout Orientation="Vertical">
                         <ImageButton Clicked="Strength_Button_Clicked"  Source="arcanaStrength.png"
                             Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
-                        <Label Text="Strength" HorizontalOptions="Center" TextColor="Black" FontAttributes="Bold" />
+                        <Label Text="Strength" Style="{StaticResource ArcanaStyle}" />
                     </StackLayout>
                     <StackLayout Orientation="Vertical">
                         <ImageButton Clicked="Sun_Button_Clicked"  Source="arcanaSun.png"
                             Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
-                        <Label Text="Sun" HorizontalOptions="Center" TextColor="Black" FontAttributes="Bold" />
+                        <Label Text="Sun" Style="{StaticResource ArcanaStyle}" />
                     </StackLayout>
                 </StackLayout>
             <!--Sixth Row-->
@@ -132,12 +139,12 @@
                     <StackLayout Orientation="Vertical">
                         <ImageButton Clicked="Temperance_Button_Clicked"  Source="arcanaTemperance.png"
                             Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
-                        <Label Text="Temperance" HorizontalOptions="Center" TextColor="Black" FontAttributes="Bold" />
+                        <Label Text="Temperance" Style="{StaticResource ArcanaStyle}" />
                     </StackLayout>
                     <StackLayout Orientation="Vertical">
                         <ImageButton Clicked="Tower_Button_Clicked"  Source="arcanaTower.png"
                             Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
-                        <Label Text="Tower" HorizontalOptions="Center" TextColor="Black" FontAttributes="Bold" />
+                        <Label Text="Tower" Style="{StaticResource ArcanaStyle}" />
                     </StackLayout>
 
                     

@@ -9,19 +9,25 @@
             <Setter Property="HorizontalTextAlignment" Value="Center" />
             <Setter Property="FontSize" Value="25" />
             <Setter Property="FontAttributes" Value="Bold" />
-            <Setter Property="TextColor" Value="Blue" />
+            <Setter Property="TextColor" Value="#0c3bc5" />
         </Style>
         <!--Style for female Property titles in SLinks Arcana views-->
         <Style x:Key="FemalePropertyTitles" TargetType="Label">
             <Setter Property="HorizontalTextAlignment" Value="Center" />
             <Setter Property="FontSize" Value="25" />
             <Setter Property="FontAttributes" Value="Bold" />
-            <Setter Property="TextColor" Value="HotPink" />
+            <Setter Property="TextColor" Value="#fd4d7b" />
         </Style>
-        <!--Style for Property values in SLinks Arcana views-->
-        <Style x:Key="PropertyValues" TargetType="Label">
+        <!--Style for Male Property values in SLinks Arcana views-->
+        <Style x:Key="MalePropertyValues" TargetType="Label">
             <Setter Property="HorizontalTextAlignment" Value="Center" />
-            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="TextColor" Value="#0601fa" />
+            <Setter Property="FontSize" Value="20" />
+        </Style>
+        <!--Style for Female Property values in SLinks Arcana views-->
+        <Style x:Key="FemalePropertyValues" TargetType="Label">
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+            <Setter Property="TextColor" Value="#f696b2" />
             <Setter Property="FontSize" Value="20" />
         </Style>
     </ContentPage.Resources>
@@ -31,7 +37,7 @@
                 <!-- StackLayout with "Arcana" label and image -->
                 <StackLayout>
                     <Label Text="{Binding Arcana}" HorizontalOptions="Center" FontSize="50" FontAttributes="Bold"
-                           TextColor="Blue" />
+                           TextColor="#0c3bc5" />
                     <Image Source="arcanaAeon.png" />
                 </StackLayout>
                 <!-- Spacer between header and scroll view -->
@@ -63,13 +69,13 @@
                             <!-- Male Properties -->
                             <StackLayout Grid.Column="0">
                                 <Label Text="Name" Style="{StaticResource MalePropertyTitles}" />
-                                <Label Text="{Binding MaleName}" Style="{StaticResource PropertyValues}" />
+                                <Label Text="{Binding MaleName}" Style="{StaticResource MalePropertyValues}" />
                                 <Label Text="Unlock Date"  Style="{StaticResource MalePropertyTitles}" />
-                                <Label Text="{Binding MaleUnlockDate}" Style="{StaticResource PropertyValues}" />
+                                <Label Text="{Binding MaleUnlockDate}" Style="{StaticResource MalePropertyValues}" />
                                 <Label Text="How to Unlock"  Style="{StaticResource MalePropertyTitles}" />
-                                <Label Text="{Binding MaleHowToUnlock}" Style="{StaticResource PropertyValues}" />
+                                <Label Text="{Binding MaleHowToUnlock}" Style="{StaticResource MalePropertyValues}" />
                                 <Label Text="Availability"  Style="{StaticResource MalePropertyTitles}" />
-                                <Label Text="{Binding MaleAvailability}" Style="{StaticResource PropertyValues}" />
+                                <Label Text="{Binding MaleAvailability}" Style="{StaticResource MalePropertyValues}" />
                                 <StackLayout x:Name="MaleNeedPersonaContainer">
                                     <!--Requires Persona content-->
                                 </StackLayout>
@@ -80,18 +86,18 @@
                             </StackLayout>
 
                             <!-- Vertical line -->
-                            <BoxView Grid.Column="1" BackgroundColor="Blue" WidthRequest="1" HorizontalOptions="Center" />
+                            <BoxView Grid.Column="1" BackgroundColor="#0c3bc5" WidthRequest="1" HorizontalOptions="Center" />
 
                             <!-- Female Properties -->
                             <StackLayout Grid.Column="2">
                                 <Label Text="Name" Style="{StaticResource FemalePropertyTitles}" />
-                                <Label Text="{Binding FemaleName}" Style="{StaticResource PropertyValues}" />
+                                <Label Text="{Binding FemaleName}" Style="{StaticResource FemalePropertyValues}" />
                                 <Label Text="Unlock Date"  Style="{StaticResource FemalePropertyTitles}" />
-                                <Label Text="{Binding FemaleUnlockDate}" Style="{StaticResource PropertyValues}" />
+                                <Label Text="{Binding FemaleUnlockDate}" Style="{StaticResource FemalePropertyValues}" />
                                 <Label Text="How to Unlock"  Style="{StaticResource FemalePropertyTitles}" />
-                                <Label Text="{Binding FemaleHowToUnlock}" Style="{StaticResource PropertyValues}" />
+                                <Label Text="{Binding FemaleHowToUnlock}" Style="{StaticResource FemalePropertyValues}" />
                                 <Label Text="Availability"  Style="{StaticResource FemalePropertyTitles}" />
-                                <Label Text="{Binding FemaleAvailability}" Style="{StaticResource PropertyValues}" />
+                                <Label Text="{Binding FemaleAvailability}" Style="{StaticResource FemalePropertyValues}" />
                                 <StackLayout x:Name="FemaleNeedPersonaContainer">
                                     <!--Requires Persona content-->
                                 </StackLayout>
