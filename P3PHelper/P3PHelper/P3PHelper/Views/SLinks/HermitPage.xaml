@@ -8,19 +8,25 @@
             <Setter Property="HorizontalTextAlignment" Value="Center" />
             <Setter Property="FontSize" Value="25" />
             <Setter Property="FontAttributes" Value="Bold" />
-            <Setter Property="TextColor" Value="Blue" />
+            <Setter Property="TextColor" Value="#0c3bc5" />
         </Style>
         <!--Style for female Property titles in SLinks Arcana views-->
         <Style x:Key="FemalePropertyTitles" TargetType="Label">
             <Setter Property="HorizontalTextAlignment" Value="Center" />
             <Setter Property="FontSize" Value="25" />
             <Setter Property="FontAttributes" Value="Bold" />
-            <Setter Property="TextColor" Value="HotPink" />
+            <Setter Property="TextColor" Value="#fd4d7b" />
         </Style>
-        <!--Style for Property values in SLinks Arcana views-->
-        <Style x:Key="PropertyValues" TargetType="Label">
+        <!--Style for Male Property values in SLinks Arcana views-->
+        <Style x:Key="MalePropertyValues" TargetType="Label">
             <Setter Property="HorizontalTextAlignment" Value="Center" />
-            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="TextColor" Value="#0601fa" />
+            <Setter Property="FontSize" Value="20" />
+        </Style>
+        <!--Style for Female Property values in SLinks Arcana views-->
+        <Style x:Key="FemalePropertyValues" TargetType="Label">
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+            <Setter Property="TextColor" Value="#f696b2" />
             <Setter Property="FontSize" Value="20" />
         </Style>
     </ContentPage.Resources>
@@ -30,8 +36,8 @@
                 <!-- StackLayout with "Arcana" label and image -->
                 <StackLayout>
                     <Label Text="{Binding Arcana}" HorizontalOptions="Center" FontSize="50" FontAttributes="Bold"
-                           TextColor="Blue" />
-                    <Image Source="arcanaHermit.png" />
+                           TextColor="#0c3bc5" />
+                    <Image Source="arcanaAeon.png" />
                 </StackLayout>
                 <!-- Spacer between header and scroll view -->
                 <BoxView HeightRequest="10" />
@@ -62,13 +68,41 @@
                             <!-- Male Properties -->
                             <StackLayout Grid.Column="0">
                                 <Label Text="Name" Style="{StaticResource MalePropertyTitles}" />
-                                <Label Text="{Binding MaleName}" Style="{StaticResource PropertyValues}" />
-                                <Label Text="Unlock Date"  Style="{StaticResource MalePropertyTitles}" />
-                                <Label Text="{Binding MaleUnlockDate}" Style="{StaticResource PropertyValues}" />
-                                <Label Text="How to Unlock"  Style="{StaticResource MalePropertyTitles}" />
-                                <Label Text="{Binding MaleHowToUnlock}" Style="{StaticResource PropertyValues}" />
-                                <Label Text="Availability"  Style="{StaticResource MalePropertyTitles}" />
-                                <Label Text="{Binding MaleAvailability}" Style="{StaticResource PropertyValues}" />
+                                <Label Text="{Binding MaleName}" Style="{StaticResource MalePropertyValues}" />
+
+                                <StackLayout Orientation="Vertical" >
+                                    <Label Text="Unlock Date"  Style="{StaticResource MalePropertyTitles}" />
+                                    <Image x:Name="MaleUnlockDateArrowImage" Source="blueDownArrow.png" WidthRequest="20" HeightRequest="20">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="MaleUnlockDateArrowTapped" />
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                </StackLayout>
+                                <Label x:Name="MaleUnlockDateLabel" Text="{Binding MaleUnlockDate}" 
+                                       Style="{StaticResource MalePropertyValues}" IsVisible="False" />
+
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="How to Unlock" Style="{StaticResource MalePropertyTitles}" />
+                                    <Image x:Name="MaleHowToUnlockArrowImage" Source="blueDownArrow.png" WidthRequest="20" HeightRequest="20">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="MaleHowToUnlockArrowTapped" />
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                </StackLayout>
+                                <Label x:Name="MaleHowToUnlockLabel" Text="{Binding MaleHowToUnlock}" 
+                                       Style="{StaticResource MalePropertyValues}" IsVisible="False" />
+
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="Availability"  Style="{StaticResource MalePropertyTitles}" />
+                                    <Image x:Name="MaleAvailabilityArrowImage" Source="blueDownArrow.png" WidthRequest="20" HeightRequest="20">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="MaleAvailabilityArrowTapped" />
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                </StackLayout>
+                                <Label x:Name="MaleAvailabilityLabel" Text="{Binding MaleAvailability}" 
+                                       Style="{StaticResource MalePropertyValues}" IsVisible="False" />
+
                                 <StackLayout x:Name="MaleNeedPersonaContainer">
                                     <!--Requires Persona content-->
                                 </StackLayout>
@@ -79,18 +113,46 @@
                             </StackLayout>
 
                             <!-- Vertical line -->
-                            <BoxView Grid.Column="1" BackgroundColor="Blue" WidthRequest="1" HorizontalOptions="Center" />
+                            <BoxView Grid.Column="1" BackgroundColor="#0c3bc5" WidthRequest="1" HorizontalOptions="Center" />
 
                             <!-- Female Properties -->
                             <StackLayout Grid.Column="2">
                                 <Label Text="Name" Style="{StaticResource FemalePropertyTitles}" />
-                                <Label Text="{Binding FemaleName}" Style="{StaticResource PropertyValues}" />
-                                <Label Text="Unlock Date"  Style="{StaticResource FemalePropertyTitles}" />
-                                <Label Text="{Binding FemaleUnlockDate}" Style="{StaticResource PropertyValues}" />
-                                <Label Text="How to Unlock"  Style="{StaticResource FemalePropertyTitles}" />
-                                <Label Text="{Binding FemaleHowToUnlock}" Style="{StaticResource PropertyValues}" />
-                                <Label Text="Availability"  Style="{StaticResource FemalePropertyTitles}" />
-                                <Label Text="{Binding FemaleAvailability}" Style="{StaticResource PropertyValues}" />
+                                <Label Text="{Binding FemaleName}" Style="{StaticResource FemalePropertyValues}" />
+
+                                <StackLayout Orientation="Vertical" >
+                                    <Label Text="Unlock Date"  Style="{StaticResource FemalePropertyTitles}" />
+                                    <Image x:Name="FemaleUnlockDateArrowImage" Source="pinkDownArrow.png" WidthRequest="20" HeightRequest="20">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="FemaleUnlockDateArrowTapped" />
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                </StackLayout>
+                                <Label x:Name="FemaleUnlockDateLabel" Text="{Binding FemaleUnlockDate}" 
+                                       Style="{StaticResource FemalePropertyValues}" IsVisible="False" />
+
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="How to Unlock" Style="{StaticResource FemalePropertyTitles}" />
+                                    <Image x:Name="FemaleHowToUnlockArrowImage" Source="pinkDownArrow.png" WidthRequest="20" HeightRequest="20">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="FemaleHowToUnlockArrowTapped" />
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                </StackLayout>
+                                <Label x:Name="FemaleHowToUnlockLabel" Text="{Binding FemaleHowToUnlock}" 
+                                       Style="{StaticResource FemalePropertyValues}" IsVisible="False" />
+
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="Availability"  Style="{StaticResource FemalePropertyTitles}" />
+                                    <Image x:Name="FemaleAvailabilityArrowImage" Source="pinkDownArrow.png" WidthRequest="20" HeightRequest="20">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="FemaleAvailabilityArrowTapped" />
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                </StackLayout>
+                                <Label x:Name="FemaleAvailabilityLabel" Text="{Binding FemaleAvailability}" 
+                                       Style="{StaticResource FemalePropertyValues}" IsVisible="False" />
+
                                 <StackLayout x:Name="FemaleNeedPersonaContainer">
                                     <!--Requires Persona content-->
                                 </StackLayout>

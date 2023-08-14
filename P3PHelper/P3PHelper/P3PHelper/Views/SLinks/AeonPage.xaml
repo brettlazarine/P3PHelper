@@ -81,7 +81,7 @@
                                 </StackLayout>
                                 <Label x:Name="MaleUnlockDateLabel" Text="{Binding MaleUnlockDate}" 
                                        Style="{StaticResource MalePropertyValues}" IsVisible="False" />
-                                
+
                                 <StackLayout Orientation="Vertical">
                                     <Label Text="How to Unlock" Style="{StaticResource MalePropertyTitles}" />
                                     <Image x:Name="MaleHowToUnlockArrowImage" Source="blueDownArrow.png" WidthRequest="20" HeightRequest="20">
@@ -103,7 +103,7 @@
                                 </StackLayout>
                                 <Label x:Name="MaleAvailabilityLabel" Text="{Binding MaleAvailability}" 
                                        Style="{StaticResource MalePropertyValues}" IsVisible="False" />
-                                
+
                                 <StackLayout x:Name="MaleNeedPersonaContainer">
                                     <!--Requires Persona content-->
                                 </StackLayout>

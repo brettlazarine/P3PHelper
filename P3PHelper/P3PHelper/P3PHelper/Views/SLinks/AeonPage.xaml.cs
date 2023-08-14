@@ -16,7 +16,6 @@ namespace P3PHelper.Views.SLinks
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AeonPage : ContentPage
     {
-        public ICommand ExpandCommand { get; }
         public AeonPage()
         {
             InitializeComponent();
@@ -251,7 +250,7 @@ namespace P3PHelper.Views.SLinks
             var sLink = BindingContext as SLink; // Cast sLink so that it can be worked with below
             if (sLink != null) // Ensure sLink is not null to avoid exceptions
             {
-                foreach (var rankUp in sLink.MaleRankUps) // FemaleRankUps is a collection that requires iteration
+                foreach (var rankUp in sLink.FemaleRankUps) // FemaleRankUps is a collection that requires iteration
                 {
                     var rankLabel = new Label
                     {
@@ -494,6 +493,7 @@ namespace P3PHelper.Views.SLinks
         }
 
         // Handles arrow icon being tapped
+        #region ArrowTaps
         private void MaleUnlockDateArrowTapped(object sender, EventArgs e)
         {
             MaleUnlockDateLabel.IsVisible = !MaleUnlockDateLabel.IsVisible;
@@ -537,5 +537,6 @@ namespace P3PHelper.Views.SLinks
             var arrowImage = (Image)sender;
             arrowImage.Rotation = FemaleAvailabilityLabel.IsVisible ? 180 : 0;
         }
+        #endregion
     }
 }
