@@ -34,8 +34,8 @@ namespace P3PHelper.ViewModels
                 // Male
                 MaleName = "Aigis",
                 MaleUnlockDate = "1/8",
-                MaleHowToUnlock = "Talk to her in the classroom on 1/8.",
-                MaleAvailability = "Can be found in the classroom every day except Sunday.",
+                MaleHowToUnlock = "Talk to her in the Classroom on 1/8.",
+                MaleAvailability = "Can be found in the Classroom every day except Sunday.",
                 MaleRankUps = new ObservableCollection<RankUp>
                 {
                     new RankUp()
@@ -122,8 +122,8 @@ namespace P3PHelper.ViewModels
                 // Female
                 FemaleName = "Aigis",
                 FemaleUnlockDate = "1/8",
-                FemaleHowToUnlock = "Talk to her in the classroom on 1/8.",
-                FemaleAvailability = "Can be found in the classroom every day except Sunday.",
+                FemaleHowToUnlock = "Talk to her in the Classroom on 1/8.",
+                FemaleAvailability = "Can be found in the Classroom every day except Sunday.",
                 FemaleRankUps = new ObservableCollection<RankUp>
                 {
 
@@ -220,7 +220,7 @@ namespace P3PHelper.ViewModels
                 MaleName = "Kazushi Miyamoto",
                 MaleUnlockDate = "4/24",
                 MaleHowToUnlock = "Join a sports club.",
-                MaleAvailability = "Can be found in the classroom on Monday, Wednesday, Thursday, and Friday.",
+                MaleAvailability = "Can be found in the Classroom on Monday, Tuesday, Thursday, and Friday.",
                 MaleRankUps = new ObservableCollection<RankUp>
                 {
                     new RankUp()
@@ -316,7 +316,7 @@ namespace P3PHelper.ViewModels
                 FemaleName = "Rio Iwasaki",
                 FemaleUnlockDate = "4/24",
                 FemaleHowToUnlock = "Join a sports club.",
-                FemaleAvailability = "Can be found outside the classroom on Monday, Wednesday, and Friday.",
+                FemaleAvailability = "Can be found outside the Classroom on Monday, Wednesday, and Friday.",
                 FemaleRankUps = new ObservableCollection<RankUp>
                 {
 
@@ -806,7 +806,8 @@ namespace P3PHelper.ViewModels
                 // Male
                 MaleName = "Hidetoshi Odagiri",
                 MaleUnlockDate = "4/27",
-                MaleHowToUnlock = "Starting on 4/27, talk to Ms. Toriumi in the Faculty Office about joining the Student Council.",
+                MaleHowToUnlock = "Starting on 4/27, talk to Ms. Toriumi in the Faculty Office about joining the Student Council." +
+                    "Then go to the Student Council Room on the 2nd Floor.",
                 MaleAvailability = "Can be found in the Student Council Room on Monday, Wednesday, and Friday.",
                 MaleRankUps = new ObservableCollection<RankUp>
                 {
@@ -896,7 +897,8 @@ namespace P3PHelper.ViewModels
                 // Female
                 FemaleName = "Hidetoshi Odagiri",
                 FemaleUnlockDate = "4/27",
-                FemaleHowToUnlock = "Starting on 4/27, talk to Ms. Toriumi in the Faculty Office about joining the Student Council.",
+                FemaleHowToUnlock = "Starting on 4/27, talk to Ms. Toriumi in the Faculty Office about joining the Student Council." +
+                    "Then go to the Student Council Room on the 2nd Floor.",
                 FemaleAvailability = "Can be found in the Student Council Room on Monday, Wednesday, and Friday.",
                 FemaleRankUps = new ObservableCollection<RankUp>
                 {
@@ -1589,7 +1591,7 @@ namespace P3PHelper.ViewModels
                 MaleHowToUnlock = "Buy a Mad Bull from the Dormitory's 2nd floor Vending Machine, and a Weird Takoyaki from " +
                 "Octopia at the Iwatodai Strip Mall. Go to Naganaki Shrine and give them to the little girl at the playground. Speak to " +
                 "her again another day after giving her the Mad Bull and Weird Takoyaki to get the first rank.",
-                MaleAvailability = "Can be found at Naganaki Shrine by the playground every day except Sunday. She must also " +
+                MaleAvailability = "Can be found at Naganaki Shrine by the playground Monday, Wednesday, and Saturday. She must also " +
                 "be rescued from Tartarus between 10/21 and 11/3.",
                 MaleRankUps = new ObservableCollection<RankUp>
                 {
@@ -1680,11 +1682,11 @@ namespace P3PHelper.ViewModels
                 },
                 // Female
                 FemaleName = "Maiko Oohashi",
-                FemaleUnlockDate = "5/6",
+                FemaleUnlockDate = "5/11",
                 FemaleHowToUnlock = "Buy a Mad Bull from the Dormitory's 2nd floor Vending Machine, and a Weird Takoyaki from " +
                 "Octopia at the Iwatodai Strip Mall. Go to Naganaki Shrine and give them to the little girl at the playground. Speak to " +
                 "her again another day after giving her the Mad Bull and Weird Takoyaki to get the first rank.",
-                FemaleAvailability = "Can be found at Naganaki Shrine by the playground every day except Sunday. She must also " +
+                FemaleAvailability = "Can be found at Naganaki Shrine by the playground Monday, Wednesday, and Saturday. She must also " +
                 "be rescued from Tartarus between 10/21 and 11/3.",
                 FemaleRankUps = new ObservableCollection<RankUp>
                 {
@@ -2381,7 +2383,7 @@ namespace P3PHelper.ViewModels
                 Arcana = "Justice",
                 // Male
                 MaleName = "Chihiro Fushimi",
-                MaleUnlockDate = "5/26",
+                MaleUnlockDate = "5/7",
                 MaleHowToUnlock = "Unlock Emperor rank 1, then talk to her 4 times.",
                 MaleAvailability = "Can be found in the 2nd Floor Hallway on Tuesday, Thursday, and Saturday.",
                 MaleRankUps = new ObservableCollection<RankUp>
@@ -2686,7 +2688,7 @@ namespace P3PHelper.ViewModels
                 // Female
                 FemaleName = "Yukari Takeba",
                 FemaleUnlockDate = "4/28",
-                FemaleHowToUnlock = "No requirements, just talk to her in the classroom.",
+                FemaleHowToUnlock = "No requirements, just talk to her in the Classroom.",
                 FemaleAvailability = "Can be found in the Classroom on Monday, Wednesday, Thursday, and Saturday.",
                 FemaleRankUps = new ObservableCollection<RankUp>
                 {
@@ -2786,7 +2788,7 @@ namespace P3PHelper.ViewModels
                 MaleName = "Kenji Tomochika",
                 MaleUnlockDate = "4/23",
                 MaleHowToUnlock = "Story related.",
-                MaleAvailability = "Can be found in the Classroom Tuesday, Thursday, and Friday.",
+                MaleAvailability = "Can be found in the Classroom on Tuesday, Thursday, and Friday.",
                 MaleRankUps = new ObservableCollection<RankUp>
                 {
                     new RankUp()
@@ -2883,7 +2885,7 @@ namespace P3PHelper.ViewModels
                 FemaleName = "Junpei Iori",
                 FemaleUnlockDate = "4/23",
                 FemaleHowToUnlock = "Story related.",
-                FemaleAvailability = "Can be found in the classroom on Tuesday, Thursday, and Friday.",
+                FemaleAvailability = "Can be found in the Classroom on Tuesday, Wednesday, Thursday.",
                 FemaleRankUps = new ObservableCollection<RankUp>
                 {
 
@@ -3580,7 +3582,7 @@ namespace P3PHelper.ViewModels
                 MaleName = "Yuko Nishiwaki",
                 MaleUnlockDate = "4/28",
                 MaleHowToUnlock = "Offer to walk Yuko home on ranks 2 and 3 of the Chariot Social Link.",
-                MaleAvailability = "Can be found outside the classroom on Wednesday and Saturday.",
+                MaleAvailability = "Can be found outside the Classroom on Wednesday and Saturday.",
                 MaleRankUps = new ObservableCollection<RankUp>
                 {
                     new RankUp()
@@ -4291,7 +4293,7 @@ namespace P3PHelper.ViewModels
                 },
                 // Female
                 FemaleName = "Mutatsu",
-                FemaleUnlockDate = "After Yuko mentions the monk in Club Escapade.",
+                FemaleUnlockDate = "After Rio mentions the monk in Club Escapade.",
                 FemaleHowToUnlock = "Chariot Social Link must be rank 3, and Courage must be level 4. Talk to the Monk " +
                 "in Club Escapade, then the bartender. The bartender will want to know the drink orders of the patrons. " +
                 "Give him the orders: Bloody Mary, Margarita, Screwdriver, and Oolong Tea. Go back to Mutatsu after.",
