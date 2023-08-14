@@ -70,12 +70,40 @@
                             <StackLayout Grid.Column="0">
                                 <Label Text="Name" Style="{StaticResource MalePropertyTitles}" />
                                 <Label Text="{Binding MaleName}" Style="{StaticResource MalePropertyValues}" />
-                                <Label Text="Unlock Date"  Style="{StaticResource MalePropertyTitles}" />
-                                <Label Text="{Binding MaleUnlockDate}" Style="{StaticResource MalePropertyValues}" />
-                                <Label Text="How to Unlock"  Style="{StaticResource MalePropertyTitles}" />
-                                <Label Text="{Binding MaleHowToUnlock}" Style="{StaticResource MalePropertyValues}" />
-                                <Label Text="Availability"  Style="{StaticResource MalePropertyTitles}" />
-                                <Label Text="{Binding MaleAvailability}" Style="{StaticResource MalePropertyValues}" />
+
+                                <StackLayout Orientation="Vertical" >
+                                    <Label Text="Unlock Date"  Style="{StaticResource MalePropertyTitles}" />
+                                    <Image x:Name="MaleUnlockDateArrowImage" Source="blueDownArrow.png" WidthRequest="20" HeightRequest="20">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="MaleUnlockDateArrowTapped" />
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                </StackLayout>
+                                <Label x:Name="MaleUnlockDateLabel" Text="{Binding MaleUnlockDate}" 
+                                       Style="{StaticResource MalePropertyValues}" IsVisible="False" />
+                                
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="How to Unlock" Style="{StaticResource MalePropertyTitles}" />
+                                    <Image x:Name="MaleHowToUnlockArrowImage" Source="blueDownArrow.png" WidthRequest="20" HeightRequest="20">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="MaleHowToUnlockArrowTapped" />
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                </StackLayout>
+                                <Label x:Name="MaleHowToUnlockLabel" Text="{Binding MaleHowToUnlock}" 
+                                       Style="{StaticResource MalePropertyValues}" IsVisible="False" />
+
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="Availability"  Style="{StaticResource MalePropertyTitles}" />
+                                    <Image x:Name="MaleAvailabilityArrowImage" Source="blueDownArrow.png" WidthRequest="20" HeightRequest="20">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="MaleAvailabilityArrowTapped" />
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                </StackLayout>
+                                <Label x:Name="MaleAvailabilityLabel" Text="{Binding MaleAvailability}" 
+                                       Style="{StaticResource MalePropertyValues}" IsVisible="False" />
+                                
                                 <StackLayout x:Name="MaleNeedPersonaContainer">
                                     <!--Requires Persona content-->
                                 </StackLayout>
@@ -92,12 +120,40 @@
                             <StackLayout Grid.Column="2">
                                 <Label Text="Name" Style="{StaticResource FemalePropertyTitles}" />
                                 <Label Text="{Binding FemaleName}" Style="{StaticResource FemalePropertyValues}" />
-                                <Label Text="Unlock Date"  Style="{StaticResource FemalePropertyTitles}" />
-                                <Label Text="{Binding FemaleUnlockDate}" Style="{StaticResource FemalePropertyValues}" />
-                                <Label Text="How to Unlock"  Style="{StaticResource FemalePropertyTitles}" />
-                                <Label Text="{Binding FemaleHowToUnlock}" Style="{StaticResource FemalePropertyValues}" />
-                                <Label Text="Availability"  Style="{StaticResource FemalePropertyTitles}" />
-                                <Label Text="{Binding FemaleAvailability}" Style="{StaticResource FemalePropertyValues}" />
+
+                                <StackLayout Orientation="Vertical" >
+                                    <Label Text="Unlock Date"  Style="{StaticResource FemalePropertyTitles}" />
+                                    <Image x:Name="FemaleUnlockDateArrowImage" Source="pinkDownArrow.png" WidthRequest="20" HeightRequest="20">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="FemaleUnlockDateArrowTapped" />
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                </StackLayout>
+                                <Label x:Name="FemaleUnlockDateLabel" Text="{Binding FemaleUnlockDate}" 
+                                       Style="{StaticResource FemalePropertyValues}" IsVisible="False" />
+
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="How to Unlock" Style="{StaticResource FemalePropertyTitles}" />
+                                    <Image x:Name="FemaleHowToUnlockArrowImage" Source="pinkDownArrow.png" WidthRequest="20" HeightRequest="20">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="FemaleHowToUnlockArrowTapped" />
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                </StackLayout>
+                                <Label x:Name="FemaleHowToUnlockLabel" Text="{Binding FemaleHowToUnlock}" 
+                                       Style="{StaticResource FemalePropertyValues}" IsVisible="False" />
+
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="Availability"  Style="{StaticResource FemalePropertyTitles}" />
+                                    <Image x:Name="FemaleAvailabilityArrowImage" Source="pinkDownArrow.png" WidthRequest="20" HeightRequest="20">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="FemaleAvailabilityArrowTapped" />
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                </StackLayout>
+                                <Label x:Name="FemaleAvailabilityLabel" Text="{Binding FemaleAvailability}" 
+                                       Style="{StaticResource FemalePropertyValues}" IsVisible="False" />
+
                                 <StackLayout x:Name="FemaleNeedPersonaContainer">
                                     <!--Requires Persona content-->
                                 </StackLayout>

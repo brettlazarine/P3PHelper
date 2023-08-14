@@ -5,6 +5,7 @@ using P3PHelper.ViewModels;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -15,6 +16,7 @@ namespace P3PHelper.Views.SLinks
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AeonPage : ContentPage
     {
+        public ICommand ExpandCommand { get; }
         public AeonPage()
         {
             InitializeComponent();
@@ -235,8 +237,6 @@ namespace P3PHelper.Views.SLinks
                 }
             }
         }
-
-
         /*
         
         FEMALE MC
@@ -491,6 +491,51 @@ namespace P3PHelper.Views.SLinks
             string jsonData = JsonConvert.SerializeObject(rankUp);
             var sLink = (SLink)this.BindingContext;
             Preferences.Set($"rankUpData_Aeon_{sLink.Arcana}", jsonData);
+        }
+
+        // Handles arrow icon being tapped
+        private void MaleUnlockDateArrowTapped(object sender, EventArgs e)
+        {
+            MaleUnlockDateLabel.IsVisible = !MaleUnlockDateLabel.IsVisible;
+            // Rotate the arrow icon by 180 degrees
+            var arrowImage = (Image)sender;
+            arrowImage.Rotation = MaleUnlockDateLabel.IsVisible ? 180 : 0;
+        }
+        private void MaleHowToUnlockArrowTapped(object sender, EventArgs e)
+        {
+            MaleHowToUnlockLabel.IsVisible = !MaleHowToUnlockLabel.IsVisible;
+            // Rotate the arrow icon by 180 degrees
+            var arrowImage = (Image)sender;
+            arrowImage.Rotation = MaleHowToUnlockLabel.IsVisible ? 180 : 0;
+        }
+        private void MaleAvailabilityArrowTapped(Object sender, EventArgs e)
+        {
+            MaleAvailabilityLabel.IsVisible = !MaleAvailabilityLabel.IsVisible;
+            // Rotate the arrow icon by 180 degrees
+            var arrowImage = (Image)sender;
+            arrowImage.Rotation = MaleAvailabilityLabel.IsVisible ? 180 : 0;
+        }
+
+        private void FemaleUnlockDateArrowTapped(object sender, EventArgs e)
+        {
+            FemaleUnlockDateLabel.IsVisible = !FemaleUnlockDateLabel.IsVisible;
+            // Rotate the arrow icon by 180 degrees
+            var arrowImage = (Image)sender;
+            arrowImage.Rotation = FemaleUnlockDateLabel.IsVisible ? 180 : 0;
+        }
+        private void FemaleHowToUnlockArrowTapped(object sender, EventArgs e)
+        {
+            FemaleHowToUnlockLabel.IsVisible = !FemaleHowToUnlockLabel.IsVisible;
+            // Rotate the arrow icon by 180 degrees
+            var arrowImage = (Image)sender;
+            arrowImage.Rotation = FemaleHowToUnlockLabel.IsVisible ? 180 : 0;
+        }
+        private void FemaleAvailabilityArrowTapped(Object sender, EventArgs e)
+        {
+            FemaleAvailabilityLabel.IsVisible = !FemaleAvailabilityLabel.IsVisible;
+            // Rotate the arrow icon by 180 degrees
+            var arrowImage = (Image)sender;
+            arrowImage.Rotation = FemaleAvailabilityLabel.IsVisible ? 180 : 0;
         }
     }
 }
