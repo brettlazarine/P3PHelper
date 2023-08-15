@@ -86,7 +86,9 @@
     <FlyoutItem Title="Social Links" Icon="icon_feed.png">
         <ShellContent Route="SocialLinksPage" ContentTemplate="{DataTemplate local:SocialLinksPage}" />
     </FlyoutItem>
-    
+    <FlyoutItem Title="Requests" Icon="icon_feed.png">
+        <ShellContent Route="RequestsPage" ContentTemplate="{DataTemplate local:RequestsPage}" />
+    </FlyoutItem>
 
     <!-- When the Flyout is visible this will be a menu item you can tie a click behavior to  -->
     <!--<MenuItem Text="Logout" StyleClass="MenuItemLayoutStyle" Clicked="OnMenuItemClicked">

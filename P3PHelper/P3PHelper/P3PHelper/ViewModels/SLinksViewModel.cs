@@ -10,6 +10,8 @@ namespace P3PHelper.ViewModels
 {
     public class SLinksViewModel : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         private ObservableCollection<SLink> _sLinks;
         public ObservableCollection<SLink> SLinks
         {
@@ -4395,7 +4397,5 @@ namespace P3PHelper.ViewModels
                 }
             };
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

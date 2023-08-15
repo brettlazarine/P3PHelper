@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:P3PHelper.Controls"
+             x:Class="P3PHelper.Views.RequestsPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="Requests" HorizontalOptions="Center" VerticalOptions="Center" />
+
+                <StackLayout x:Name="RequestsContainer" >
+                    <CollectionView ItemsSource="{Binding RequestCollection}" >
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout Spacing="5">
+                                    <StackLayout Orientation="Horizontal" BackgroundColor="Blue" >
+                                        <Label Text="{Binding Number}" />
+                                        <controls:CustomCheckBox x:Name="DetailsArrow"
+                                            Color="White" IsCompleted="{Binding IsCompleted}" />
+                                        <Image Source="downArrow.png" HeightRequest="20" WidthRequest="20">
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="RequestArrowTapped" />
+                                            </Image.GestureRecognizers>
+                                        </Image>
+                                    </StackLayout>
+
+                                    <StackLayout IsVisible="{Binding AreDetailsVisible}" >
+                                        <Label Text="{Binding Name}" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

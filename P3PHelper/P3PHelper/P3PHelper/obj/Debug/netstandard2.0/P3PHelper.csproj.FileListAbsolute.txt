@@ -37,3 +37,4 @@ C:\GitHubRepos\P3PHelper\P3PHelper\P3PHelper\P3PHelper\obj\Debug\netstandard2.0\
 C:\GitHubRepos\P3PHelper\P3PHelper\P3PHelper\P3PHelper\obj\Debug\netstandard2.0\Views\SLinks\SunPage.xaml.g.cs
 C:\GitHubRepos\P3PHelper\P3PHelper\P3PHelper\P3PHelper\obj\Debug\netstandard2.0\Views\SLinks\TemperancePage.xaml.g.cs
 C:\GitHubRepos\P3PHelper\P3PHelper\P3PHelper\P3PHelper\obj\Debug\netstandard2.0\Views\SLinks\TowerPage.xaml.g.cs
+C:\GitHubRepos\P3PHelper\P3PHelper\P3PHelper\P3PHelper\obj\Debug\netstandard2.0\Views\RequestsPage.xaml.g.cs
