@@ -1,4 +1,5 @@
-﻿using P3PHelper.Controls;
+﻿using Newtonsoft.Json;
+using P3PHelper.Controls;
 using P3PHelper.Models;
 using P3PHelper.ViewModels;
 using System;
@@ -6,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -21,6 +22,7 @@ namespace P3PHelper.Views
             var vm = new RequestsViewModel();
             BindingContext = vm;
         }
+        // Not in use, but keeping for reference
         public void AddRequestLabels()
         {
             var request = BindingContext as Request;
@@ -153,7 +155,20 @@ namespace P3PHelper.Views
             }
         }
 
+        private void Checkbox_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            var checkbox = (CustomCheckBox)sender;
+            var request = checkbox.BindingContext as Request;
 
+            if (request != null)
+            {
+                request.IsCompleted = e.Value;
+
+                // Save the data for the current request using a unique identifier
+                string jsonData = JsonConvert.SerializeObject(request);
+                Preferences.Set($"Request_IsCompleted_{request.Number}", jsonData);
+            }
+        }
         private void RequestArrowTapped(object sender, EventArgs e)
         {
             var arrowImage = (Image)sender;

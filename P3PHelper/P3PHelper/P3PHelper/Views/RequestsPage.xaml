@@ -12,20 +12,41 @@
                     <CollectionView ItemsSource="{Binding RequestCollection}" >
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
-                                <StackLayout Spacing="5">
-                                    <StackLayout Orientation="Horizontal" BackgroundColor="Blue" >
-                                        <Label Text="{Binding Number}" />
-                                        <controls:CustomCheckBox x:Name="DetailsArrow"
+                                <StackLayout Spacing="0" Padding="10">
+                                    <StackLayout Orientation="Horizontal" BackgroundColor="#0c3bc5" >
+                                        <Label Text="Request:" HorizontalOptions="CenterAndExpand"
+                                               VerticalOptions="CenterAndExpand"
+                                               TextColor="White" FontSize="30"
+                                               FontAttributes="Bold"/>
+                                        <Label Text="{Binding Number}" HorizontalOptions="CenterAndExpand"
+                                               VerticalOptions="CenterAndExpand"
+                                               TextColor="White" FontSize="30"
+                                               FontAttributes="Bold"/>
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand"
+                                                     Padding="10">
+                                            <controls:CustomCheckBox x:Name="DetailsArrow" CheckedChanged="Checkbox_CheckedChanged"
                                             Color="White" IsCompleted="{Binding IsCompleted}" />
-                                        <Image Source="downArrow.png" HeightRequest="20" WidthRequest="20">
-                                            <Image.GestureRecognizers>
-                                                <TapGestureRecognizer Tapped="RequestArrowTapped" />
-                                            </Image.GestureRecognizers>
-                                        </Image>
+                                            <Image Source="downArrow.png" HeightRequest="20" WidthRequest="20">
+                                                <Image.GestureRecognizers>
+                                                    <TapGestureRecognizer Tapped="RequestArrowTapped" />
+                                                </Image.GestureRecognizers>
+                                            </Image>
+                                        </StackLayout>
+                                        
                                     </StackLayout>
 
-                                    <StackLayout IsVisible="{Binding AreDetailsVisible}" >
+                                    <StackLayout IsVisible="{Binding AreDetailsVisible}" 
+                                                 BackgroundColor="#04fcfd" Padding="10">
+                                        <Label Text="Request" />
                                         <Label Text="{Binding Name}" />
+                                        <Label Text="How to Unlock" />
+                                        <Label Text="{Binding HowToUnlock}" />
+                                        <Label Text="Expires" />
+                                        <Label Text="{Binding Expires}" />
+                                        <Label Text="How to Complete It" />
+                                        <Label Text="{Binding Solution}" />
+                                        <Label Text="Reward" />
+                                        <Label Text="{Binding Reward}" />
                                     </StackLayout>
                                 </StackLayout>
                             </DataTemplate>

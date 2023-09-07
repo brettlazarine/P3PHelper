@@ -5,7 +5,7 @@ using System.Text;
 using Xamarin.Forms;
 
 namespace P3PHelper.Models
-{
+{ // Clean this code out next time you're in here
     public class InverseBoolConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)

@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Text;
 using System.Windows.Input;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace P3PHelper.ViewModels
@@ -21,6 +22,7 @@ namespace P3PHelper.ViewModels
 
         public RequestsViewModel()
         {
+            //Create the collection of requests
             RequestCollection = new ObservableCollection<Request>() 
             {
                 req1, req2, req3, req4, req5, req6, req7, req8, req9, req10,
@@ -33,18 +35,20 @@ namespace P3PHelper.ViewModels
                 req71, req72, req73, req74, req75, req76, req77, req78, req79, req80
             };
             ToggleDetailsCommand = new Command<Request>(ExecuteToggleDetailsCommand);
+
+            //foreach (var req in RequestCollection)
+            //{
+            //    req.IsCompleted = Preferences.Get("Request_IsCompleted_" + req.Number, false);
+            //}
         }
-        private void ToggleDetails(Request request)
-        {
-            request.AreDetailsVisible = !request.AreDetailsVisible;
-        }
+
         private void ExecuteToggleDetailsCommand(Request request)
         {
             request.AreDetailsVisible = !request.AreDetailsVisible;
         }
 
         #region 1-10
-        Request req1 = new Request()
+        readonly Request req1 = new Request()
         {
             Number = 1,
             Name = "a",

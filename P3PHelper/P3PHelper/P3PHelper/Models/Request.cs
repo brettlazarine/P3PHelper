@@ -1,9 +1,12 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
+using Xamarin.Essentials;
 
 namespace P3PHelper.Models
 {
@@ -19,10 +22,14 @@ namespace P3PHelper.Models
                 {
                     _isCompleted = value;
                     OnPropertyChanged(nameof(IsCompleted));
+
+                    // Update Preferences here
+                    //Preferences.Set("Request_IsCompleted_" + Number, value);
                 }
             }
         }
         private ObservableCollection<Request> _requests { get; set; }
+        [JsonIgnore]
         public ObservableCollection<Request> Requests
         {
             get { return _requests; }
@@ -35,6 +42,7 @@ namespace P3PHelper.Models
                 }
             }
         }
+        [PrimaryKey]
         public int Number { get; set; }
         public string Name { get; set; }
         public string HowToUnlock { get; set; }

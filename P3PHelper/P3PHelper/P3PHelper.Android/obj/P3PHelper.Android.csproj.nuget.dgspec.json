@@ -42,13 +42,17 @@
       "frameworks": {
         "monoandroid13.0": {
           "dependencies": {
+            "SQLite": {
+              "target": "Package",
+              "version": "[3.13.0, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
-              "version": "[1.7.6, )"
+              "version": "[1.8.0, )"
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[5.0.0.2578, )"
+              "version": "[5.0.0.2612, )"
             }
           }
         }
@@ -105,13 +109,21 @@
               "target": "Package",
               "version": "[13.0.3, )"
             },
+            "SQLite": {
+              "target": "Package",
+              "version": "[3.13.0, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
-              "version": "[1.7.6, )"
+              "version": "[1.8.0, )"
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[5.0.0.2578, )"
+              "version": "[5.0.0.2612, )"
+            },
+            "sqlite-net-pcl": {
+              "target": "Package",
+              "version": "[1.8.116, )"
             }
           },
           "imports": [
